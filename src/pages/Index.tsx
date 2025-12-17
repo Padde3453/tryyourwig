@@ -8,9 +8,6 @@ import {
   RotateCcw,
   Users,
   Clock,
-  Upload,
-  Palette,
-  Wand2,
   Check,
   Home,
   Image,
@@ -48,8 +45,6 @@ const Index = () => {
   const { t } = useI18n();
 
   const problemIcons = [RotateCcw, Users, Clock, Home, Image];
-
-  const stepIcons = [Upload, Palette, Wand2];
 
   return (
     <Layout>
@@ -180,7 +175,7 @@ const Index = () => {
 
       {/* How It Works */}
       <section className="py-24 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -195,9 +190,12 @@ const Index = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="relative flex flex-col gap-12 md:gap-0">
+            {/* Connecting line - runs behind everything */}
+            <div className="hidden md:block absolute left-1/2 top-[160px] bottom-[160px] w-[2px] bg-gradient-to-b from-primary via-accent to-primary -translate-x-1/2 z-0" />
+
             {t.howItWorks.steps.map((step, i) => {
-              const Icon = stepIcons[i];
+              const isReversed = i === 1;
               return (
                 <motion.div
                   key={i}
@@ -205,23 +203,35 @@ const Index = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.15 }}
-                  className="relative"
+                  className={`relative flex flex-col md:flex-row items-center gap-8 ${
+                    isReversed ? "md:flex-row-reverse" : ""
+                  }`}
                 >
-                  {i < 2 && (
-                    <div className="hidden md:block absolute top-14 left-[60%] w-[80%] h-[2px] bg-gradient-to-r from-primary/50 to-transparent" />
-                  )}
-                  <Card className="p-8 text-center hero-card card-hover">
-                    <div className="text-5xl font-extrabold gradient-text mb-4">
+                  {/* Connection dot at center of card */}
+                  <div className="hidden md:block absolute left-1/2 top-1/2 w-4 h-4 rounded-full gradient-bg -translate-x-1/2 -translate-y-1/2 z-10 border-4 border-background" />
+
+                  {/* Image Card */}
+                  <div className="w-full md:w-1/2 relative z-[1]">
+                    <Card className="hero-card card-hover overflow-hidden aspect-[4/3] flex items-center justify-center bg-muted/50">
+                      <div className="flex flex-col items-center justify-center text-muted-foreground/50">
+                        <Image className="w-16 h-16 mb-2" />
+                        <span className="text-sm font-medium">Step {step.step} Image</span>
+                      </div>
+                    </Card>
+                  </div>
+
+                  {/* Text Content */}
+                  <div className={`w-full md:w-1/2 ${isReversed ? "md:text-right" : "md:text-left"} text-center`}>
+                    <div className="text-6xl font-extrabold gradient-text mb-4">
                       {step.step}
                     </div>
-                    <div className="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center mx-auto mb-6">
-                      <Icon className="w-8 h-8 text-primary-foreground" />
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">
+                    <h3 className="text-2xl font-bold text-foreground mb-3">
                       {step.title}
                     </h3>
-                    <p className="text-muted-foreground">{step.description}</p>
-                  </Card>
+                    <p className="text-muted-foreground text-lg leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
                 </motion.div>
               );
             })}
