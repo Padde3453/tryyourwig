@@ -8,6 +8,8 @@ import {
 import { Maximize2 } from "lucide-react";
 import beforeWig from "@/assets/before-wig.jpg";
 import afterWig from "@/assets/after-wig.png";
+import beforeWig2 from "@/assets/before-wig-2.webp";
+import afterWig2 from "@/assets/after-wig-2.webp";
 
 interface ImagePair {
   before: string | null;
@@ -17,7 +19,7 @@ interface ImagePair {
 
 const imagePairs: ImagePair[] = [
   { before: beforeWig, after: afterWig, isPlaceholder: false },
-  { before: null, after: null, isPlaceholder: true },
+  { before: beforeWig2, after: afterWig2, isPlaceholder: false },
   { before: null, after: null, isPlaceholder: true },
   { before: null, after: null, isPlaceholder: true },
   { before: null, after: null, isPlaceholder: true },
