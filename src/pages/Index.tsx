@@ -28,6 +28,7 @@ import { Layout } from "@/components/Layout";
 import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slider";
 import beforeWig from "@/assets/before-wig.jpg";
 import afterWig from "@/assets/after-wig.png";
+import { HeroCarousel } from "@/components/HeroCarousel";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -103,37 +104,14 @@ const Index = () => {
             </motion.div>
           </motion.div>
 
-          {/* Hero Visual - Split Screen */}
+          {/* Hero Carousel */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="mt-16 max-w-4xl mx-auto"
+            className="mt-16"
           >
-            <div className="hero-card p-4 overflow-hidden">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative rounded-2xl overflow-hidden">
-                  <img
-                    src={beforeWig}
-                    alt="Before transformation"
-                    className="w-full h-[300px] sm:h-[400px] object-cover"
-                  />
-                  <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium">
-                    Before
-                  </div>
-                </div>
-                <div className="relative rounded-2xl overflow-hidden">
-                  <img
-                    src={afterWig}
-                    alt="After transformation"
-                    className="w-full h-[300px] sm:h-[400px] object-cover"
-                  />
-                  <div className="absolute bottom-4 right-4 gradient-bg text-primary-foreground px-3 py-1.5 rounded-full text-sm font-medium">
-                    After AI ✨
-                  </div>
-                </div>
-              </div>
-            </div>
+            <HeroCarousel />
           </motion.div>
         </div>
       </section>
