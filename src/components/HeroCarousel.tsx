@@ -12,6 +12,8 @@ import beforeWig2 from "@/assets/before-wig-2.webp";
 import afterWig2 from "@/assets/after-wig-2.webp";
 import beforeWig3 from "@/assets/before-wig-3.webp";
 import afterWig3 from "@/assets/after-wig-3.webp";
+import beforeWig4 from "@/assets/before-wig-4.webp";
+import afterWig4 from "@/assets/after-wig-4.webp";
 
 interface ImagePair {
   before: string | null;
@@ -23,7 +25,7 @@ const imagePairs: ImagePair[] = [
   { before: beforeWig, after: afterWig, isPlaceholder: false },
   { before: beforeWig2, after: afterWig2, isPlaceholder: false },
   { before: beforeWig3, after: afterWig3, isPlaceholder: false },
-  { before: null, after: null, isPlaceholder: true },
+  { before: beforeWig4, after: afterWig4, isPlaceholder: false },
   { before: null, after: null, isPlaceholder: true },
   { before: null, after: null, isPlaceholder: true },
 ];
