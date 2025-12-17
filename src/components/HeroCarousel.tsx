@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Maximize2 } from "lucide-react";
 import beforeWig from "@/assets/before-wig.jpg";
@@ -53,6 +54,8 @@ const ImagePairCard = ({ pair, index }: { pair: ImagePair; index: number }) => (
 );
 
 export const HeroCarousel = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  
   // Duplicate pairs for seamless infinite loop
   const duplicatedPairs = [...imagePairs, ...imagePairs];
 
@@ -63,12 +66,14 @@ export const HeroCarousel = () => {
         maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
         WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
       }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div
         className="flex gap-8 sm:gap-12"
-        animate={{ x: "-50%" }}
+        animate={{ x: ["0%", "50%"] }}
         transition={{
-          duration: 30,
+          duration: isHovered ? 30 : 15,
           repeat: Infinity,
           ease: "linear",
         }}
