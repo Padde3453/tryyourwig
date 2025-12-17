@@ -23,7 +23,7 @@ import {
 import { useI18n } from "@/lib/i18n";
 import { Layout } from "@/components/Layout";
 import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slider";
-import beforeWig from "@/assets/before-wig.jpg";
+import beforeWig from "@/assets/before-wig.webp";
 import afterWig from "@/assets/after-wig.png";
 import stepUploadSelfie from "@/assets/step-upload-selfie.webp";
 import { HeroCarousel } from "@/components/HeroCarousel";
