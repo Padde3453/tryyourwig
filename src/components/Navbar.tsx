@@ -54,10 +54,10 @@ export const Navbar = () => {
         y: isVisible ? 0 : -20 
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="fixed top-[68px] left-4 right-4 z-50 bg-background/60 backdrop-blur-xl border border-border/50 rounded-full shadow-lg"
+      className="fixed top-4 left-4 right-4 z-50 bg-background/60 backdrop-blur-xl border border-border/50 rounded-full shadow-lg"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-14">
+        <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-9 h-9 gradient-bg rounded-xl flex items-center justify-center text-primary-foreground font-bold text-lg shadow-lg transition-transform group-hover:scale-105">
