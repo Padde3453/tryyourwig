@@ -12,6 +12,8 @@ import {
   Palette,
   Wand2,
   Check,
+  Home,
+  Image,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -44,7 +46,7 @@ const staggerContainer = {
 const Index = () => {
   const { t } = useI18n();
 
-  const problemIcons = [RotateCcw, Users, Clock];
+  const problemIcons = [RotateCcw, Users, Clock, Home, Image];
 
   const stepIcons = [Upload, Palette, Wand2];
 
@@ -174,7 +176,7 @@ const Index = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {t.problems.items.map((problem, i) => {
               const Icon = problemIcons[i];
               return (

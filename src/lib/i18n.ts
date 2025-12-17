@@ -37,8 +37,8 @@ export const translations = {
       title: 'Trusted by modern salons worldwide',
     },
     problems: {
-      title: 'The Challenges You Face',
-      subtitle: 'Running a wig shop comes with unique challenges',
+      title: 'How TryYourWig supports your business',
+      subtitle: 'Stand out with a special service that helps you win and retain clients',
       items: [
         {
           title: 'High Return Rates',
@@ -51,6 +51,14 @@ export const translations = {
         {
           title: 'Wasted Consultations',
           description: 'Staff spend hours on consultations that don\'t convert because customers remain unsure.',
+        },
+        {
+          title: 'Sensitive Topic',
+          description: 'Our service allows your customers to try the wigs in different poses from the comfort and privacy of their home.',
+        },
+        {
+          title: 'Challenging Presentation',
+          description: 'Many wigs are displayed on ugly doll faces or plastic heads, which actually harms their presentation and makes them look less appealing.',
         },
       ],
     },
@@ -192,8 +200,8 @@ export const translations = {
       title: 'Vertraut von modernen Salons weltweit',
     },
     problems: {
-      title: 'Die Herausforderungen, denen Sie gegenüberstehen',
-      subtitle: 'Ein Perückengeschäft zu führen bringt einzigartige Herausforderungen mit sich',
+      title: 'Wie TryYourWig Ihr Geschäft unterstützt',
+      subtitle: 'Heben Sie sich mit einem besonderen Service ab, der Ihnen hilft, Kunden zu gewinnen und zu halten',
       items: [
         {
           title: 'Hohe Rückgabequoten',
@@ -206,6 +214,14 @@ export const translations = {
         {
           title: 'Vergeudete Beratungen',
           description: 'Mitarbeiter verbringen Stunden mit Beratungen, die nicht konvertieren, weil Kunden unsicher bleiben.',
+        },
+        {
+          title: 'Sensibles Thema',
+          description: 'Unser Service ermöglicht es Ihren Kunden, die Perücken in verschiedenen Posen bequem und privat von zu Hause aus anzuprobieren.',
+        },
+        {
+          title: 'Herausfordernde Präsentation',
+          description: 'Viele Perücken werden auf hässlichen Puppengesichtern oder Plastikköpfen präsentiert, was ihre Präsentation tatsächlich beeinträchtigt und sie weniger ansprechend macht.',
         },
       ],
     },
@@ -347,8 +363,8 @@ export const translations = {
       title: 'Confiado por salones modernos en todo el mundo',
     },
     problems: {
-      title: 'Los Desafíos que Enfrentas',
-      subtitle: 'Dirigir una tienda de pelucas viene con desafíos únicos',
+      title: 'Cómo TryYourWig apoya tu negocio',
+      subtitle: 'Destaca con un servicio especial que te ayuda a ganar y retener clientes',
       items: [
         {
           title: 'Altas Tasas de Devolución',
@@ -361,6 +377,14 @@ export const translations = {
         {
           title: 'Consultas Desperdiciadas',
           description: 'El personal pasa horas en consultas que no convierten porque los clientes permanecen inseguros.',
+        },
+        {
+          title: 'Tema Sensible',
+          description: 'Nuestro servicio permite a tus clientes probar las pelucas en diferentes poses desde la comodidad y privacidad de su hogar.',
+        },
+        {
+          title: 'Presentación Desafiante',
+          description: 'Muchas pelucas se exhiben en caras de muñecas feas o cabezas de plástico, lo que perjudica su presentación y las hace menos atractivas.',
         },
       ],
     },
@@ -502,8 +526,8 @@ export const translations = {
       title: 'Approuvé par les salons modernes du monde entier',
     },
     problems: {
-      title: 'Les Défis Auxquels Vous Faites Face',
-      subtitle: 'Gérer une boutique de perruques comporte des défis uniques',
+      title: 'Comment TryYourWig soutient votre entreprise',
+      subtitle: 'Démarquez-vous avec un service spécial qui vous aide à gagner et fidéliser vos clients',
       items: [
         {
           title: 'Taux de Retour Élevés',
@@ -516,6 +540,14 @@ export const translations = {
         {
           title: 'Consultations Gaspillées',
           description: 'Le personnel passe des heures en consultations qui ne convertissent pas car les clients restent incertains.',
+        },
+        {
+          title: 'Sujet Sensible',
+          description: 'Notre service permet à vos clients d\'essayer les perruques dans différentes poses depuis le confort et l\'intimité de leur domicile.',
+        },
+        {
+          title: 'Présentation Difficile',
+          description: 'De nombreuses perruques sont exposées sur des visages de poupées laids ou des têtes en plastique, ce qui nuit à leur présentation et les rend moins attrayantes.',
         },
       ],
     },
