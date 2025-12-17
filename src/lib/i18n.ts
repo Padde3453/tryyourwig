@@ -66,13 +66,16 @@ export const translations = {
       title: 'How It Works',
       subtitle: 'Three simple steps to transform your customer experience',
       steps: [
-        {
-          step: '01',
-          title: 'Upload Selfie',
-          description: 'Customer takes or uploads a photo of themselves',
-          overlayTitle: 'Upload Selfie',
-          overlaySubtitle: 'Make sure your face is clearly visible',
-        },
+      {
+        step: '01',
+        title: 'Upload Selfie',
+        description: 'Customer takes or uploads a photo of themselves',
+        overlayUploadTitle: 'Upload Selfie',
+        overlayUploadSubtitle: 'Make sure your face is clearly visible',
+        overlayStyleTitle: 'Desired style',
+        overlayStyleSubtitle: 'Like the reference image',
+        overlayGenerate: 'Generate image',
+      },
         {
           step: '02',
           title: 'Select Wig',
@@ -231,13 +234,16 @@ export const translations = {
       title: 'So Funktioniert Es',
       subtitle: 'Drei einfache Schritte zur Transformation Ihres Kundenerlebnisses',
       steps: [
-        {
-          step: '01',
-          title: 'Selfie Hochladen',
-          description: 'Kunde macht oder lädt ein Foto von sich hoch',
-          overlayTitle: 'Selfie hochladen',
-          overlaySubtitle: 'Stelle sicher, dass dein Gesicht gut sichtbar ist',
-        },
+      {
+        step: '01',
+        title: 'Selfie Hochladen',
+        description: 'Kunde macht oder lädt ein Foto von sich hoch',
+        overlayUploadTitle: 'Selfie hochladen',
+        overlayUploadSubtitle: 'Stelle sicher, dass dein Gesicht gut sichtbar ist',
+        overlayStyleTitle: 'Gewünschter Stil',
+        overlayStyleSubtitle: 'Wie das Referenzbild',
+        overlayGenerate: 'Bild generieren',
+      },
         {
           step: '02',
           title: 'Perücke Auswählen',
@@ -396,13 +402,16 @@ export const translations = {
       title: 'Cómo Funciona',
       subtitle: 'Tres simples pasos para transformar la experiencia del cliente',
       steps: [
-        {
-          step: '01',
-          title: 'Subir Selfie',
-          description: 'El cliente toma o sube una foto de sí mismo',
-          overlayTitle: 'Subir Selfie',
-          overlaySubtitle: 'Asegúrate de que tu rostro sea claramente visible',
-        },
+      {
+        step: '01',
+        title: 'Subir Selfie',
+        description: 'El cliente toma o sube una foto de sí mismo',
+        overlayUploadTitle: 'Subir Selfie',
+        overlayUploadSubtitle: 'Asegúrate de que tu rostro sea claramente visible',
+        overlayStyleTitle: 'Estilo deseado',
+        overlayStyleSubtitle: 'Como la imagen de referencia',
+        overlayGenerate: 'Generar imagen',
+      },
         {
           step: '02',
           title: 'Seleccionar Peluca',
@@ -561,13 +570,16 @@ export const translations = {
       title: 'Comment Ça Marche',
       subtitle: 'Trois étapes simples pour transformer l\'expérience client',
       steps: [
-        {
-          step: '01',
-          title: 'Télécharger un Selfie',
-          description: 'Le client prend ou télécharge une photo de lui-même',
-          overlayTitle: 'Télécharger un Selfie',
-          overlaySubtitle: 'Assurez-vous que votre visage est bien visible',
-        },
+      {
+        step: '01',
+        title: 'Télécharger un Selfie',
+        description: 'Le client prend ou télécharge une photo de lui-même',
+        overlayUploadTitle: 'Télécharger un Selfie',
+        overlayUploadSubtitle: 'Assurez-vous que votre visage est bien visible',
+        overlayStyleTitle: 'Style souhaité',
+        overlayStyleSubtitle: 'Comme l\'image de référence',
+        overlayGenerate: 'Générer l\'image',
+      },
         {
           step: '02',
           title: 'Sélectionner la Perruque',

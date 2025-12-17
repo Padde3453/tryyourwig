@@ -218,21 +218,43 @@ const Index = () => {
                     viewport={{ once: true, amount: 0.6 }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
                   >
-                    <Card className="hero-card card-hover overflow-hidden aspect-[4/3] flex items-center justify-center bg-muted/50 relative">
+                    <Card className="hero-card card-hover overflow-hidden aspect-[1008/1056] flex items-center justify-center bg-muted/50 relative">
                       {i === 0 ? (
                         <>
                           <img 
                             src={stepUploadSelfie} 
                             alt={step.title} 
-                            className="w-full h-full object-contain"
+                            className="w-full h-full object-cover"
                           />
-                          {/* Text overlay positioned in bottom portion of image */}
-                          <div className="absolute inset-0 flex flex-col items-center justify-end pb-[22%]">
-                            <h4 className="text-base md:text-lg font-bold text-foreground">
-                              {step.overlayTitle}
+                          {/* Text overlays with exact positioning based on image measurements */}
+                          {/* Upload section - top: 42.8%, left: 33.3% */}
+                          <div className="absolute" style={{ top: '42.8%', left: '33.3%' }}>
+                            <h4 className="text-sm md:text-base lg:text-lg font-bold text-foreground">
+                              {step.overlayUploadTitle}
                             </h4>
-                            <p className="text-xs md:text-sm text-muted-foreground text-center px-8 mt-1">
-                              {step.overlaySubtitle}
+                          </div>
+                          {/* Upload subtitle - top: 49.9%, left: 25.3% */}
+                          <div className="absolute" style={{ top: '49.9%', left: '25.3%' }}>
+                            <p className="text-[10px] md:text-xs lg:text-sm text-muted-foreground">
+                              {step.overlayUploadSubtitle}
+                            </p>
+                          </div>
+                          {/* Style title - top: 71.5%, left: 7.4% */}
+                          <div className="absolute" style={{ top: '71.5%', left: '7.4%' }}>
+                            <h4 className="text-sm md:text-base lg:text-lg font-bold text-foreground">
+                              {step.overlayStyleTitle}
+                            </h4>
+                          </div>
+                          {/* Style subtitle - top: 79.5%, left: 7.5% */}
+                          <div className="absolute" style={{ top: '79.5%', left: '7.5%' }}>
+                            <p className="text-[10px] md:text-xs lg:text-sm text-muted-foreground">
+                              {step.overlayStyleSubtitle}
+                            </p>
+                          </div>
+                          {/* Generate button text - top: 94%, centered */}
+                          <div className="absolute left-1/2 -translate-x-1/2" style={{ top: '94%' }}>
+                            <p className="text-xs md:text-sm lg:text-base font-semibold text-white whitespace-nowrap">
+                              {step.overlayGenerate}
                             </p>
                           </div>
                         </>
