@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Globe, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -15,8 +15,29 @@ import { useI18n, locales, localeNames, localeFlags, Locale } from "@/lib/i18n";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const { locale, setLocale, t } = useI18n();
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY < 100) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   const navLinks = [
     { name: t.nav.demo, href: "/demo" },
@@ -26,15 +47,23 @@ export const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <motion.nav
+      initial={{ opacity: 1, y: 0 }}
+      animate={{ 
+        opacity: isVisible ? 1 : 0, 
+        y: isVisible ? 0 : -20 
+      }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className="fixed top-12 left-4 right-4 z-50 bg-background/60 backdrop-blur-xl border border-border/50 rounded-full shadow-lg"
+    >
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center text-primary-foreground font-bold text-xl shadow-lg transition-transform group-hover:scale-105">
+            <div className="w-9 h-9 gradient-bg rounded-xl flex items-center justify-center text-primary-foreground font-bold text-lg shadow-lg transition-transform group-hover:scale-105">
               T
             </div>
-            <span className="text-xl font-bold tracking-tight text-foreground">
+            <span className="text-lg font-bold tracking-tight text-foreground">
               TryYourWig
             </span>
           </Link>
@@ -58,9 +87,8 @@ export const Navbar = () => {
             {/* Language Switcher */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="gap-2">
-                  <Globe className="w-4 h-4" />
-                  <span>{localeFlags[locale]}</span>
+                <Button variant="ghost" size="sm" className="gap-1.5 px-2">
+                  <span className="text-base">{localeFlags[locale]}</span>
                   <ChevronDown className="w-3 h-3" />
                 </Button>
               </DropdownMenuTrigger>
@@ -90,8 +118,8 @@ export const Navbar = () => {
           <div className="md:hidden flex items-center gap-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Globe className="w-5 h-5" />
+                <Button variant="ghost" size="sm" className="px-2">
+                  <span className="text-base">{localeFlags[locale]}</span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
@@ -129,7 +157,7 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border"
+            className="md:hidden bg-background/90 backdrop-blur-xl border-t border-border/50 rounded-b-3xl overflow-hidden"
           >
             <div className="px-4 py-4 space-y-3">
               {navLinks.map((link) => (
@@ -155,6 +183,6 @@ export const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 };
