@@ -196,13 +196,12 @@ const Index = () => {
 
             {t.howItWorks.steps.map((step, i) => {
               const isReversed = i === 1;
+              // Left-bound images fly from right, right-bound flies from left
+              const imageInitialX = isReversed ? -100 : 100;
+              
               return (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.15 }}
                   className={`relative flex flex-col md:flex-row items-center gap-8 ${
                     isReversed ? "md:flex-row-reverse" : ""
                   }`}
@@ -210,18 +209,30 @@ const Index = () => {
                   {/* Connection dot at center of card */}
                   <div className="hidden md:block absolute left-1/2 top-1/2 w-4 h-4 rounded-full gradient-bg -translate-x-1/2 -translate-y-1/2 z-10 border-4 border-background" />
 
-                  {/* Image Card */}
-                  <div className="w-full md:w-1/2 relative z-[1]">
+                  {/* Image Card - flies in independently */}
+                  <motion.div 
+                    className="w-full md:w-1/2 relative z-[1]"
+                    initial={{ opacity: 0, x: imageInitialX }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                  >
                     <Card className="hero-card card-hover overflow-hidden aspect-[4/3] flex items-center justify-center bg-muted/50">
                       <div className="flex flex-col items-center justify-center text-muted-foreground/50">
                         <Image className="w-16 h-16 mb-2" />
                         <span className="text-sm font-medium">Step {step.step} Image</span>
                       </div>
                     </Card>
-                  </div>
+                  </motion.div>
 
                   {/* Text Content */}
-                  <div className={`w-full md:w-1/2 ${isReversed ? "md:text-right" : "md:text-left"} text-center`}>
+                  <motion.div 
+                    className={`w-full md:w-1/2 ${isReversed ? "md:text-right" : "md:text-left"} text-center`}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                  >
                     <div className="text-6xl font-extrabold gradient-text mb-4">
                       {step.step}
                     </div>
@@ -231,8 +242,8 @@ const Index = () => {
                     <p className="text-muted-foreground text-lg leading-relaxed">
                       {step.description}
                     </p>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </div>
               );
             })}
           </div>
