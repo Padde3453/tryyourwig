@@ -197,7 +197,7 @@ const Index = () => {
             {t.howItWorks.steps.map((step, i) => {
               const isReversed = i === 1;
               // Left-bound images fly from right, right-bound flies from left
-              const imageInitialX = isReversed ? -100 : 100;
+              const imageInitialX = isReversed ? -200 : 200;
               
               return (
                 <div
@@ -214,8 +214,8 @@ const Index = () => {
                     className="w-full md:w-1/2 relative z-[1]"
                     initial={{ opacity: 0, x: imageInitialX }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.6 }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
                   >
                     <Card className="hero-card card-hover overflow-hidden aspect-[4/3] flex items-center justify-center bg-muted/50">
                       <div className="flex flex-col items-center justify-center text-muted-foreground/50">
@@ -230,8 +230,8 @@ const Index = () => {
                     className={`w-full md:w-1/2 ${isReversed ? "md:text-right" : "md:text-left"} text-center`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
+                    viewport={{ once: true, amount: 0.6 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
                   >
                     <div className="text-6xl font-extrabold gradient-text mb-4">
                       {step.step}
