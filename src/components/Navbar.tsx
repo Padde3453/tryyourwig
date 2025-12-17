@@ -54,7 +54,7 @@ export const Navbar = () => {
         y: isVisible ? 0 : -20 
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="fixed top-12 left-4 right-4 z-50 bg-background/60 backdrop-blur-xl border border-border/50 rounded-full shadow-lg"
+      className="fixed top-[68px] left-4 right-4 z-50 bg-background/60 backdrop-blur-xl border border-border/50 rounded-full shadow-lg"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-14">
@@ -63,7 +63,7 @@ export const Navbar = () => {
             <div className="w-9 h-9 gradient-bg rounded-xl flex items-center justify-center text-primary-foreground font-bold text-lg shadow-lg transition-transform group-hover:scale-105">
               T
             </div>
-            <span className="text-lg font-bold tracking-tight text-foreground">
+            <span className="text-xl font-bold tracking-tight text-foreground">
               TryYourWig
             </span>
           </Link>
@@ -74,7 +74,7 @@ export const Navbar = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-base font-medium transition-colors ${
                   isActive(link.href)
                     ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
