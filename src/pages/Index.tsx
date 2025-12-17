@@ -227,32 +227,32 @@ const Index = () => {
                             className="w-full h-full object-cover"
                           />
                           {/* Text overlays with exact positioning based on image measurements */}
-                          {/* Upload section - top: 42.8%, left: 33.3% */}
-                          <div className="absolute" style={{ top: '42.8%', left: '33.3%' }}>
-                            <h4 className="text-sm md:text-base lg:text-lg font-bold text-foreground">
+                          {/* Upload title - centered at Y-76 from center = 42.8% from top */}
+                          <div className="absolute left-1/2 -translate-x-1/2" style={{ top: '42.8%' }}>
+                            <h4 className="text-sm md:text-base lg:text-lg font-bold text-foreground text-center">
                               {step.overlayUploadTitle}
                             </h4>
                           </div>
-                          {/* Upload subtitle - top: 49.9%, left: 25.3% */}
-                          <div className="absolute" style={{ top: '49.9%', left: '25.3%' }}>
+                          {/* Upload subtitle - centered at Y77 from center = 57.3% from top, width 45.6% */}
+                          <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ top: '57.3%', width: '45.6%' }}>
                             <p className="text-[10px] md:text-xs lg:text-sm text-muted-foreground">
                               {step.overlayUploadSubtitle}
                             </p>
                           </div>
-                          {/* Style title - top: 71.5%, left: 7.4% */}
-                          <div className="absolute" style={{ top: '71.5%', left: '7.4%' }}>
+                          {/* Style title - moved up ~5px = 71% */}
+                          <div className="absolute" style={{ top: '71%', left: '7.4%' }}>
                             <h4 className="text-sm md:text-base lg:text-lg font-bold text-foreground">
                               {step.overlayStyleTitle}
                             </h4>
                           </div>
-                          {/* Style subtitle - top: 79.5%, left: 7.5% */}
-                          <div className="absolute" style={{ top: '79.5%', left: '7.5%' }}>
+                          {/* Style subtitle - moved up ~5px = 79% */}
+                          <div className="absolute" style={{ top: '79%', left: '7.5%' }}>
                             <p className="text-[10px] md:text-xs lg:text-sm text-muted-foreground">
                               {step.overlayStyleSubtitle}
                             </p>
                           </div>
-                          {/* Generate button text - top: 94%, centered */}
-                          <div className="absolute left-1/2 -translate-x-1/2" style={{ top: '94%' }}>
+                          {/* Generate button text - moved up ~5px = 93.5% */}
+                          <div className="absolute left-1/2 -translate-x-1/2" style={{ top: '93.5%' }}>
                             <p className="text-xs md:text-sm lg:text-base font-semibold text-white whitespace-nowrap">
                               {step.overlayGenerate}
                             </p>
