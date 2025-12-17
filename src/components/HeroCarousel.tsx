@@ -6,7 +6,7 @@ import {
   useReducedMotion,
 } from "framer-motion";
 import { Maximize2 } from "lucide-react";
-import beforeWig from "@/assets/before-wig.jpg";
+import beforeWig from "@/assets/before-wig.webp";
 import afterWig from "@/assets/after-wig.png";
 import beforeWig2 from "@/assets/before-wig-2.webp";
 import afterWig2 from "@/assets/after-wig-2.webp";
