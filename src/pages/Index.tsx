@@ -224,14 +224,14 @@ const Index = () => {
                           <img 
                             src={stepUploadSelfie} 
                             alt={step.title} 
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-contain"
                           />
-                          {/* Text overlay */}
-                          <div className="absolute inset-0 flex flex-col items-center justify-center">
-                            <h4 className="text-lg md:text-xl font-bold text-foreground mt-4">
+                          {/* Text overlay positioned in bottom portion of image */}
+                          <div className="absolute inset-0 flex flex-col items-center justify-end pb-[22%]">
+                            <h4 className="text-base md:text-lg font-bold text-foreground">
                               {step.overlayTitle}
                             </h4>
-                            <p className="text-sm md:text-base text-muted-foreground text-center px-6 mt-2">
+                            <p className="text-xs md:text-sm text-muted-foreground text-center px-8 mt-1">
                               {step.overlaySubtitle}
                             </p>
                           </div>
