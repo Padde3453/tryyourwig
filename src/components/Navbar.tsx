@@ -61,7 +61,7 @@ export const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <span className="text-xl font-bold tracking-tight">
-              <span className="bg-gradient-to-r from-brand-pink to-brand-amber bg-clip-text text-transparent">TryYourWig</span>
+              <span className="bg-gradient-to-r from-brand-pink to-brand-purple bg-clip-text text-transparent">TryYourWig</span>
               <span className="text-foreground">.com</span>
             </span>
           </Link>

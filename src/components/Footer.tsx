@@ -11,7 +11,7 @@ export const Footer = () => {
           {/* Brand */}
           <Link to="/" className="flex items-center">
             <span className="text-lg font-bold tracking-tight">
-              <span className="bg-gradient-to-r from-brand-pink to-brand-amber bg-clip-text text-transparent">TryYourWig</span>
+              <span className="bg-gradient-to-r from-brand-pink to-brand-purple bg-clip-text text-transparent">TryYourWig</span>
               <span className="text-foreground">.com</span>
             </span>
           </Link>
