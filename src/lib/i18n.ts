@@ -70,6 +70,8 @@ export const translations = {
           step: '01',
           title: 'Upload Selfie',
           description: 'Customer takes or uploads a photo of themselves',
+          overlayTitle: 'Upload Selfie',
+          overlaySubtitle: 'Make sure your face is clearly visible',
         },
         {
           step: '02',
@@ -233,6 +235,8 @@ export const translations = {
           step: '01',
           title: 'Selfie Hochladen',
           description: 'Kunde macht oder lädt ein Foto von sich hoch',
+          overlayTitle: 'Selfie hochladen',
+          overlaySubtitle: 'Stelle sicher, dass dein Gesicht gut sichtbar ist',
         },
         {
           step: '02',
@@ -396,6 +400,8 @@ export const translations = {
           step: '01',
           title: 'Subir Selfie',
           description: 'El cliente toma o sube una foto de sí mismo',
+          overlayTitle: 'Subir Selfie',
+          overlaySubtitle: 'Asegúrate de que tu rostro sea claramente visible',
         },
         {
           step: '02',
@@ -559,6 +565,8 @@ export const translations = {
           step: '01',
           title: 'Télécharger un Selfie',
           description: 'Le client prend ou télécharge une photo de lui-même',
+          overlayTitle: 'Télécharger un Selfie',
+          overlaySubtitle: 'Assurez-vous que votre visage est bien visible',
         },
         {
           step: '02',
