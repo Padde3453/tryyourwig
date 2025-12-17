@@ -27,8 +27,8 @@ export const translations = {
     },
     hero: {
       badge: 'AI-Powered Virtual Try-On',
-      title: 'Stop Returns.',
-      titleHighlight: 'Start Confidence.',
+      title: 'Any Wig. Any Face.',
+      titleHighlight: 'Instantly.',
       subtitle: 'The AI Virtual Try-On for Professional Wig Shops. Let your clients see their perfect look before they buy.',
       cta: 'Try the Demo',
       ctaSecondary: 'View Pricing',
@@ -195,8 +195,8 @@ export const translations = {
     },
     hero: {
       badge: 'KI-Gestützte Virtuelle Anprobe',
-      title: 'Stoppen Sie Retouren.',
-      titleHighlight: 'Starten Sie Vertrauen.',
+      title: 'Jede Perücke. Jedes Gesicht.',
+      titleHighlight: 'Sofort.',
       subtitle: 'Die KI-Virtuelle Anprobe für professionelle Perückengeschäfte. Lassen Sie Ihre Kunden ihren perfekten Look sehen, bevor sie kaufen.',
       cta: 'Demo Testen',
       ctaSecondary: 'Preise Ansehen',
@@ -363,8 +363,8 @@ export const translations = {
     },
     hero: {
       badge: 'Prueba Virtual con IA',
-      title: 'Detén las Devoluciones.',
-      titleHighlight: 'Inicia la Confianza.',
+      title: 'Cualquier Peluca. Cualquier Rostro.',
+      titleHighlight: 'Al Instante.',
       subtitle: 'La Prueba Virtual con IA para Tiendas Profesionales de Pelucas. Deja que tus clientes vean su look perfecto antes de comprar.',
       cta: 'Probar Demo',
       ctaSecondary: 'Ver Precios',
@@ -531,8 +531,8 @@ export const translations = {
     },
     hero: {
       badge: 'Essayage Virtuel par IA',
-      title: 'Arrêtez les Retours.',
-      titleHighlight: 'Commencez la Confiance.',
+      title: 'N\'importe Quelle Perruque. N\'importe Quel Visage.',
+      titleHighlight: 'Instantanément.',
       subtitle: 'L\'Essayage Virtuel par IA pour les Boutiques de Perruques Professionnelles. Permettez à vos clients de voir leur look parfait avant d\'acheter.',
       cta: 'Essayer la Démo',
       ctaSecondary: 'Voir les Tarifs',

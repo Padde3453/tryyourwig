@@ -70,9 +70,28 @@ const Index = () => {
             <motion.h1
               variants={fadeInUp}
               className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 text-foreground"
+              style={{
+                textShadow: '0 4px 8px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.05)',
+              }}
             >
-              {t.hero.title}{" "}
-              <span className="gradient-text">{t.hero.titleHighlight}</span>
+              <span style={{
+                display: 'inline-block',
+                transform: 'perspective(500px) rotateX(5deg)',
+                transformOrigin: 'center bottom',
+              }}>
+                {t.hero.title}
+              </span>{" "}
+              <span 
+                className="gradient-text"
+                style={{
+                  display: 'inline-block',
+                  transform: 'perspective(500px) rotateX(5deg) translateZ(20px)',
+                  transformOrigin: 'center bottom',
+                  textShadow: '0 6px 12px hsl(var(--primary) / 0.3)',
+                }}
+              >
+                {t.hero.titleHighlight}
+              </span>
             </motion.h1>
 
             <motion.p
