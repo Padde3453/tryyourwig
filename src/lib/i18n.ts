@@ -99,6 +99,18 @@ export const translations = {
           question: 'Can I customize the interface to match my brand?',
           answer: 'Yes! All plans include white-label options. You can customize colors, logos, and even the domain for a seamless brand experience.',
         },
+        {
+          question: 'We have a lot of wigs in our portfolio, can we bulk upload in the system?',
+          answer: 'Currently this is not possible by default due to the many different ways this data might be available. But we are more than happy to support you with this and we can look into a solution together. Simply ping us a message to service@tryyourwig.com',
+        },
+        {
+          question: 'How do I send our website visitors to this service?',
+          answer: 'Via QR code or link, best is to place the service prominently on your website, for example in the header. This way, your visitors find it easily and profit the most.',
+        },
+        {
+          question: 'Can I integrate the service directly on my website?',
+          answer: 'Yes this is possible, but not by default. We could integrate it via iframe, contact us at service@tryyourwig.com and we evaluate this together.',
+        },
       ],
     },
     footer: {
@@ -241,6 +253,18 @@ export const translations = {
         {
           question: 'Kann ich die Oberfläche an meine Marke anpassen?',
           answer: 'Ja! Alle Pläne beinhalten White-Label-Optionen. Sie können Farben, Logos und sogar die Domain anpassen.',
+        },
+        {
+          question: 'Wir haben viele Perücken in unserem Portfolio, können wir diese gebündelt ins System hochladen?',
+          answer: 'Derzeit ist dies standardmäßig nicht möglich, da diese Daten auf viele verschiedene Arten verfügbar sein können. Aber wir unterstützen Sie gerne dabei und können gemeinsam eine Lösung finden. Schreiben Sie uns einfach an service@tryyourwig.com',
+        },
+        {
+          question: 'Wie leite ich unsere Website-Besucher zu diesem Service?',
+          answer: 'Per QR-Code oder Link, am besten platzieren Sie den Service prominent auf Ihrer Website, zum Beispiel im Header. So finden Ihre Besucher ihn leicht und profitieren am meisten.',
+        },
+        {
+          question: 'Kann ich den Service direkt auf meiner Website integrieren?',
+          answer: 'Ja, das ist möglich, aber nicht standardmäßig. Wir könnten es per iframe integrieren, kontaktieren Sie uns unter service@tryyourwig.com und wir evaluieren dies gemeinsam.',
         },
       ],
     },
@@ -385,6 +409,18 @@ export const translations = {
           question: '¿Puedo personalizar la interfaz para que coincida con mi marca?',
           answer: '¡Sí! Todos los planes incluyen opciones de marca blanca. Puedes personalizar colores, logos y el dominio.',
         },
+        {
+          question: '¿Tenemos muchas pelucas en nuestro portafolio, podemos cargarlas en bloque en el sistema?',
+          answer: 'Actualmente esto no es posible por defecto debido a las muchas formas diferentes en que estos datos pueden estar disponibles. Pero estaremos encantados de ayudarte y podemos buscar una solución juntos. Simplemente envíanos un mensaje a service@tryyourwig.com',
+        },
+        {
+          question: '¿Cómo envío a los visitantes de nuestro sitio web a este servicio?',
+          answer: 'Mediante código QR o enlace, lo mejor es colocar el servicio de forma prominente en tu sitio web, por ejemplo en el encabezado. De esta manera, tus visitantes lo encuentran fácilmente y se benefician al máximo.',
+        },
+        {
+          question: '¿Puedo integrar el servicio directamente en mi sitio web?',
+          answer: 'Sí, esto es posible, pero no por defecto. Podríamos integrarlo mediante iframe, contáctanos en service@tryyourwig.com y lo evaluamos juntos.',
+        },
       ],
     },
     footer: {
@@ -527,6 +563,18 @@ export const translations = {
         {
           question: 'Puis-je personnaliser l\'interface pour correspondre à ma marque?',
           answer: 'Oui! Tous les plans incluent des options de marque blanche. Vous pouvez personnaliser les couleurs, logos et le domaine.',
+        },
+        {
+          question: 'Nous avons beaucoup de perruques dans notre portfolio, pouvons-nous les télécharger en masse dans le système?',
+          answer: 'Actuellement, cela n\'est pas possible par défaut en raison des nombreuses façons différentes dont ces données peuvent être disponibles. Mais nous serons ravis de vous aider et nous pouvons trouver une solution ensemble. Envoyez-nous simplement un message à service@tryyourwig.com',
+        },
+        {
+          question: 'Comment diriger les visiteurs de notre site web vers ce service?',
+          answer: 'Via un code QR ou un lien, le mieux est de placer le service de manière visible sur votre site web, par exemple dans l\'en-tête. Ainsi, vos visiteurs le trouvent facilement et en profitent au maximum.',
+        },
+        {
+          question: 'Puis-je intégrer le service directement sur mon site web?',
+          answer: 'Oui, c\'est possible, mais pas par défaut. Nous pourrions l\'intégrer via iframe, contactez-nous à service@tryyourwig.com et nous évaluons cela ensemble.',
         },
       ],
     },

@@ -25,7 +25,7 @@ import { useI18n } from "@/lib/i18n";
 import { Layout } from "@/components/Layout";
 import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slider";
 import beforeWig from "@/assets/before-wig.jpg";
-import afterWig from "@/assets/after-wig.jpg";
+import afterWig from "@/assets/after-wig.png";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
