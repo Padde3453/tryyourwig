@@ -61,45 +61,51 @@ const Index = () => {
           >
             <motion.div
               variants={fadeInUp}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-8 border border-primary/20"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-8 border border-primary/20 backdrop-blur-md"
             >
               <Sparkles className="w-4 h-4" />
               <span>{t.hero.badge}</span>
             </motion.div>
 
-            <motion.h1
+            <motion.div
               variants={fadeInUp}
-              className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 text-foreground"
-              style={{
-                textShadow: '0 4px 8px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.05)',
-              }}
+              className="inline-block bg-background/70 backdrop-blur-md rounded-2xl px-8 py-6 mb-6"
             >
-              <span style={{
-                display: 'inline-block',
-                transform: 'perspective(500px) rotateX(5deg)',
-                transformOrigin: 'center bottom',
-              }}>
-                {t.hero.title}
-              </span>{" "}
-              <span 
-                className="gradient-text"
+              <h1
+                className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground"
                 style={{
-                  display: 'inline-block',
-                  transform: 'perspective(500px) rotateX(5deg) translateZ(20px)',
-                  transformOrigin: 'center bottom',
-                  textShadow: '0 6px 12px hsl(var(--primary) / 0.3)',
+                  textShadow: '0 4px 8px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.05)',
                 }}
               >
-                {t.hero.titleHighlight}
-              </span>
-            </motion.h1>
+                <span style={{
+                  display: 'inline-block',
+                  transform: 'perspective(500px) rotateX(5deg)',
+                  transformOrigin: 'center bottom',
+                }}>
+                  {t.hero.title}
+                </span>{" "}
+                <span 
+                  className="gradient-text"
+                  style={{
+                    display: 'inline-block',
+                    transform: 'perspective(500px) rotateX(5deg) translateZ(20px)',
+                    transformOrigin: 'center bottom',
+                    textShadow: '0 6px 12px hsl(var(--primary) / 0.3)',
+                  }}
+                >
+                  {t.hero.titleHighlight}
+                </span>
+              </h1>
+            </motion.div>
 
-            <motion.p
+            <motion.div
               variants={fadeInUp}
-              className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
+              className="inline-block bg-background/60 backdrop-blur-md rounded-xl px-6 py-4 mb-10"
             >
-              {t.hero.subtitle}
-            </motion.p>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                {t.hero.subtitle}
+              </p>
+            </motion.div>
 
             <motion.div
               variants={fadeInUp}
@@ -175,7 +181,7 @@ const Index = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <Card className="p-8 h-full hover:shadow-lg transition-shadow border-destructive/20 bg-destructive/5">
+                  <Card className="p-8 h-full hover:shadow-lg transition-shadow border-destructive/20 bg-destructive/5 bg-opacity-100 relative z-10 backdrop-blur-sm" style={{ backgroundColor: 'hsl(var(--destructive) / 0.08)' }}>
                     <div className="w-14 h-14 rounded-2xl bg-destructive/10 flex items-center justify-center mb-6">
                       <Icon className="w-7 h-7 text-destructive" />
                     </div>
@@ -202,12 +208,14 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              {t.howItWorks.title}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t.howItWorks.subtitle}
-            </p>
+            <div className="inline-block bg-background/70 backdrop-blur-md rounded-2xl px-8 py-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+                {t.howItWorks.title}
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                {t.howItWorks.subtitle}
+              </p>
+            </div>
           </motion.div>
 
           <div className="relative flex flex-col gap-12 md:gap-0">
@@ -294,15 +302,17 @@ const Index = () => {
                     viewport={{ once: true, amount: 0.6 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
                   >
-                    <div className="text-6xl font-extrabold gradient-text mb-4">
-                      {step.step}
+                    <div className={`inline-block bg-background/70 backdrop-blur-md rounded-2xl px-6 py-5 ${isReversed ? "md:ml-auto" : "md:mr-auto"}`}>
+                      <div className="text-6xl font-extrabold gradient-text mb-4">
+                        {step.step}
+                      </div>
+                      <h3 className="text-2xl font-bold text-foreground mb-3">
+                        {step.title}
+                      </h3>
+                      <p className="text-muted-foreground text-lg leading-relaxed">
+                        {step.description}
+                      </p>
                     </div>
-                    <h3 className="text-2xl font-bold text-foreground mb-3">
-                      {step.title}
-                    </h3>
-                    <p className="text-muted-foreground text-lg leading-relaxed">
-                      {step.description}
-                    </p>
                   </motion.div>
                 </div>
               );

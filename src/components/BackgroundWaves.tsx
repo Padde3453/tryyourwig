@@ -165,7 +165,7 @@ const BackgroundWaves: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full block transition-all duration-300 pointer-events-none"
+      className="fixed top-0 left-0 w-full h-full block transition-all duration-300 pointer-events-none z-0"
       style={{
         mixBlendMode: WAVE_CONFIG.blendMode as React.CSSProperties['mixBlendMode'],
         filter: `blur(${WAVE_CONFIG.blurAmount}px)`
