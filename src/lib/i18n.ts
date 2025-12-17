@@ -34,7 +34,7 @@ export const translations = {
       ctaSecondary: 'View Pricing',
     },
     socialProof: {
-      title: 'Trusted by modern salons worldwide',
+      title: 'Trusted by more and more modern salons worldwide',
     },
     problems: {
       title: 'How TryYourWig supports your business',
@@ -197,7 +197,7 @@ export const translations = {
       ctaSecondary: 'Preise Ansehen',
     },
     socialProof: {
-      title: 'Vertraut von modernen Salons weltweit',
+      title: 'Vertraut von immer mehr modernen Salons weltweit',
     },
     problems: {
       title: 'Wie TryYourWig Ihr Geschäft unterstützt',
@@ -360,7 +360,7 @@ export const translations = {
       ctaSecondary: 'Ver Precios',
     },
     socialProof: {
-      title: 'Confiado por salones modernos en todo el mundo',
+      title: 'Confiado por más y más salones modernos en todo el mundo',
     },
     problems: {
       title: 'Cómo TryYourWig apoya tu negocio',
@@ -523,7 +523,7 @@ export const translations = {
       ctaSecondary: 'Voir les Tarifs',
     },
     socialProof: {
-      title: 'Approuvé par les salons modernes du monde entier',
+      title: 'Approuvé par de plus en plus de salons modernes dans le monde',
     },
     problems: {
       title: 'Comment TryYourWig soutient votre entreprise',

@@ -139,24 +139,19 @@ const Index = () => {
       </section>
 
       {/* Social Proof */}
-      <section className="py-16 border-y border-border bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-muted-foreground mb-8 font-medium">
-            {t.socialProof.title}
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-16 opacity-60">
-            {["GlamWig Studio", "Royal Hair", "Beauty First", "Style House", "Hair Magic"].map(
-              (brand, i) => (
-                <div
-                  key={i}
-                  className="text-xl sm:text-2xl font-bold text-muted-foreground/50"
-                >
-                  {brand}
-                </div>
-              )
-            )}
-          </div>
-        </div>
+      <section className="py-16 overflow-hidden">
+        <motion.p
+          initial={{ x: "0%" }}
+          animate={{ x: "-50%" }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-muted-foreground/40 whitespace-nowrap"
+        >
+          {t.socialProof.title} • {t.socialProof.title} • {t.socialProof.title} • {t.socialProof.title} •&nbsp;
+        </motion.p>
       </section>
 
       {/* Problems Section */}
