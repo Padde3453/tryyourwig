@@ -93,7 +93,7 @@ const AnimatedImagePairCard = ({
     // U-curve: higher at edges (positive Y = down, so we want negative at edges)
     // Amplitude scales with viewport width (wider = more curve)
     // Base amplitude: 2% of viewport width, creating a subtle but noticeable curve
-    const amplitude = viewportWidth * 0.025;
+    const amplitude = viewportWidth * 0.05;
 
     // Parabola: y = amplitude * x^2, but inverted so edges are UP (negative)
     // At center (x=0): y = 0
