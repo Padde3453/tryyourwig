@@ -334,12 +334,14 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              {t.beforeAfter.title}
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              {t.beforeAfter.subtitle}
-            </p>
+            <div className="inline-block bg-background/70 backdrop-blur-md rounded-xl px-6 py-4">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
+                {t.beforeAfter.title}
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                {t.beforeAfter.subtitle}
+              </p>
+            </div>
           </motion.div>
 
           <motion.div
@@ -381,10 +383,12 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              {t.faq.title}
-            </h2>
-            <p className="text-lg text-muted-foreground">{t.faq.subtitle}</p>
+            <div className="inline-block bg-background/70 backdrop-blur-md rounded-xl px-6 py-4">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
+                {t.faq.title}
+              </h2>
+              <p className="text-lg text-muted-foreground">{t.faq.subtitle}</p>
+            </div>
           </motion.div>
 
           <motion.div
