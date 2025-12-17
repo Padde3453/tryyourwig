@@ -9,12 +9,10 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Brand */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center text-primary-foreground font-bold text-sm shadow-lg">
-              T
-            </div>
-            <span className="text-lg font-bold tracking-tight text-foreground">
-              TryYourWig
+          <Link to="/" className="flex items-center">
+            <span className="text-lg font-bold tracking-tight">
+              <span className="bg-gradient-to-r from-brand-pink to-brand-amber bg-clip-text text-transparent">TryYourWig</span>
+              <span className="text-foreground">.com</span>
             </span>
           </Link>
 

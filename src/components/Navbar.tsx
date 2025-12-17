@@ -59,12 +59,10 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 gradient-bg rounded-xl flex items-center justify-center text-primary-foreground font-bold text-lg shadow-lg transition-transform group-hover:scale-105">
-              T
-            </div>
-            <span className="text-xl font-bold tracking-tight text-foreground">
-              TryYourWig
+          <Link to="/" className="flex items-center group">
+            <span className="text-xl font-bold tracking-tight">
+              <span className="bg-gradient-to-r from-brand-pink to-brand-amber bg-clip-text text-transparent">TryYourWig</span>
+              <span className="text-foreground">.com</span>
             </span>
           </Link>
 
