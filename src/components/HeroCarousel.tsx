@@ -60,6 +60,56 @@ const ImagePairCard = ({ pair, index }: { pair: ImagePair; index: number }) => (
   </div>
 );
 
+// Individual card with Y offset based on screen position
+const AnimatedImagePairCard = ({
+  pair,
+  index,
+  cardIndex,
+  containerX,
+  containerRef,
+}: {
+  pair: ImagePair;
+  index: number;
+  cardIndex: number;
+  containerX: ReturnType<typeof useMotionValue<number>>;
+  containerRef: React.RefObject<HTMLDivElement | null>;
+}) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const y = useMotionValue(0);
+
+  useAnimationFrame(() => {
+    if (!cardRef.current || !containerRef.current) return;
+
+    const viewportWidth = window.innerWidth;
+    const viewportCenter = viewportWidth / 2;
+
+    // Get the card's position relative to viewport
+    const rect = cardRef.current.getBoundingClientRect();
+    const cardCenter = rect.left + rect.width / 2;
+
+    // Normalize position: -1 (left edge) to 1 (right edge)
+    const normalizedX = (cardCenter - viewportCenter) / (viewportWidth / 2);
+
+    // U-curve: higher at edges (positive Y = down, so we want negative at edges)
+    // Amplitude scales with viewport width (wider = more curve)
+    // Base amplitude: 2% of viewport width, creating a subtle but noticeable curve
+    const amplitude = viewportWidth * 0.025;
+
+    // Parabola: y = amplitude * x^2, but inverted so edges are UP (negative)
+    // At center (x=0): y = 0
+    // At edges (x=±1): y = -amplitude (higher up)
+    const yOffset = -amplitude * normalizedX * normalizedX;
+
+    y.set(yOffset);
+  });
+
+  return (
+    <motion.div ref={cardRef} style={{ y }} className="shrink-0">
+      <ImagePairCard pair={pair} index={index} />
+    </motion.div>
+  );
+};
+
 export const HeroCarousel = () => {
   const prefersReducedMotion = useReducedMotion();
   const [isHovered, setIsHovered] = useState(false);
@@ -104,12 +154,13 @@ export const HeroCarousel = () => {
     const setWidth = setWidthRef.current;
     if (!setWidth) return;
 
+    // Direction: LEFT to RIGHT (positive dx)
     const dx = (speed * delta) / 1000;
-    let next = x.get() - dx;
+    let next = x.get() + dx;
 
     // Keep x in [-2*setWidth, -setWidth] so we always stay on the middle set.
-    if (next <= -2 * setWidth) next += setWidth;
     if (next > -setWidth) next -= setWidth;
+    if (next <= -2 * setWidth) next += setWidth;
 
     x.set(next);
   });
@@ -127,11 +178,14 @@ export const HeroCarousel = () => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div ref={trackRef} className="flex gap-8 sm:gap-12" style={{ x }}>
-        {tripledPairs.map((pair, index) => (
-          <ImagePairCard
-            key={index}
+        {tripledPairs.map((pair, cardIndex) => (
+          <AnimatedImagePairCard
+            key={cardIndex}
             pair={pair}
-            index={index % imagePairs.length}
+            index={cardIndex % imagePairs.length}
+            cardIndex={cardIndex}
+            containerX={x}
+            containerRef={trackRef}
           />
         ))}
       </motion.div>
