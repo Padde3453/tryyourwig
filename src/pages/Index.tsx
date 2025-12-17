@@ -25,6 +25,7 @@ import { Layout } from "@/components/Layout";
 import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slider";
 import beforeWig from "@/assets/before-wig.jpg";
 import afterWig from "@/assets/after-wig.png";
+import stepUploadSelfie from "@/assets/step-upload-selfie.webp";
 import { HeroCarousel } from "@/components/HeroCarousel";
 
 const fadeInUp = {
@@ -217,11 +218,30 @@ const Index = () => {
                     viewport={{ once: true, amount: 0.6 }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
                   >
-                    <Card className="hero-card card-hover overflow-hidden aspect-[4/3] flex items-center justify-center bg-muted/50">
-                      <div className="flex flex-col items-center justify-center text-muted-foreground/50">
-                        <Image className="w-16 h-16 mb-2" />
-                        <span className="text-sm font-medium">Step {step.step} Image</span>
-                      </div>
+                    <Card className="hero-card card-hover overflow-hidden aspect-[4/3] flex items-center justify-center bg-muted/50 relative">
+                      {i === 0 ? (
+                        <>
+                          <img 
+                            src={stepUploadSelfie} 
+                            alt={step.title} 
+                            className="w-full h-full object-cover"
+                          />
+                          {/* Text overlay */}
+                          <div className="absolute inset-0 flex flex-col items-center justify-center">
+                            <h4 className="text-lg md:text-xl font-bold text-foreground mt-4">
+                              {step.overlayTitle}
+                            </h4>
+                            <p className="text-sm md:text-base text-muted-foreground text-center px-6 mt-2">
+                              {step.overlaySubtitle}
+                            </p>
+                          </div>
+                        </>
+                      ) : (
+                        <div className="flex flex-col items-center justify-center text-muted-foreground/50">
+                          <Image className="w-16 h-16 mb-2" />
+                          <span className="text-sm font-medium">Step {step.step} Image</span>
+                        </div>
+                      )}
                     </Card>
                   </motion.div>
 
