@@ -1,5 +1,10 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useMemo, useRef, useState } from "react";
+import {
+  motion,
+  useAnimationFrame,
+  useMotionValue,
+  useReducedMotion,
+} from "framer-motion";
 import { Maximize2 } from "lucide-react";
 import beforeWig from "@/assets/before-wig.jpg";
 import afterWig from "@/assets/after-wig.png";
@@ -36,6 +41,7 @@ const ImagePairCard = ({ pair, index }: { pair: ImagePair; index: number }) => (
           src={pair.before!}
           alt={`Before transformation ${index + 1}`}
           className="w-full h-full object-cover"
+          loading="lazy"
         />
       )}
     </div>
@@ -47,6 +53,7 @@ const ImagePairCard = ({ pair, index }: { pair: ImagePair; index: number }) => (
           src={pair.after!}
           alt={`After transformation ${index + 1}`}
           className="w-full h-full object-cover"
+          loading="lazy"
         />
       )}
     </div>
@@ -54,34 +61,81 @@ const ImagePairCard = ({ pair, index }: { pair: ImagePair; index: number }) => (
 );
 
 export const HeroCarousel = () => {
+  const prefersReducedMotion = useReducedMotion();
   const [isHovered, setIsHovered] = useState(false);
-  
-  // Duplicate pairs for seamless infinite loop
-  const duplicatedPairs = [...imagePairs, ...imagePairs];
+  const trackRef = useRef<HTMLDivElement | null>(null);
+
+  // We render THREE sets so there is always content on both sides (true "infinite circle").
+  const tripledPairs = useMemo(
+    () => [...imagePairs, ...imagePairs, ...imagePairs],
+    [],
+  );
+
+  // px per second
+  const speed = isHovered ? 50 : 100; // hover slows down to the previous speed
+
+  const x = useMotionValue(0);
+  const setWidthRef = useRef<number>(0);
+
+  useEffect(() => {
+    if (!trackRef.current) return;
+
+    const measure = () => {
+      const full = trackRef.current?.scrollWidth ?? 0;
+      const setWidth = full / 3;
+      setWidthRef.current = setWidth;
+
+      // Start on the MIDDLE set, so items exist to the left and right immediately.
+      if (setWidth > 0) {
+        x.set(-setWidth);
+      }
+    };
+
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(trackRef.current);
+
+    return () => ro.disconnect();
+  }, [x]);
+
+  useAnimationFrame((_, delta) => {
+    if (prefersReducedMotion) return;
+
+    const setWidth = setWidthRef.current;
+    if (!setWidth) return;
+
+    const dx = (speed * delta) / 1000;
+    let next = x.get() - dx;
+
+    // Keep x in [-2*setWidth, -setWidth] so we always stay on the middle set.
+    if (next <= -2 * setWidth) next += setWidth;
+    if (next > -setWidth) next -= setWidth;
+
+    x.set(next);
+  });
 
   return (
-    <div 
+    <div
       className="relative w-full overflow-hidden py-8"
       style={{
-        maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
-        WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+        maskImage:
+          "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+        WebkitMaskImage:
+          "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <motion.div
-        className="flex gap-8 sm:gap-12"
-        animate={{ x: ["0%", "50%"] }}
-        transition={{
-          duration: isHovered ? 30 : 15,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      >
-        {duplicatedPairs.map((pair, index) => (
-          <ImagePairCard key={index} pair={pair} index={index % imagePairs.length} />
+      <motion.div ref={trackRef} className="flex gap-8 sm:gap-12" style={{ x }}>
+        {tripledPairs.map((pair, index) => (
+          <ImagePairCard
+            key={index}
+            pair={pair}
+            index={index % imagePairs.length}
+          />
         ))}
       </motion.div>
     </div>
   );
 };
+
