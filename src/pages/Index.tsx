@@ -139,18 +139,20 @@ const Index = () => {
 
       {/* Social Proof */}
       <section className="py-16 overflow-hidden">
-        <motion.p
-          initial={{ x: "0%" }}
-          animate={{ x: "-50%" }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-muted-foreground/40 whitespace-nowrap"
-        >
-          {t.socialProof.title} • {t.socialProof.title} • {t.socialProof.title} • {t.socialProof.title} •&nbsp;
-        </motion.p>
+        <div className="inline-flex bg-background/70 backdrop-blur-md rounded-full px-8 py-4">
+          <motion.p
+            initial={{ x: "0%" }}
+            animate={{ x: "-50%" }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground whitespace-nowrap"
+          >
+            {t.socialProof.title} • {t.socialProof.title} • {t.socialProof.title} • {t.socialProof.title} •&nbsp;
+          </motion.p>
+        </div>
       </section>
 
       {/* Problems Section */}
@@ -162,12 +164,14 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              {t.problems.title}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t.problems.subtitle}
-            </p>
+            <div className="inline-block bg-background/70 backdrop-blur-md rounded-2xl px-8 py-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+                {t.problems.title}
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                {t.problems.subtitle}
+              </p>
+            </div>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -181,7 +185,7 @@ const Index = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <Card className="p-8 h-full hover:shadow-lg transition-shadow border-destructive/20 bg-destructive/5 bg-opacity-100 relative z-10 backdrop-blur-sm" style={{ backgroundColor: 'hsl(var(--destructive) / 0.08)' }}>
+                  <Card className="p-8 h-full hover:shadow-lg transition-shadow border-destructive/20 relative z-10 backdrop-blur-md bg-background/70">
                     <div className="w-14 h-14 rounded-2xl bg-destructive/10 flex items-center justify-center mb-6">
                       <Icon className="w-7 h-7 text-destructive" />
                     </div>
