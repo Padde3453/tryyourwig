@@ -2,16 +2,22 @@
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Check, Plus, ArrowRight, Sparkles } from "lucide-react";
+import { Check, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useI18n } from "@/lib/i18n";
 import { Layout } from "@/components/Layout";
+import iconPixieCut from "@/assets/icon-pixie-cut.png";
+import iconFullVolume from "@/assets/icon-full-volume.png";
+import iconSalonPro from "@/assets/icon-salon-pro.png";
+import iconExtensions from "@/assets/icon-extensions.png";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
 };
+
+const tierIcons = [iconPixieCut, iconFullVolume, iconSalonPro];
 
 const Pricing = () => {
   const { t } = useI18n();
@@ -37,7 +43,7 @@ const Pricing = () => {
           </motion.div>
 
           {/* Pricing Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {t.pricing.tiers.map((tier, i) => {
               const isHighlighted = 'highlighted' in tier && tier.highlighted;
               return (
@@ -47,10 +53,10 @@ const Pricing = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className={isHighlighted ? "md:-mt-4 md:mb-4" : ""}
+                  className={`flex ${isHighlighted ? "md:-mt-4 md:mb-4" : ""}`}
                 >
                   <Card
-                    className={`relative p-8 h-full ${
+                    className={`relative p-8 flex flex-col w-full ${
                       isHighlighted
                         ? "pricing-card-highlight gradient-border bg-card"
                         : "border border-border bg-card hover:border-primary/30 transition-colors"
@@ -65,7 +71,14 @@ const Pricing = () => {
                       </div>
                     )}
 
-                    <div className="text-center mb-8">
+                    <div className="text-center mb-6">
+                      <div className="w-20 h-20 mx-auto mb-4">
+                        <img
+                          src={tierIcons[i]}
+                          alt={tier.name}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
                       <h3 className="text-xl font-bold text-foreground mb-2">
                         {tier.name}
                       </h3>
@@ -82,7 +95,7 @@ const Pricing = () => {
                       </div>
                     </div>
 
-                    <ul className="space-y-4 mb-8">
+                    <ul className="space-y-4 mb-8 flex-1">
                       {tier.features.map((feature, j) => (
                         <li key={j} className="flex items-start gap-3">
                           <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
@@ -144,10 +157,15 @@ const Pricing = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
+                  className="flex"
                 >
-                  <Card className="p-6 bg-card border border-border hover:border-primary/30 transition-colors text-center">
-                    <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center mx-auto mb-4">
-                      <Plus className="w-6 h-6 text-primary-foreground" />
+                  <Card className="p-6 bg-card border border-border hover:border-primary/30 transition-colors text-center flex flex-col w-full">
+                    <div className="w-16 h-16 mx-auto mb-4">
+                      <img
+                        src={iconExtensions}
+                        alt="Extensions"
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                     <h3 className="text-3xl font-extrabold text-foreground mb-1">
                       {pkg.generations}
@@ -155,7 +173,7 @@ const Pricing = () => {
                     <p className="text-sm text-muted-foreground mb-4">
                       Generations
                     </p>
-                    <div className="flex items-baseline justify-center gap-1 mb-4">
+                    <div className="flex items-baseline justify-center gap-1 mb-4 flex-1">
                       <span className="text-2xl font-bold text-foreground">
                         {pkg.price}€
                       </span>
@@ -163,7 +181,7 @@ const Pricing = () => {
                     </div>
                     <Button
                       variant="heroOutline"
-                      className="w-full rounded-full"
+                      className="w-full rounded-full mt-auto"
                       size="sm"
                     >
                       Purchase
