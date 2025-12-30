@@ -42,26 +42,14 @@ const Demo = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="inline-block bg-background/70 backdrop-blur-md rounded-2xl px-8 py-6 mb-6"
-            >
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground">
+            <div className="inline-block bg-background/70 backdrop-blur-md rounded-2xl px-8 py-8">
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-4">
                 {t.demo.title}
               </h1>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-block bg-background/60 backdrop-blur-md rounded-xl px-6 py-4"
-            >
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 {t.demo.subtitle}
               </p>
-            </motion.div>
+            </div>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
