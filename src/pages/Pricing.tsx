@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Check, ArrowRight, Sparkles, Mail } from "lucide-react";
+import { Check, ArrowRight, Sparkles, Mail, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useI18n } from "@/lib/i18n";
 import { Layout } from "@/components/Layout";
 import iconPixieCut from "@/assets/icon-pixie-cut.png";
@@ -20,8 +20,16 @@ const fadeInUp = {
 
 const tierIcons = [iconPixieCut, iconFullVolume, iconSalonPro];
 
+const extensionPackages = [
+  { generations: 50, price: 49 },
+  { generations: 100, price: 89 },
+  { generations: 200, price: 150 },
+  { generations: 400, price: 300 },
+];
+
 const Pricing = () => {
   const { t } = useI18n();
+  const [isExtensionsOpen, setIsExtensionsOpen] = useState(false);
 
   return (
     <Layout>
@@ -168,73 +176,87 @@ const Pricing = () => {
             transition={{ delay: 0.4 }}
             className="mt-16"
           >
-            <div className="text-center mb-8">
-              <div className="inline-block bg-background/70 backdrop-blur-md rounded-xl px-6 py-4">
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
-                  {t.pricing.addon.title}
-                </h2>
-                <p className="text-muted-foreground">
-                  {t.pricing.addon.description}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex justify-center">
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button
-                    variant="heroOutline"
-                    size="lg"
-                    className="rounded-full px-6 py-4 h-auto flex items-center gap-3"
-                  >
+            <Card className="max-w-4xl mx-auto overflow-hidden border border-border bg-card">
+              {/* Collapsed Header - Always Visible */}
+              <button
+                onClick={() => setIsExtensionsOpen(!isExtensionsOpen)}
+                className="w-full p-6 sm:p-8 flex items-center justify-between gap-4 hover:bg-muted/30 transition-colors"
+              >
+                <div className="flex items-center gap-4 sm:gap-6">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
                     <img
                       src={iconExtensions}
                       alt="Extensions icon"
-                      className="w-8 h-8 object-contain"
-                      loading="lazy"
+                      className="w-full h-full object-contain"
                     />
-                    Show extension packages
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-
-                <DropdownMenuContent
-                  align="center"
-                  sideOffset={10}
-                  className="w-[min(28rem,calc(100vw-2rem))] p-3"
-                >
-                  <div className="space-y-2">
-                    {[
-                      { generations: 50, price: 49 },
-                      { generations: 100, price: 89 },
-                      { generations: 200, price: 150 },
-                      { generations: 400, price: 300 },
-                    ].map((pkg) => (
-                      <div
-                        key={pkg.generations}
-                        className="flex items-center justify-between gap-4 rounded-md border border-border bg-card px-3 py-2"
-                      >
-                        <div className="min-w-0">
-                          <p className="font-semibold text-foreground truncate">
-                            {pkg.generations} Generations
-                          </p>
-                          <p className="text-sm text-muted-foreground">
-                            {pkg.price}€ net
-                          </p>
-                        </div>
-                        <Button
-                          variant="hero"
-                          size="sm"
-                          className="rounded-full"
-                        >
-                          Purchase
-                        </Button>
-                      </div>
-                    ))}
                   </div>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
+                  <div className="text-left">
+                    <h2 className="text-xl sm:text-2xl font-bold text-foreground">
+                      {t.pricing.addon.title}
+                    </h2>
+                    <p className="text-sm sm:text-base text-muted-foreground">
+                      {t.pricing.addon.description}
+                    </p>
+                  </div>
+                </div>
+                <motion.div
+                  animate={{ rotate: isExtensionsOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="flex-shrink-0"
+                >
+                  <ChevronDown className="w-6 h-6 text-muted-foreground" />
+                </motion.div>
+              </button>
+
+              {/* Expandable Content */}
+              <AnimatePresence initial={false}>
+                {isExtensionsOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 pb-6 sm:px-8 sm:pb-8 pt-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {extensionPackages.map((pkg, i) => (
+                          <motion.div
+                            key={pkg.generations}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.05 }}
+                          >
+                            <Card className="p-4 sm:p-5 bg-muted/30 border border-border hover:border-primary/30 transition-colors text-center flex flex-col h-full">
+                              <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground mb-1">
+                                {pkg.generations}
+                              </h3>
+                              <p className="text-sm text-muted-foreground mb-3">
+                                Generations
+                              </p>
+                              <div className="flex items-baseline justify-center gap-1 mb-4">
+                                <span className="text-xl font-bold text-foreground">
+                                  {pkg.price}€
+                                </span>
+                                <span className="text-sm text-muted-foreground">net</span>
+                              </div>
+                              <Button
+                                variant="hero"
+                                className="w-full rounded-full mt-auto"
+                                size="sm"
+                              >
+                                Purchase
+                                <ArrowRight className="w-4 h-4" />
+                              </Button>
+                            </Card>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </Card>
           </motion.div>
 
           {/* Need Additional Support Section */}
