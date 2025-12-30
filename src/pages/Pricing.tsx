@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Check, ArrowRight, Sparkles, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useI18n } from "@/lib/i18n";
 import { Layout } from "@/components/Layout";
 import iconPixieCut from "@/assets/icon-pixie-cut.png";
@@ -86,7 +87,7 @@ const Pricing = () => {
           </motion.div>
 
           {/* Pricing Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 pt-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 pt-10 overflow-visible">
             {t.pricing.tiers.map((tier, i) => {
               const isHighlighted = 'highlighted' in tier && tier.highlighted;
               return (
@@ -96,23 +97,25 @@ const Pricing = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex"
+                  className="flex overflow-visible"
                 >
-                  <Card
-                    className={`relative p-8 pt-10 flex flex-col w-full min-h-[380px] ${
-                      isHighlighted
-                        ? "pricing-card-highlight gradient-border bg-card"
-                        : "border border-border bg-card hover:border-primary/30 transition-colors"
-                    }`}
-                  >
+                  <div className="flex flex-col w-full">
                     {isHighlighted && (
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                        <span className="gradient-bg text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-full flex items-center gap-1 whitespace-nowrap">
+                      <div className="flex justify-center mb-3">
+                        <span className="gradient-bg text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-full inline-flex items-center gap-1 whitespace-nowrap">
                           <Sparkles className="w-3 h-3" />
                           {t.pricing.popular}
                         </span>
                       </div>
                     )}
+
+                    <Card
+                      className={`relative p-8 flex flex-col w-full min-h-[400px] ${
+                        isHighlighted
+                          ? "pricing-card-highlight gradient-border bg-card"
+                          : "border border-border bg-card hover:border-primary/30 transition-colors"
+                      }`}
+                    >
 
                     <div className="text-center mb-6 flex-1 flex flex-col justify-center">
                       <div className="w-20 h-20 mx-auto mb-4">
@@ -151,7 +154,8 @@ const Pricing = () => {
                         <ArrowRight className="w-4 h-4" />
                       </Button>
                     </Link>
-                  </Card>
+                    </Card>
+                  </div>
                 </motion.div>
               );
             })}
@@ -175,52 +179,61 @@ const Pricing = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                { generations: 50, price: 49 },
-                { generations: 100, price: 89 },
-                { generations: 200, price: 150 },
-                { generations: 400, price: 300 },
-              ].map((pkg, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="flex"
+            <div className="flex justify-center">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="heroOutline"
+                    size="lg"
+                    className="rounded-full px-6 py-4 h-auto flex items-center gap-3"
+                  >
+                    <img
+                      src={iconExtensions}
+                      alt="Extensions icon"
+                      className="w-8 h-8 object-contain"
+                      loading="lazy"
+                    />
+                    Show extension packages
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+
+                <DropdownMenuContent
+                  align="center"
+                  sideOffset={10}
+                  className="w-[min(28rem,calc(100vw-2rem))] p-3"
                 >
-                  <Card className="p-6 bg-card border border-border hover:border-primary/30 transition-colors text-center flex flex-col w-full">
-                    <div className="w-16 h-16 mx-auto mb-4">
-                      <img
-                        src={iconExtensions}
-                        alt="Extensions"
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <h3 className="text-3xl font-extrabold text-foreground mb-1">
-                      {pkg.generations}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Generations
-                    </p>
-                    <div className="flex items-baseline justify-center gap-1 mb-4 flex-1">
-                      <span className="text-2xl font-bold text-foreground">
-                        {pkg.price}€
-                      </span>
-                      <span className="text-sm text-muted-foreground">net</span>
-                    </div>
-                    <Button
-                      variant="heroOutline"
-                      className="w-full rounded-full mt-auto"
-                      size="sm"
-                    >
-                      Purchase
-                      <ArrowRight className="w-4 h-4" />
-                    </Button>
-                  </Card>
-                </motion.div>
-              ))}
+                  <div className="space-y-2">
+                    {[
+                      { generations: 50, price: 49 },
+                      { generations: 100, price: 89 },
+                      { generations: 200, price: 150 },
+                      { generations: 400, price: 300 },
+                    ].map((pkg) => (
+                      <div
+                        key={pkg.generations}
+                        className="flex items-center justify-between gap-4 rounded-md border border-border bg-card px-3 py-2"
+                      >
+                        <div className="min-w-0">
+                          <p className="font-semibold text-foreground truncate">
+                            {pkg.generations} Generations
+                          </p>
+                          <p className="text-sm text-muted-foreground">
+                            {pkg.price}€ net
+                          </p>
+                        </div>
+                        <Button
+                          variant="hero"
+                          size="sm"
+                          className="rounded-full"
+                        >
+                          Purchase
+                        </Button>
+                      </div>
+                    ))}
+                  </div>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </motion.div>
 
