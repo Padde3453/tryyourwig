@@ -26,12 +26,14 @@ const Pricing = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-4">
-              {t.pricing.title}
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              {t.pricing.subtitle}
-            </p>
+            <div className="inline-block bg-background/70 backdrop-blur-md rounded-xl px-6 py-4">
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-2">
+                {t.pricing.title}
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                {t.pricing.subtitle}
+              </p>
+            </div>
           </motion.div>
 
           {/* Pricing Cards */}
@@ -148,15 +150,17 @@ const Pricing = () => {
             transition={{ delay: 0.5 }}
             className="mt-16 text-center"
           >
-            <p className="text-muted-foreground mb-4">
-              Have questions about which plan is right for you?
-            </p>
-            <Link to="/#faq">
-              <Button variant="link" className="text-primary">
-                View our FAQ
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
+            <div className="inline-block bg-background/70 backdrop-blur-md rounded-xl px-6 py-4">
+              <p className="text-muted-foreground mb-2">
+                Have questions about which plan is right for you?
+              </p>
+              <Link to="/#faq">
+                <Button variant="link" className="text-primary">
+                  View our FAQ
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
