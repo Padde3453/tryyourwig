@@ -62,7 +62,7 @@ const Impressum = () => {
                   <br />
                   Email:{" "}
                   <a
-                    href="mailto:contact@tryyourwig.com"
+                    href="mailto:service@tryyourwig.com"
                     className="text-brand-pink hover:text-brand-purple transition-colors"
                   >
                     contact@tryyourwig.com
