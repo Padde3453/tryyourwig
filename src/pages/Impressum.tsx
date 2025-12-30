@@ -10,7 +10,7 @@ const Impressum = () => {
       <section className="relative min-h-screen pt-32 pb-20 overflow-hidden">
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-brand-pink/20 via-background to-brand-purple/20" />
-        
+
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <motion.div
@@ -25,9 +25,7 @@ const Impressum = () => {
                   {t.legal.impressumTitle}
                 </span>
               </h1>
-              <p className="text-lg text-muted-foreground">
-                {t.legal.impressumSubtitle}
-              </p>
+              <p className="text-lg text-muted-foreground">{t.legal.impressumSubtitle}</p>
             </div>
           </motion.div>
 
@@ -40,57 +38,51 @@ const Impressum = () => {
           >
             <div className="prose prose-gray dark:prose-invert max-w-none space-y-8">
               <section>
-                <h2 className="text-xl font-semibold text-foreground mb-4">
-                  Angaben gemäß § 5 TMG / Information pursuant to § 5 TMG
-                </h2>
-                <p className="text-muted-foreground">
-                  TryYourWig is a service provided by:
-                </p>
+                <h2 className="text-xl font-semibold text-foreground mb-4">Information pursuant to § 5 TMG</h2>
+                <p className="text-muted-foreground">TryYourWig is a service provided by:</p>
                 <address className="not-italic text-muted-foreground mt-2">
-                  <strong className="text-foreground">Reverchon Consulting GmbH</strong><br />
+                  <strong className="text-foreground">Reverchon Consulting GmbH</strong>
+                  <br />
                   Am Gasteig 6<br />
-                  82335 Berg<br />
+                  82335 Berg
+                  <br />
                   Germany
                 </address>
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-foreground mb-4">
-                  Represented by / Vertreten durch
-                </h2>
+                <h2 className="text-xl font-semibold text-foreground mb-4">Represented by</h2>
+                <p className="text-muted-foreground">Patrick Reverchon (Managing Director)</p>
+              </section>
+
+              <section>
+                <h2 className="text-xl font-semibold text-foreground mb-4">Contact</h2>
                 <p className="text-muted-foreground">
-                  Patrick Reverchon (Managing Director / Geschäftsführer)
+                  Phone: +49 (0)152 04444450
+                  <br />
+                  Email:{" "}
+                  <a
+                    href="mailto:contact@tryyourwig.com"
+                    className="text-brand-pink hover:text-brand-purple transition-colors"
+                  >
+                    contact@tryyourwig.com
+                  </a>
                 </p>
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-foreground mb-4">
-                  Contact / Kontakt
-                </h2>
+                <h2 className="text-xl font-semibold text-foreground mb-4">Register Entry</h2>
                 <p className="text-muted-foreground">
-                  Phone: +49 (0)152 04444450<br />
-                  Email: <a href="mailto:contact@tryyourwig.com" className="text-brand-pink hover:text-brand-purple transition-colors">contact@tryyourwig.com</a>
+                  Entry in the Commercial Register <br />
+                  Register Court: Amtsgericht München
+                  <br />
+                  Register Number: HRB 284621
                 </p>
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-foreground mb-4">
-                  Register Entry / Registereintrag
-                </h2>
-                <p className="text-muted-foreground">
-                  Entry in the Commercial Register (Handelsregister).<br />
-                  Register Court (Registergericht): Amtsgericht München<br />
-                  Register Number (Registernummer): HRB 284621
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-xl font-semibold text-foreground mb-4">
-                  Tax ID
-                </h2>
-                <p className="text-muted-foreground">
-                  DE404020694
-                </p>
+                <h2 className="text-xl font-semibold text-foreground mb-4">Tax ID</h2>
+                <p className="text-muted-foreground">DE404020694</p>
               </section>
 
               <section>
@@ -98,22 +90,22 @@ const Impressum = () => {
                   Responsible for Content (acc. to § 55 Abs. 2 RStV)
                 </h2>
                 <address className="not-italic text-muted-foreground">
-                  Patrick Reverchon<br />
+                  Patrick Reverchon
+                  <br />
                   Am Gasteig 6<br />
-                  82335 Berg<br />
+                  82335 Berg
+                  <br />
                   Germany
                 </address>
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-foreground mb-4">
-                  Dispute Resolution / Streitschlichtung
-                </h2>
+                <h2 className="text-xl font-semibold text-foreground mb-4">Dispute Resolution</h2>
                 <p className="text-muted-foreground">
                   The European Commission provides a platform for online dispute resolution (ODR):{" "}
-                  <a 
-                    href="https://ec.europa.eu/consumers/odr/" 
-                    target="_blank" 
+                  <a
+                    href="https://ec.europa.eu/consumers/odr/"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-brand-pink hover:text-brand-purple transition-colors"
                   >
@@ -121,7 +113,8 @@ const Impressum = () => {
                   </a>
                 </p>
                 <p className="text-muted-foreground mt-2">
-                  We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.
+                  We are not willing or obliged to participate in dispute resolution proceedings before a consumer
+                  arbitration board.
                 </p>
               </section>
             </div>
