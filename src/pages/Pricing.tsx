@@ -42,6 +42,49 @@ const Pricing = () => {
             </div>
           </motion.div>
 
+          {/* What You Get Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mb-16"
+          >
+            <div className="text-center mb-8">
+              <div className="inline-block bg-background/70 backdrop-blur-md rounded-xl px-6 py-4">
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
+                  What you get
+                </h2>
+                <p className="text-muted-foreground">
+                  A completely new experience for your clients.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
+              {[
+                "HD quality results",
+                "Fast generation speeds",
+                "Whitelabel solutions under the domain name",
+                "E-Mail support (24h answer time)",
+                "User-Analytics",
+              ].map((feature, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="flex items-center gap-3 bg-card/50 backdrop-blur-sm border border-border rounded-xl px-4 py-3"
+                >
+                  <div className="w-6 h-6 rounded-full gradient-bg flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-primary-foreground" />
+                  </div>
+                  <span className="text-sm text-foreground">{feature}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
           {/* Pricing Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {t.pricing.tiers.map((tier, i) => {
@@ -53,7 +96,7 @@ const Pricing = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className={`flex ${isHighlighted ? "md:-mt-4 md:mb-4" : ""}`}
+                  className="flex"
                 >
                   <Card
                     className={`relative p-8 flex flex-col w-full ${
@@ -71,7 +114,7 @@ const Pricing = () => {
                       </div>
                     )}
 
-                    <div className="text-center mb-6">
+                    <div className="text-center mb-6 flex-1 flex flex-col justify-center">
                       <div className="w-20 h-20 mx-auto mb-4">
                         <img
                           src={tierIcons[i]}
@@ -82,8 +125,11 @@ const Pricing = () => {
                       <h3 className="text-xl font-bold text-foreground mb-2">
                         {tier.name}
                       </h3>
-                      <p className="text-sm text-muted-foreground mb-4">
+                      <p className="text-sm text-muted-foreground mb-2">
                         {tier.description}
+                      </p>
+                      <p className="text-lg font-semibold text-primary mb-4">
+                        {tier.features[0]}
                       </p>
                       <div className="flex items-baseline justify-center gap-1">
                         <span className={`text-5xl font-extrabold ${isHighlighted ? "gradient-text" : "text-foreground"}`}>
@@ -94,21 +140,6 @@ const Pricing = () => {
                         </span>
                       </div>
                     </div>
-
-                    <ul className="space-y-4 mb-8 flex-1">
-                      {tier.features.map((feature, j) => (
-                        <li key={j} className="flex items-start gap-3">
-                          <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
-                            isHighlighted ? "gradient-bg" : "bg-primary/10"
-                          }`}>
-                            <Check className={`w-3 h-3 ${isHighlighted ? "text-primary-foreground" : "text-primary"}`} />
-                          </div>
-                          <span className="text-muted-foreground text-sm">
-                            {feature}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
 
                     <Link to="/demo" className="block mt-auto">
                       <Button
