@@ -111,17 +111,17 @@ const Index = () => {
               variants={fadeInUp}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Link to="/demo">
-                <Button variant="hero" size="xl" className="rounded-full">
+              <Button variant="hero" size="xl" className="rounded-full" asChild>
+                <Link to="/demo">
                   {t.hero.cta}
                   <ArrowRight className="w-5 h-5" />
-                </Button>
-              </Link>
-              <Link to="/pricing">
-                <Button variant="heroOutline" size="xl" className="rounded-full">
+                </Link>
+              </Button>
+              <Button variant="heroOutline" size="xl" className="rounded-full" asChild>
+                <Link to="/pricing">
                   {t.hero.ctaSecondary}
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </motion.div>
           </motion.div>
 
