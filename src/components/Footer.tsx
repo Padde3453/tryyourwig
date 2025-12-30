@@ -19,14 +19,14 @@ export const Footer = () => {
           {/* Legal Links */}
           <div className="flex items-center gap-4">
             <Link
-              to="#"
+              to="/privacy"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {t.footer.privacy}
             </Link>
             <span className="text-muted-foreground/30">|</span>
             <Link
-              to="#"
+              to="/terms"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {t.footer.terms}

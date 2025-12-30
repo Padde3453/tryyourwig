@@ -219,6 +219,13 @@ export const translations = {
         cta: 'Try Client Demo',
       },
     },
+    legal: {
+      privacyTitle: 'Privacy Policy',
+      privacySubtitle: 'How we protect your data',
+      termsTitle: 'Terms of Service',
+      termsSubtitle: 'Our terms and conditions',
+      contentPlaceholder: 'Content will be provided soon.',
+    },
   },
   de: {
     nav: {
@@ -419,6 +426,13 @@ export const translations = {
         description: 'Sehen Sie genau, was Ihre Kunden erleben werden, wenn sie Perücken virtuell anprobieren.',
         cta: 'Kunden-Demo testen',
       },
+    },
+    legal: {
+      privacyTitle: 'Datenschutzrichtlinie',
+      privacySubtitle: 'Wie wir Ihre Daten schützen',
+      termsTitle: 'Nutzungsbedingungen',
+      termsSubtitle: 'Unsere Allgemeinen Geschäftsbedingungen',
+      contentPlaceholder: 'Inhalt wird in Kürze bereitgestellt.',
     },
   },
   es: {
@@ -621,6 +635,13 @@ export const translations = {
         cta: 'Probar Demo del Cliente',
       },
     },
+    legal: {
+      privacyTitle: 'Política de Privacidad',
+      privacySubtitle: 'Cómo protegemos tus datos',
+      termsTitle: 'Términos de Servicio',
+      termsSubtitle: 'Nuestros términos y condiciones',
+      contentPlaceholder: 'El contenido se proporcionará pronto.',
+    },
   },
   fr: {
     nav: {
@@ -821,6 +842,13 @@ export const translations = {
         description: 'Voyez exactement ce que vos clients vivront en essayant des perruques virtuellement.',
         cta: 'Essayer la Démo Client',
       },
+    },
+    legal: {
+      privacyTitle: 'Politique de Confidentialité',
+      privacySubtitle: 'Comment nous protégeons vos données',
+      termsTitle: 'Conditions d\'Utilisation',
+      termsSubtitle: 'Nos termes et conditions',
+      contentPlaceholder: 'Le contenu sera fourni prochainement.',
     },
   },
 };
