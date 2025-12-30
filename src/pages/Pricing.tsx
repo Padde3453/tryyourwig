@@ -277,10 +277,10 @@ const Pricing = () => {
                 Looking for custom solutions, bulk uploads of wigs, or have special requirements? 
                 We're here to help you find the perfect solution for your business.
               </p>
-              <a href="mailto:service@tryyourwig.com">
-                <Button variant="hero" size="lg" className="rounded-full">
-                  Contact us at service@tryyourwig.com
-                  <ArrowRight className="w-4 h-4" />
+              <a href="mailto:service@tryyourwig.com" className="inline-block w-full sm:w-auto">
+                <Button variant="hero" size="lg" className="rounded-full w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6">
+                  <Mail className="w-4 h-4 flex-shrink-0" />
+                  <span className="truncate">service@tryyourwig.com</span>
                 </Button>
               </a>
             </Card>
