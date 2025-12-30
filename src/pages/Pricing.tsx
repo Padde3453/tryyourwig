@@ -56,17 +56,15 @@ const Pricing = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="mb-16"
+            className="mb-16 bg-background/70 backdrop-blur-md rounded-xl px-6 py-8"
           >
             <div className="text-center mb-8">
-              <div className="inline-block bg-background/70 backdrop-blur-md rounded-xl px-6 py-4">
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
-                  What you get
-                </h2>
-                <p className="text-muted-foreground">
-                  A completely new experience for your clients.
-                </p>
-              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
+                What you get
+              </h2>
+              <p className="text-muted-foreground">
+                A completely new experience for your clients.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
@@ -83,7 +81,7 @@ const Pricing = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="flex items-center gap-3 bg-card/50 backdrop-blur-sm border border-border rounded-xl px-4 py-3"
+                  className="flex items-center gap-3 bg-card/50 border border-border rounded-xl px-4 py-3"
                 >
                   <div className="w-6 h-6 rounded-full gradient-bg flex items-center justify-center flex-shrink-0">
                     <Check className="w-4 h-4 text-primary-foreground" />
@@ -95,7 +93,7 @@ const Pricing = () => {
           </motion.div>
 
           {/* Pricing Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 pt-10 overflow-visible">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 pt-10 overflow-visible items-end">
             {t.pricing.tiers.map((tier, i) => {
               const isHighlighted = 'highlighted' in tier && tier.highlighted;
               return (
@@ -108,14 +106,12 @@ const Pricing = () => {
                   className="flex overflow-visible"
                 >
                   <div className="flex flex-col w-full">
-                    {isHighlighted && (
-                      <div className="flex justify-center mb-3">
-                        <span className="gradient-bg text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-full inline-flex items-center gap-1 whitespace-nowrap">
-                          <Sparkles className="w-3 h-3" />
-                          {t.pricing.popular}
-                        </span>
-                      </div>
-                    )}
+                    <div className={`flex justify-center mb-3 ${isHighlighted ? '' : 'invisible'}`}>
+                      <span className="gradient-bg text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-full inline-flex items-center gap-1 whitespace-nowrap">
+                        <Sparkles className="w-3 h-3" />
+                        {t.pricing.popular}
+                      </span>
+                    </div>
 
                     <Card
                       className={`relative p-8 flex flex-col w-full min-h-[400px] ${
