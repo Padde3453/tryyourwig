@@ -20,13 +20,6 @@ const fadeInUp = {
 
 const tierIcons = [iconPixieCut, iconFullVolume, iconSalonPro];
 
-const extensionPackages = [
-  { generations: 50, price: 49 },
-  { generations: 100, price: 89 },
-  { generations: 200, price: 150 },
-  { generations: 400, price: 300 },
-];
-
 const Pricing = () => {
   const { t } = useI18n();
   const [isExtensionsOpen, setIsExtensionsOpen] = useState(false);
@@ -216,7 +209,7 @@ const Pricing = () => {
                   >
                     <div className="px-6 pb-6 sm:px-8 sm:pb-8 pt-2">
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {extensionPackages.map((pkg, i) => (
+                        {(t.pricing as any).extensions?.packages?.map((pkg: { generations: number; price: number }, i: number) => (
                           <motion.div
                             key={pkg.generations}
                             initial={{ opacity: 0, y: 10 }}
@@ -228,7 +221,7 @@ const Pricing = () => {
                                 {pkg.generations}
                               </h3>
                               <p className="text-sm text-muted-foreground mb-3">
-                                Generations
+                                {(t.pricing as any).extensions?.generations || 'Generations'}
                               </p>
                               <div className="flex items-baseline justify-center gap-1 mb-4">
                                 <span className="text-xl font-bold text-foreground">
@@ -241,7 +234,7 @@ const Pricing = () => {
                                 className="w-full rounded-full mt-auto"
                                 size="sm"
                               >
-                                Purchase
+                                {(t.pricing as any).extensions?.purchase || 'Purchase'}
                                 <ArrowRight className="w-4 h-4" />
                               </Button>
                             </Card>
