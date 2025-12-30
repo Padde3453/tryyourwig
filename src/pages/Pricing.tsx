@@ -53,21 +53,21 @@ const Pricing = () => {
           >
             <div className="text-center mb-8">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
-                What you get
+                {(t.pricing as any).whatYouGet?.title || 'What you get'}
               </h2>
               <p className="text-muted-foreground">
-                A completely new experience for your clients.
+                {(t.pricing as any).whatYouGet?.subtitle || 'A completely new experience for your clients.'}
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
-              {[
+              {((t.pricing as any).whatYouGet?.features || [
                 "HD quality results",
                 "Fast generation speeds",
                 "Whitelabel solutions under the domain name",
                 "E-Mail support (24h answer time)",
                 "User-Analytics",
-              ].map((feature, i) => (
+              ]).map((feature: string, i: number) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 10 }}
@@ -227,7 +227,7 @@ const Pricing = () => {
                                 <span className="text-xl font-bold text-foreground">
                                   {pkg.price}€
                                 </span>
-                                <span className="text-sm text-muted-foreground">net</span>
+                                <span className="text-sm text-muted-foreground">{(t.pricing as any).extensions?.net || 'net'}</span>
                               </div>
                               <Button
                                 variant="hero"
@@ -260,11 +260,10 @@ const Pricing = () => {
                 <Mail className="w-8 h-8 text-primary-foreground" />
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
-                Need additional support?
+                {(t.pricing as any).support?.title || 'Need additional support?'}
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-                Looking for custom solutions, bulk uploads of wigs, or have special requirements? 
-                We're here to help you find the perfect solution for your business.
+                {(t.pricing as any).support?.description || "Looking for custom solutions, bulk uploads of wigs, or have special requirements? We're here to help you find the perfect solution for your business."}
               </p>
               <a href="mailto:service@tryyourwig.com" className="inline-block w-full sm:w-auto">
                 <Button variant="hero" size="lg" className="rounded-full w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6">
