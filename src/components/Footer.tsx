@@ -31,6 +31,13 @@ export const Footer = () => {
             >
               {t.footer.terms}
             </Link>
+            <span className="text-muted-foreground/30">|</span>
+            <Link
+              to="/impressum"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {t.footer.impressum}
+            </Link>
           </div>
 
           {/* Copyright */}
