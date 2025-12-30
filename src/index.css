@@ -138,7 +138,7 @@
   }
 
   .pricing-card-highlight {
-    @apply relative overflow-hidden;
+    @apply relative overflow-visible;
     box-shadow: 0 25px 50px -12px hsl(var(--primary) / 0.25);
   }
 }
