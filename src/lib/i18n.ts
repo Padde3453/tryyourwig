@@ -180,12 +180,29 @@ export const translations = {
       extensions: {
         generations: 'Generations',
         purchase: 'Purchase',
+        net: 'net',
         packages: [
           { generations: 50, price: 49 },
           { generations: 100, price: 89 },
           { generations: 200, price: 150 },
           { generations: 400, price: 300 },
         ],
+      },
+      whatYouGet: {
+        title: 'What you get',
+        subtitle: 'A completely new experience for your clients.',
+        features: [
+          'HD quality results',
+          'Fast generation speeds',
+          'Whitelabel solutions under the domain name',
+          'E-Mail support (24h answer time)',
+          'User-Analytics',
+        ],
+      },
+      support: {
+        title: 'Need additional support?',
+        description: 'Looking for custom solutions, bulk uploads of wigs, or have special requirements? We\'re here to help you find the perfect solution for your business.',
+        email: 'service@tryyourwig.com',
       },
     },
     demo: {
@@ -358,12 +375,29 @@ export const translations = {
       extensions: {
         generations: 'Generierungen',
         purchase: 'Kaufen',
+        net: 'netto',
         packages: [
           { generations: 50, price: 49 },
           { generations: 100, price: 89 },
           { generations: 200, price: 150 },
           { generations: 400, price: 300 },
         ],
+      },
+      whatYouGet: {
+        title: 'Was Sie bekommen',
+        subtitle: 'Ein völlig neues Erlebnis für Ihre Kunden.',
+        features: [
+          'HD-Qualitätsergebnisse',
+          'Schnelle Generierungsgeschwindigkeiten',
+          'Whitelabel-Lösungen unter dem Domainnamen',
+          'E-Mail-Support (24h Antwortzeit)',
+          'Benutzer-Analysen',
+        ],
+      },
+      support: {
+        title: 'Benötigen Sie zusätzliche Unterstützung?',
+        description: 'Suchen Sie nach maßgeschneiderten Lösungen, Massen-Uploads von Perücken oder haben Sie besondere Anforderungen? Wir helfen Ihnen gerne, die perfekte Lösung für Ihr Unternehmen zu finden.',
+        email: 'service@tryyourwig.com',
       },
     },
     demo: {
@@ -536,12 +570,29 @@ export const translations = {
       extensions: {
         generations: 'Generaciones',
         purchase: 'Comprar',
+        net: 'neto',
         packages: [
           { generations: 50, price: 49 },
           { generations: 100, price: 89 },
           { generations: 200, price: 150 },
           { generations: 400, price: 300 },
         ],
+      },
+      whatYouGet: {
+        title: 'Lo que obtienes',
+        subtitle: 'Una experiencia completamente nueva para tus clientes.',
+        features: [
+          'Resultados en calidad HD',
+          'Velocidades de generación rápidas',
+          'Soluciones de marca blanca bajo el nombre de dominio',
+          'Soporte por correo electrónico (tiempo de respuesta 24h)',
+          'Análisis de usuarios',
+        ],
+      },
+      support: {
+        title: '¿Necesitas soporte adicional?',
+        description: '¿Buscas soluciones personalizadas, cargas masivas de pelucas o tienes requisitos especiales? Estamos aquí para ayudarte a encontrar la solución perfecta para tu negocio.',
+        email: 'service@tryyourwig.com',
       },
     },
     demo: {
@@ -714,12 +765,29 @@ export const translations = {
       extensions: {
         generations: 'Générations',
         purchase: 'Acheter',
+        net: 'net',
         packages: [
           { generations: 50, price: 49 },
           { generations: 100, price: 89 },
           { generations: 200, price: 150 },
           { generations: 400, price: 300 },
         ],
+      },
+      whatYouGet: {
+        title: 'Ce que vous obtenez',
+        subtitle: 'Une expérience entièrement nouvelle pour vos clients.',
+        features: [
+          'Résultats en qualité HD',
+          'Vitesses de génération rapides',
+          'Solutions en marque blanche sous le nom de domaine',
+          'Support par e-mail (temps de réponse 24h)',
+          'Analyses utilisateurs',
+        ],
+      },
+      support: {
+        title: 'Besoin d\'un support supplémentaire?',
+        description: 'Vous cherchez des solutions personnalisées, des téléchargements en masse de perruques ou avez des exigences spéciales? Nous sommes là pour vous aider à trouver la solution parfaite pour votre entreprise.',
+        email: 'service@tryyourwig.com',
       },
     },
     demo: {
