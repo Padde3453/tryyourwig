@@ -113,34 +113,66 @@ const Pricing = () => {
             })}
           </div>
 
-          {/* Add-on Banner */}
+          {/* Extensions Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
             className="mt-16"
           >
-            <Card className="p-6 sm:p-8 bg-muted/50 border-dashed border-2 border-border">
-              <div className="flex flex-col sm:flex-row items-center gap-6">
-                <div className="w-14 h-14 rounded-2xl gradient-bg flex items-center justify-center flex-shrink-0">
-                  <Plus className="w-7 h-7 text-primary-foreground" />
-                </div>
-                <div className="flex-1 text-center sm:text-left">
-                  <h3 className="text-xl font-bold text-foreground mb-1">
-                    {t.pricing.addon.title}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {t.pricing.addon.description}{" "}
-                    <span className="font-semibold text-foreground">
-                      {t.pricing.addon.price}
-                    </span>
-                  </p>
-                </div>
-                <Button variant="outline" className="rounded-full flex-shrink-0">
-                  Learn More
-                </Button>
+            <div className="text-center mb-8">
+              <div className="inline-block bg-background/70 backdrop-blur-md rounded-xl px-6 py-4">
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
+                  {t.pricing.addon.title}
+                </h2>
+                <p className="text-muted-foreground">
+                  {t.pricing.addon.description}
+                </p>
               </div>
-            </Card>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { generations: 50, price: 49 },
+                { generations: 100, price: 89 },
+                { generations: 200, price: 150 },
+                { generations: 400, price: 300 },
+              ].map((pkg, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <Card className="p-6 bg-card border border-border hover:border-primary/30 transition-colors text-center">
+                    <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center mx-auto mb-4">
+                      <Plus className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                    <h3 className="text-3xl font-extrabold text-foreground mb-1">
+                      {pkg.generations}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Generations
+                    </p>
+                    <div className="flex items-baseline justify-center gap-1 mb-4">
+                      <span className="text-2xl font-bold text-foreground">
+                        {pkg.price}€
+                      </span>
+                      <span className="text-sm text-muted-foreground">net</span>
+                    </div>
+                    <Button
+                      variant="heroOutline"
+                      className="w-full rounded-full"
+                      size="sm"
+                    >
+                      Purchase
+                      <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
 
           {/* FAQ CTA */}
