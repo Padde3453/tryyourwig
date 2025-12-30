@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Check, ArrowRight, Sparkles } from "lucide-react";
+import { Check, ArrowRight, Sparkles, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useI18n } from "@/lib/i18n";
@@ -99,15 +99,15 @@ const Pricing = () => {
                   className="flex"
                 >
                   <Card
-                    className={`relative p-8 flex flex-col w-full ${
+                    className={`relative p-8 pt-10 flex flex-col w-full min-h-[380px] ${
                       isHighlighted
                         ? "pricing-card-highlight gradient-border bg-card"
                         : "border border-border bg-card hover:border-primary/30 transition-colors"
                     }`}
                   >
                     {isHighlighted && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                        <span className="gradient-bg text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-full flex items-center gap-1">
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                        <span className="gradient-bg text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-full flex items-center gap-1 whitespace-nowrap">
                           <Sparkles className="w-3 h-3" />
                           {t.pricing.popular}
                         </span>
@@ -224,12 +224,39 @@ const Pricing = () => {
             </div>
           </motion.div>
 
-          {/* FAQ CTA */}
+          {/* Need Additional Support Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="mt-16 text-center"
+            className="mt-16"
+          >
+            <Card className="p-8 bg-card/50 backdrop-blur-sm border border-border text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-bg flex items-center justify-center">
+                <Mail className="w-8 h-8 text-primary-foreground" />
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
+                Need additional support?
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
+                Looking for custom solutions, bulk uploads of wigs, or have special requirements? 
+                We're here to help you find the perfect solution for your business.
+              </p>
+              <a href="mailto:service@tryyourwig.com">
+                <Button variant="hero" size="lg" className="rounded-full">
+                  Contact us at service@tryyourwig.com
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </a>
+            </Card>
+          </motion.div>
+
+          {/* FAQ CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="mt-8 text-center"
           >
             <div className="inline-block bg-background/70 backdrop-blur-md rounded-xl px-6 py-4">
               <p className="text-muted-foreground mb-2">
