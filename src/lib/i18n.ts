@@ -208,10 +208,16 @@ export const translations = {
     demo: {
       title: 'Try the Demo',
       subtitle: 'Experience TryYourWig in action',
-      comingSoon: 'Interactive demo coming soon',
-      description: 'Our team is putting the finishing touches on an amazing demo experience. Leave your email to be notified when it\'s ready.',
-      placeholder: 'Enter your email',
-      notify: 'Notify Me',
+      dashboardCard: {
+        title: 'Preview your Dashboard',
+        description: 'Explore the admin interface where you manage wigs, view analytics, and configure your brand settings.',
+        cta: 'Open Dashboard Demo',
+      },
+      clientCard: {
+        title: 'Preview the client experience',
+        description: 'See exactly what your customers will experience when trying on wigs virtually.',
+        cta: 'Try Client Demo',
+      },
     },
   },
   de: {
@@ -403,10 +409,16 @@ export const translations = {
     demo: {
       title: 'Demo Testen',
       subtitle: 'Erleben Sie TryYourWig in Aktion',
-      comingSoon: 'Interaktive Demo kommt bald',
-      description: 'Unser Team legt letzte Hand an ein erstaunliches Demo-Erlebnis.',
-      placeholder: 'E-Mail eingeben',
-      notify: 'Benachrichtigen',
+      dashboardCard: {
+        title: 'Vorschau Ihres Dashboards',
+        description: 'Erkunden Sie die Admin-Oberfläche, in der Sie Perücken verwalten, Analysen einsehen und Ihre Markeneinstellungen konfigurieren.',
+        cta: 'Dashboard-Demo öffnen',
+      },
+      clientCard: {
+        title: 'Vorschau der Kundenerfahrung',
+        description: 'Sehen Sie genau, was Ihre Kunden erleben werden, wenn sie Perücken virtuell anprobieren.',
+        cta: 'Kunden-Demo testen',
+      },
     },
   },
   es: {
@@ -598,10 +610,16 @@ export const translations = {
     demo: {
       title: 'Prueba la Demo',
       subtitle: 'Experimenta TryYourWig en acción',
-      comingSoon: 'Demo interactiva próximamente',
-      description: 'Nuestro equipo está dando los toques finales a una experiencia de demo increíble.',
-      placeholder: 'Ingresa tu email',
-      notify: 'Notificarme',
+      dashboardCard: {
+        title: 'Vista previa de tu Panel',
+        description: 'Explora la interfaz de administración donde gestionas pelucas, ves análisis y configuras tu marca.',
+        cta: 'Abrir Demo del Panel',
+      },
+      clientCard: {
+        title: 'Vista previa de la experiencia del cliente',
+        description: 'Ve exactamente lo que experimentarán tus clientes al probarse pelucas virtualmente.',
+        cta: 'Probar Demo del Cliente',
+      },
     },
   },
   fr: {
@@ -793,10 +811,16 @@ export const translations = {
     demo: {
       title: 'Essayer la Démo',
       subtitle: 'Découvrez TryYourWig en action',
-      comingSoon: 'Démo interactive bientôt disponible',
-      description: 'Notre équipe met la touche finale à une expérience de démo incroyable.',
-      placeholder: 'Entrez votre email',
-      notify: 'Me Notifier',
+      dashboardCard: {
+        title: 'Aperçu de votre Tableau de bord',
+        description: 'Explorez l\'interface d\'administration où vous gérez les perruques, consultez les analyses et configurez votre marque.',
+        cta: 'Ouvrir la Démo du Tableau de bord',
+      },
+      clientCard: {
+        title: 'Aperçu de l\'expérience client',
+        description: 'Voyez exactement ce que vos clients vivront en essayant des perruques virtuellement.',
+        cta: 'Essayer la Démo Client',
+      },
     },
   },
 };
