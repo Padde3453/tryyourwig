@@ -38,31 +38,31 @@ const Impressum = () => {
           >
             <div className="prose prose-gray dark:prose-invert max-w-none space-y-8">
               <section>
-                <h2 className="text-xl font-semibold text-foreground mb-4">Information pursuant to § 5 TMG</h2>
-                <p className="text-muted-foreground">TryYourWig is a service provided by:</p>
+                <h2 className="text-xl font-semibold text-foreground mb-4">{t.legal.impressum.infoTitle}</h2>
+                <p className="text-muted-foreground">{t.legal.impressum.serviceProvider}</p>
                 <address className="not-italic text-muted-foreground mt-2">
                   <strong className="text-foreground">Reverchon Consulting GmbH</strong>
                   <br />
                   Am Gasteig 6<br />
                   82335 Berg
                   <br />
-                  Germany
+                  {t.legal.impressum.germany}
                 </address>
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-foreground mb-4">Represented by</h2>
-                <p className="text-muted-foreground">Patrick Reverchon (Managing Director)</p>
+                <h2 className="text-xl font-semibold text-foreground mb-4">{t.legal.impressum.representedBy}</h2>
+                <p className="text-muted-foreground">{t.legal.impressum.managingDirector}</p>
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-foreground mb-4">Contact</h2>
+                <h2 className="text-xl font-semibold text-foreground mb-4">{t.legal.impressum.contact}</h2>
                 <p className="text-muted-foreground">
-                  Phone: +49 (0)152 04444450
+                  {t.legal.impressum.phone}: +49 (0)152 04444450
                   <br />
-                  Email:{" "}
+                  {t.legal.impressum.email}:{" "}
                   <a
-                    href="mailto:service@tryyourwig.com"
+                    href="mailto:contact@tryyourwig.com"
                     className="text-brand-pink hover:text-brand-purple transition-colors"
                   >
                     contact@tryyourwig.com
@@ -71,23 +71,23 @@ const Impressum = () => {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-foreground mb-4">Register Entry</h2>
+                <h2 className="text-xl font-semibold text-foreground mb-4">{t.legal.impressum.registerEntry}</h2>
                 <p className="text-muted-foreground">
-                  Entry in the Commercial Register <br />
-                  Register Court: Amtsgericht München
+                  {t.legal.impressum.commercialRegister} <br />
+                  {t.legal.impressum.registerCourt}: Amtsgericht München
                   <br />
-                  Register Number: HRB 284621
+                  {t.legal.impressum.registerNumber}: HRB 284621
                 </p>
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-foreground mb-4">Tax ID</h2>
+                <h2 className="text-xl font-semibold text-foreground mb-4">{t.legal.impressum.taxId}</h2>
                 <p className="text-muted-foreground">DE404020694</p>
               </section>
 
               <section>
                 <h2 className="text-xl font-semibold text-foreground mb-4">
-                  Responsible for Content (acc. to § 55 Abs. 2 RStV)
+                  {t.legal.impressum.responsibleForContent}
                 </h2>
                 <address className="not-italic text-muted-foreground">
                   Patrick Reverchon
@@ -95,14 +95,14 @@ const Impressum = () => {
                   Am Gasteig 6<br />
                   82335 Berg
                   <br />
-                  Germany
+                  {t.legal.impressum.germany}
                 </address>
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-foreground mb-4">Dispute Resolution</h2>
+                <h2 className="text-xl font-semibold text-foreground mb-4">{t.legal.impressum.disputeResolution}</h2>
                 <p className="text-muted-foreground">
-                  The European Commission provides a platform for online dispute resolution (ODR):{" "}
+                  {t.legal.impressum.odrPlatform}{" "}
                   <a
                     href="https://ec.europa.eu/consumers/odr/"
                     target="_blank"
@@ -113,8 +113,7 @@ const Impressum = () => {
                   </a>
                 </p>
                 <p className="text-muted-foreground mt-2">
-                  We are not willing or obliged to participate in dispute resolution proceedings before a consumer
-                  arbitration board.
+                  {t.legal.impressum.noArbitration}
                 </p>
               </section>
             </div>
