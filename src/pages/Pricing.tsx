@@ -86,7 +86,7 @@ const Pricing = () => {
           </motion.div>
 
           {/* Pricing Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 pt-6">
             {t.pricing.tiers.map((tier, i) => {
               const isHighlighted = 'highlighted' in tier && tier.highlighted;
               return (
@@ -251,25 +251,6 @@ const Pricing = () => {
             </Card>
           </motion.div>
 
-          {/* FAQ CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="mt-8 text-center"
-          >
-            <div className="inline-block bg-background/70 backdrop-blur-md rounded-xl px-6 py-4">
-              <p className="text-muted-foreground mb-2">
-                Have questions about which plan is right for you?
-              </p>
-              <Link to="/#faq">
-                <Button variant="link" className="text-primary">
-                  View our FAQ
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
         </div>
       </section>
     </Layout>
