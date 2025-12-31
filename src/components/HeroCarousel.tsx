@@ -5,7 +5,6 @@ import {
   useMotionValue,
   useReducedMotion,
 } from "framer-motion";
-import { Maximize2 } from "lucide-react";
 import beforeWig from "@/assets/before-wig.webp";
 import afterWig from "@/assets/after-wig.png";
 import beforeWig2 from "@/assets/before-wig-2.webp";
@@ -16,54 +15,40 @@ import beforeWig4 from "@/assets/before-wig-4.webp";
 import afterWig4 from "@/assets/after-wig-4.webp";
 import beforeWig5 from "@/assets/before-wig-5.webp";
 import afterWig5 from "@/assets/after-wig-5.webp";
+import beforeWig6 from "@/assets/before-wig-6.webp";
+import afterWig6 from "@/assets/after-wig-6.webp";
 
 interface ImagePair {
-  before: string | null;
-  after: string | null;
-  isPlaceholder: boolean;
+  before: string;
+  after: string;
 }
 
 const imagePairs: ImagePair[] = [
-  { before: beforeWig, after: afterWig, isPlaceholder: false },
-  { before: beforeWig2, after: afterWig2, isPlaceholder: false },
-  { before: beforeWig3, after: afterWig3, isPlaceholder: false },
-  { before: beforeWig4, after: afterWig4, isPlaceholder: false },
-  { before: beforeWig5, after: afterWig5, isPlaceholder: false },
-  { before: null, after: null, isPlaceholder: true },
+  { before: beforeWig, after: afterWig },
+  { before: beforeWig2, after: afterWig2 },
+  { before: beforeWig3, after: afterWig3 },
+  { before: beforeWig4, after: afterWig4 },
+  { before: beforeWig5, after: afterWig5 },
+  { before: beforeWig6, after: afterWig6 },
 ];
-
-const PlaceholderImage = ({ label }: { label: string }) => (
-  <div className="w-full h-full bg-muted/50 flex flex-col items-center justify-center gap-2 rounded-xl border border-border/30">
-    <Maximize2 className="w-8 h-8 text-muted-foreground/40" />
-    <span className="text-xs text-muted-foreground/40 font-medium">{label}</span>
-  </div>
-);
 
 const ImagePairCard = ({ pair, index }: { pair: ImagePair; index: number }) => (
   <div className="flex gap-3 shrink-0">
     <div className="w-32 h-44 sm:w-40 sm:h-56 lg:w-48 lg:h-64 overflow-hidden rounded-xl shadow-lg">
-      {pair.isPlaceholder ? (
-        <PlaceholderImage label="Before" />
-      ) : (
-        <img
-          src={pair.before!}
-          alt={`Before transformation ${index + 1}`}
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-      )}
+      <img
+        src={pair.before}
+        alt={`Before transformation ${index + 1}`}
+        className="w-full h-full object-cover"
+        loading="lazy"
+      />
     </div>
     <div className="w-32 h-44 sm:w-40 sm:h-56 lg:w-48 lg:h-64 overflow-hidden rounded-xl shadow-lg">
-      {pair.isPlaceholder ? (
-        <PlaceholderImage label="After" />
-      ) : (
-        <img
-          src={pair.after!}
-          alt={`After transformation ${index + 1}`}
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-      )}
+      <img
+        src={pair.after}
+        alt={`After transformation ${index + 1}`}
+        className="w-full h-full object-cover"
+        loading="lazy"
+      />
     </div>
   </div>
 );
