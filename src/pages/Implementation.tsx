@@ -27,38 +27,38 @@ const ImplementationStep = ({
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="relative pl-20 md:pl-28 pb-16 last:pb-0 min-h-[120px] flex items-center"
+      className="relative pl-20 md:pl-28 pb-16 last:pb-0"
     >
-      {/* Step circle - positioned at vertical center */}
-      <div
-        ref={circleRef}
-        className={`absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center font-bold text-lg border-[3px] transition-all duration-400 ${
-          isCompleted
-            ? "bg-green-500 border-green-500 text-white"
-            : "bg-slate-100 border-slate-200 text-muted-foreground"
-        }`}
-      >
-        {isCompleted ? (
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 500, damping: 30 }}
-          >
-            <Check className="w-5 h-5 md:w-6 md:h-6" />
-          </motion.div>
-        ) : (
-          step
-        )}
-      </div>
-
       {/* Content card */}
       <div
-        className={`bg-card/50 backdrop-blur-sm border-2 rounded-2xl p-6 md:p-8 transition-all duration-400 ${
+        className={`relative bg-card/50 backdrop-blur-sm border-2 rounded-2xl p-6 md:p-8 transition-all duration-400 ${
           isCompleted 
             ? "border-green-500 shadow-[0_0_20px_rgba(34,197,94,0.3)] shadow-green-500/20" 
             : "border-border/50 shadow-lg hover:shadow-xl"
         }`}
       >
+        {/* Step circle - positioned at vertical center of the card */}
+        <div
+          ref={circleRef}
+          className={`absolute -left-[68px] md:-left-[84px] top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center font-bold text-lg border-[3px] transition-all duration-400 ${
+            isCompleted
+              ? "bg-green-500 border-green-500 text-white"
+              : "bg-slate-100 border-slate-200 text-muted-foreground"
+          }`}
+        >
+          {isCompleted ? (
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 500, damping: 30 }}
+            >
+              <Check className="w-5 h-5 md:w-6 md:h-6" />
+            </motion.div>
+          ) : (
+            step
+          )}
+        </div>
+
         <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">{title}</h3>
         <p className="text-muted-foreground leading-relaxed">{description}</p>
       </div>
