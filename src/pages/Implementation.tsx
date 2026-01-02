@@ -24,9 +24,9 @@ const ImplementationStep = ({
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="relative pl-16 md:pl-24 pb-16 last:pb-0"
+      className="relative pl-20 md:pl-28 pb-16 last:pb-0 min-h-[120px] flex items-center"
     >
-      {/* Step circle */}
+      {/* Step circle - positioned at vertical center */}
       <motion.div
         initial={false}
         animate={{
@@ -34,7 +34,7 @@ const ImplementationStep = ({
           borderColor: isCompleted ? "rgb(34 197 94)" : "hsl(var(--border))",
         }}
         transition={{ duration: 0.4 }}
-        className={`absolute left-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center font-bold text-lg border-2 ${
+        className={`absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center font-bold text-lg border-3 ${
           isCompleted ? "text-white" : "text-muted-foreground"
         }`}
       >
@@ -77,7 +77,7 @@ const Implementation = () => {
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start center", "end center"],
+    offset: ["start 80%", "end 60%"],
   });
 
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
@@ -122,9 +122,9 @@ const Implementation = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-center max-w-3xl mx-auto"
+              className="text-center max-w-3xl mx-auto bg-background/70 backdrop-blur-md rounded-2xl px-8 py-6"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                 <span className="bg-gradient-to-r from-brand-pink to-brand-purple bg-clip-text text-transparent">
                   {t.implementation?.title || "Implementation"}
                 </span>
@@ -141,11 +141,11 @@ const Implementation = () => {
           <div className="container mx-auto px-4">
             <div ref={containerRef} className="relative max-w-3xl mx-auto">
               {/* Timeline line background */}
-              <div className="absolute left-5 md:left-6 top-0 bottom-0 w-0.5 bg-border" />
+              <div className="absolute left-[22px] md:left-[26px] top-0 bottom-0 w-1 bg-border rounded-full" />
               
               {/* Animated progress line */}
               <motion.div
-                className="absolute left-5 md:left-6 top-0 w-0.5 bg-gradient-to-b from-green-500 to-green-400 origin-top"
+                className="absolute left-[22px] md:left-[26px] top-0 w-1 bg-gradient-to-b from-green-500 to-green-400 origin-top rounded-full"
                 style={{ height: lineHeight }}
               />
 
