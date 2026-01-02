@@ -216,8 +216,14 @@ const Index = () => {
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                 {t.howItWorks.title}
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
                 {t.howItWorks.subtitle}
+              </p>
+              <p className="text-lg text-muted-foreground flex items-center justify-center gap-3">
+                Available in 5 languages
+                <span className="flex items-center gap-2 text-2xl">
+                  🇬🇧 🇩🇪 🇪🇸 🇫🇷 🇮🇹
+                </span>
               </p>
             </div>
           </motion.div>
