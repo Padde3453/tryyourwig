@@ -9,12 +9,12 @@ export const I18nProvider = ({ children }: I18nProviderProps) => {
   const [locale, setLocale] = useState<Locale>(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('locale') as Locale;
-      if (saved && ['en', 'de', 'es', 'fr'].includes(saved)) {
+      if (saved && ['en', 'de', 'es', 'fr', 'it'].includes(saved)) {
         return saved;
       }
       // Auto-detect browser language
       const browserLang = navigator.language.split('-')[0];
-      if (['en', 'de', 'es', 'fr'].includes(browserLang)) {
+      if (['en', 'de', 'es', 'fr', 'it'].includes(browserLang)) {
         return browserLang as Locale;
       }
     }
