@@ -7,6 +7,7 @@ import { I18nProvider } from "@/components/I18nProvider";
 import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
 import Demo from "./pages/Demo";
+import Implementation from "./pages/Implementation";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Impressum from "./pages/Impressum";
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/demo" element={<Demo />} />
+            <Route path="/implementation" element={<Implementation />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/impressum" element={<Impressum />} />

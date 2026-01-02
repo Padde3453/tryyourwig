@@ -42,6 +42,7 @@ export const Navbar = () => {
   const navLinks = [
     { name: t.nav.demo, href: "/demo" },
     { name: t.nav.pricing, href: "/pricing" },
+    { name: t.nav.implementation, href: "/implementation" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
