@@ -151,21 +151,21 @@ const Implementation = () => {
     const easedProgress = 1 - Math.pow(1 - rawProgress, 2.5);
     setLineProgress(easedProgress);
 
-    // Completed steps based on each circle's center
-    // For the last step, use a slightly lower threshold to ensure it can turn green on desktop
+    // Completed steps: a circle turns green when the progress line reaches its center.
+    // The progress line's current endpoint (in container-relative px):
+    const progressLineEndY = lineTop + lineHeight * easedProgress;
+
     let completed = 0;
     for (let i = 0; i < circles.length; i++) {
       const circle = circles[i];
       if (!circle) continue;
 
       const rect = circle.getBoundingClientRect();
-      const circleCenterY = rect.top + scrollY + rect.height / 2;
-      
-      // For the last step, trigger much earlier and keep it once reached
-      const isLastStep = i === circles.length - 1;
-      const threshold = isLastStep ? circleCenterY - 250 : circleCenterY;
+      // Circle center in container-relative coordinates
+      const circleCenterY = rect.top - containerRect.top + rect.height / 2;
 
-      if (currentTriggerY >= threshold) completed = i + 1;
+      // Circle is completed when progress line has reached its center
+      if (progressLineEndY >= circleCenterY) completed = i + 1;
     }
     setCompletedSteps(completed);
 
