@@ -106,7 +106,7 @@ export const Navbar = () => {
             </DropdownMenu>
 
             {/* CTA Button */}
-            <Link to="/demo">
+            <Link to="/pricing">
               <Button className="gradient-bg text-primary-foreground font-semibold rounded-full px-6 hover:opacity-90 transition-opacity">
                 {t.nav.tryIt}
               </Button>
@@ -173,7 +173,7 @@ export const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Link to="/demo" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link to="/pricing" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button className="w-full gradient-bg text-primary-foreground font-semibold rounded-full">
                   {t.nav.tryIt}
                 </Button>

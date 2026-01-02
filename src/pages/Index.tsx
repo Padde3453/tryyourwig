@@ -109,7 +109,7 @@ const Index = () => {
 
             <motion.div
               variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-4 justify-center relative z-20"
             >
               <Button variant="hero" size="xl" className="rounded-full" asChild>
                 <Link to="/demo">
@@ -440,12 +440,12 @@ const Index = () => {
               and reduce returns.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/demo">
+              <Link to="/pricing">
                 <Button
                   size="xl"
                   className="rounded-full bg-card text-foreground hover:bg-card/90"
                 >
-                  {t.hero.cta}
+                  {t.nav.tryIt}
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
