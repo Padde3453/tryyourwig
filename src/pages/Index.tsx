@@ -174,7 +174,7 @@ const Index = () => {
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {t.problems.items.map((problem, i) => {
               const Icon = problemIcons[i];
               return (
@@ -184,6 +184,7 @@ const Index = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
+                  className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
                 >
                   <Card className="p-8 h-full hover:shadow-lg transition-shadow border-destructive/20 relative z-10 backdrop-blur-md bg-background/70">
                     <div className="w-14 h-14 rounded-2xl bg-destructive/10 flex items-center justify-center mb-6">
