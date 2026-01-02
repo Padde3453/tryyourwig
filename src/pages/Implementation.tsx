@@ -30,7 +30,7 @@ const ImplementationStep = ({
       {/* Step circle - positioned at vertical center */}
       <div
         ref={circleRef}
-        className={`absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center font-bold text-lg border-[3px] transition-all duration-400 ${
+        className={`absolute left-0 top-1/2 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center font-bold text-lg border-[3px] transition-all duration-400 ${
           isCompleted 
             ? "bg-green-500 border-green-500 text-white" 
             : "bg-slate-100 border-slate-200 text-muted-foreground"
@@ -152,6 +152,7 @@ const Implementation = () => {
     setLineProgress(easedProgress);
 
     // Completed steps based on each circle's center
+    // For the last step, use a slightly lower threshold to ensure it can turn green on desktop
     let completed = 0;
     for (let i = 0; i < circles.length; i++) {
       const circle = circles[i];
@@ -159,8 +160,12 @@ const Implementation = () => {
 
       const rect = circle.getBoundingClientRect();
       const circleCenterY = rect.top + scrollY + rect.height / 2;
+      
+      // For the last step, trigger a bit earlier (when near bottom of page)
+      const isLastStep = i === circles.length - 1;
+      const threshold = isLastStep ? circleCenterY - 100 : circleCenterY;
 
-      if (currentTriggerY >= circleCenterY) completed = i + 1;
+      if (currentTriggerY >= threshold) completed = i + 1;
     }
     setCompletedSteps(completed);
 
@@ -223,7 +228,7 @@ const Implementation = () => {
             <div ref={containerRef} className="relative max-w-3xl mx-auto">
               {/* Timeline line background - spans from first to last circle */}
               <div
-                className="absolute left-[22px] md:left-[26px] w-1 bg-slate-200 rounded-full"
+                className="absolute left-[27px] md:left-[31px] w-1 bg-slate-200 rounded-full"
                 style={{
                   top: ready ? `${lineTop}px` : 0,
                   height: ready ? `${lineHeight}px` : 0,
@@ -232,7 +237,7 @@ const Implementation = () => {
 
               {/* Animated progress line */}
               <div
-                className="absolute left-[22px] md:left-[26px] w-1 bg-gradient-to-b from-green-500 to-green-400 origin-top rounded-full"
+                className="absolute left-[27px] md:left-[31px] w-1 bg-gradient-to-b from-green-500 to-green-400 origin-top rounded-full"
                 style={{
                   top: ready ? `${lineTop}px` : 0,
                   height: ready ? `${lineHeight}px` : 0,
