@@ -23,6 +23,7 @@ export const translations = {
     nav: {
       demo: 'Demo',
       pricing: 'Pricing',
+      implementation: 'Implementation',
       tryIt: 'Try it Here',
     },
     hero: {
@@ -248,11 +249,38 @@ export const translations = {
         noArbitration: 'We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.',
       },
     },
+    implementation: {
+      title: 'Implementation',
+      subtitle: 'Get started with TryYourWig in 5 simple steps',
+      steps: [
+        {
+          title: 'Sign Up',
+          description: 'Sign up choosing the best package for you. Here the user signs up via the pricing page.',
+        },
+        {
+          title: 'Access Admin Portal',
+          description: 'UI can get customized, including the logo, brand colors, social media links and company description.',
+        },
+        {
+          title: 'Create the Inventory',
+          description: 'Upload images of the wigs you offer including pricing information, available colors, description, color, name etc. If you have a wide variety of wigs or need help otherwise, reach out to us via service@tryyourwig.com and we can help you with anything extra you might need.',
+        },
+        {
+          title: 'Adjust Your Website',
+          description: 'Link your website to the service, create a QR code or a link to guide your website visitors to your custom simulator page domain.',
+        },
+        {
+          title: 'Ready!',
+          description: 'Your service is fully integrated and available to your clients, a completely new experience and unique service to your clients.',
+        },
+      ],
+    },
   },
   de: {
     nav: {
       demo: 'Demo',
       pricing: 'Preise',
+      implementation: 'Umsetzung',
       tryIt: 'Jetzt Testen',
     },
     hero: {
@@ -478,11 +506,38 @@ export const translations = {
         noArbitration: 'Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.',
       },
     },
+    implementation: {
+      title: 'Umsetzung',
+      subtitle: 'Starten Sie mit TryYourWig in 5 einfachen Schritten',
+      steps: [
+        {
+          title: 'Registrieren',
+          description: 'Melden Sie sich an und wählen Sie das beste Paket für Sie. Hier erfolgt die Anmeldung über die Preisseite.',
+        },
+        {
+          title: 'Admin-Portal Zugang',
+          description: 'Die Benutzeroberfläche kann angepasst werden, einschließlich Logo, Markenfarben, Social-Media-Links und Unternehmensbeschreibung.',
+        },
+        {
+          title: 'Inventar erstellen',
+          description: 'Laden Sie Bilder Ihrer Perücken hoch, einschließlich Preisinformationen, verfügbarer Farben, Beschreibung, Farbe, Name usw. Bei einer großen Vielfalt an Perücken oder anderem Hilfebedarf kontaktieren Sie uns unter service@tryyourwig.com.',
+        },
+        {
+          title: 'Website anpassen',
+          description: 'Verknüpfen Sie Ihre Website mit dem Service, erstellen Sie einen QR-Code oder Link, um Ihre Website-Besucher zu Ihrer individuellen Simulator-Seite zu führen.',
+        },
+        {
+          title: 'Fertig!',
+          description: 'Ihr Service ist vollständig integriert und für Ihre Kunden verfügbar - ein völlig neues Erlebnis und einzigartiger Service für Ihre Kunden.',
+        },
+      ],
+    },
   },
   es: {
     nav: {
       demo: 'Demo',
       pricing: 'Precios',
+      implementation: 'Implementación',
       tryIt: 'Pruébalo',
     },
     hero: {
@@ -708,11 +763,38 @@ export const translations = {
         noArbitration: 'No estamos dispuestos ni obligados a participar en procedimientos de resolución de disputas ante una junta de arbitraje de consumidores.',
       },
     },
+    implementation: {
+      title: 'Implementación',
+      subtitle: 'Comienza con TryYourWig en 5 sencillos pasos',
+      steps: [
+        {
+          title: 'Registrarse',
+          description: 'Regístrate eligiendo el mejor paquete para ti. Aquí el usuario se registra a través de la página de precios.',
+        },
+        {
+          title: 'Acceso al Portal de Administración',
+          description: 'La interfaz se puede personalizar, incluyendo el logo, colores de marca, enlaces de redes sociales y descripción de la empresa.',
+        },
+        {
+          title: 'Crear el Inventario',
+          description: 'Sube imágenes de las pelucas que ofreces incluyendo información de precios, colores disponibles, descripción, color, nombre, etc. Si tienes una gran variedad de pelucas o necesitas ayuda, contáctanos en service@tryyourwig.com.',
+        },
+        {
+          title: 'Ajustar tu Sitio Web',
+          description: 'Vincula tu sitio web al servicio, crea un código QR o un enlace para guiar a los visitantes de tu sitio web a tu página de simulador personalizada.',
+        },
+        {
+          title: '¡Listo!',
+          description: 'Tu servicio está completamente integrado y disponible para tus clientes, una experiencia completamente nueva y un servicio único para tus clientes.',
+        },
+      ],
+    },
   },
   fr: {
     nav: {
       demo: 'Démo',
       pricing: 'Tarifs',
+      implementation: 'Mise en œuvre',
       tryIt: 'Essayez',
     },
     hero: {
@@ -937,6 +1019,32 @@ export const translations = {
         odrPlatform: 'La Commission européenne fournit une plateforme de règlement des litiges en ligne (RLL) :',
         noArbitration: 'Nous ne sommes pas disposés ni obligés de participer à des procédures de règlement des litiges devant un conseil d\'arbitrage des consommateurs.',
       },
+    },
+    implementation: {
+      title: 'Mise en œuvre',
+      subtitle: 'Commencez avec TryYourWig en 5 étapes simples',
+      steps: [
+        {
+          title: 'S\'inscrire',
+          description: 'Inscrivez-vous en choisissant le meilleur forfait pour vous. Ici, l\'utilisateur s\'inscrit via la page des tarifs.',
+        },
+        {
+          title: 'Accès au Portail Admin',
+          description: 'L\'interface peut être personnalisée, y compris le logo, les couleurs de la marque, les liens vers les réseaux sociaux et la description de l\'entreprise.',
+        },
+        {
+          title: 'Créer l\'Inventaire',
+          description: 'Téléchargez des images des perruques que vous proposez, y compris les informations de prix, les couleurs disponibles, la description, la couleur, le nom, etc. Si vous avez une grande variété de perruques ou besoin d\'aide, contactez-nous à service@tryyourwig.com.',
+        },
+        {
+          title: 'Ajuster Votre Site Web',
+          description: 'Liez votre site web au service, créez un code QR ou un lien pour guider les visiteurs de votre site vers votre page de simulateur personnalisée.',
+        },
+        {
+          title: 'Prêt !',
+          description: 'Votre service est entièrement intégré et disponible pour vos clients, une expérience totalement nouvelle et un service unique pour vos clients.',
+        },
+      ],
     },
   },
 };
