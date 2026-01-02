@@ -1,7 +1,9 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
+import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n";
 
 const ImplementationStep = ({
@@ -51,8 +53,10 @@ const ImplementationStep = ({
 
       {/* Content card */}
       <div
-        className={`bg-card/50 backdrop-blur-sm border rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-400 ${
-          isCompleted ? "border-green-500/30" : "border-border/50"
+        className={`bg-card/50 backdrop-blur-sm border-2 rounded-2xl p-6 md:p-8 transition-all duration-400 ${
+          isCompleted 
+            ? "border-green-500 shadow-[0_0_20px_rgba(34,197,94,0.3)] shadow-green-500/20" 
+            : "border-border/50 shadow-lg hover:shadow-xl"
         }`}
       >
         <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">{title}</h3>
@@ -123,14 +127,15 @@ const Implementation = () => {
     const firstRect = firstCircle.getBoundingClientRect();
     const lastRect = lastCircle.getBoundingClientRect();
 
-    const firstOffsetY = firstRect.top - containerRect.top + firstRect.height / 2;
-    const lastOffsetY = lastRect.top - containerRect.top + lastRect.height / 2;
+    const freshFirstOffsetY = firstRect.top - containerRect.top + firstRect.height / 2;
+    const freshLastOffsetY = lastRect.top - containerRect.top + lastRect.height / 2;
+    const freshLineHeight = Math.max(0, freshLastOffsetY - freshFirstOffsetY);
 
-    setLineTop(firstOffsetY);
-    setLineHeight(Math.max(0, lastOffsetY - firstOffsetY));
+    setLineTop(freshFirstOffsetY);
+    setLineHeight(freshLineHeight);
 
     // Trigger line: when this viewport Y position crosses a circle, it's "reached"
-    const viewportTriggerY = window.innerHeight * 0.65;
+    const viewportTriggerY = window.innerHeight * 0.75;
     const currentTriggerY = scrollY + viewportTriggerY;
 
     // Use page coordinates for progress & completion.
@@ -140,7 +145,6 @@ const Implementation = () => {
     const rawProgress = Math.max(0, Math.min(1, (currentTriggerY - firstCenterY) / (lastCenterY - firstCenterY)));
 
     // On initial page load (top of page), force a fully blank state.
-    // This avoids mobile/desktop differences where the first step might already be past the trigger line.
     if (scrollY < 8) {
       setLineProgress(0);
       setCompletedSteps(0);
@@ -148,20 +152,23 @@ const Implementation = () => {
       return;
     }
 
-    // Accelerated fill (ease-out)
-    const easedProgress = 1 - Math.pow(1 - rawProgress, 2.5);
+    // Gentle easing for smoother progression
+    const easedProgress = Math.pow(rawProgress, 1.2);
     setLineProgress(easedProgress);
 
-    // Completed steps based on each circle's center
+    // Calculate where the green line actually ends (in container-relative coordinates)
+    const progressLineEndY = freshFirstOffsetY + (freshLineHeight * easedProgress);
+
+    // Complete a step when the green line reaches that circle's center
     let completed = 0;
     for (let i = 0; i < circles.length; i++) {
       const circle = circles[i];
       if (!circle) continue;
 
       const rect = circle.getBoundingClientRect();
-      const circleCenterY = rect.top + scrollY + rect.height / 2;
+      const circleCenterY = rect.top - containerRect.top + rect.height / 2;
 
-      if (currentTriggerY >= circleCenterY) completed = i + 1;
+      if (progressLineEndY >= circleCenterY) completed = i + 1;
     }
     setCompletedSteps(completed);
 
@@ -257,6 +264,26 @@ const Implementation = () => {
                 ))}
               </div>
             </div>
+
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mt-16"
+            >
+              <Button 
+                variant="hero" 
+                size="xl" 
+                className="rounded-full" 
+                asChild
+              >
+                <Link to="/pricing" onClick={() => window.scrollTo(0, 0)}>
+                  Get started here
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+              </Button>
+            </motion.div>
           </div>
         </section>
       </div>
