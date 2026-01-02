@@ -80,13 +80,17 @@ const Implementation = () => {
     offset: ["start 80%", "end 95%"],
   });
 
-  // Stop the line at the last circle (not 100% of container)
-  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "calc(100% - 60px)"]);
+  // Green progress line fill (0 → 1 as you scroll through the timeline)
+  const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   // Update completed steps based on scroll progress
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const steps = t.implementation?.steps || [];
-    const newCompleted = Math.floor(latest * (steps.length + 0.5));
+    const count = steps.length;
+    if (!count) return;
+
+    // 0 at top, then 1..count as the user progresses
+    const newCompleted = Math.min(count, Math.floor(latest * count + 1e-6));
     setCompletedSteps(newCompleted);
   });
 
@@ -147,7 +151,7 @@ const Implementation = () => {
               {/* Animated progress line */}
               <motion.div
                 className="absolute left-[22px] md:left-[26px] top-0 w-1 bg-gradient-to-b from-green-500 to-green-400 origin-top rounded-full"
-                style={{ height: lineHeight }}
+                style={{ height: "calc(100% - 60px)", scaleY: lineScale }}
               />
 
               {/* Steps */}
