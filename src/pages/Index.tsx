@@ -452,11 +452,10 @@ const Index = () => {
             className="gradient-bg rounded-3xl p-12 sm:p-16 text-primary-foreground"
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Ready to Transform Your Salon?
+              {t.cta.title}
             </h2>
             <p className="text-lg opacity-90 mb-8 max-w-xl mx-auto">
-              Join hundreds of salons already using TryYourWig to boost confidence
-              and reduce returns.
+              {t.cta.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/pricing">
