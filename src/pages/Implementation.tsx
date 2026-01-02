@@ -40,7 +40,7 @@ const ImplementationStep = ({
         {/* Step circle - positioned at vertical center of the card */}
         <div
           ref={circleRef}
-          className={`absolute -left-[68px] md:-left-[84px] top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center font-bold text-lg border-[3px] transition-all duration-400 ${
+          className={`absolute -left-[80px] md:-left-[112px] top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center font-bold text-lg border-[3px] transition-all duration-400 ${
             isCompleted
               ? "bg-green-500 border-green-500 text-white"
               : "bg-slate-100 border-slate-200 text-muted-foreground"
