@@ -1,14 +1,15 @@
 import { createContext, useContext } from 'react';
 
-export type Locale = 'en' | 'de' | 'es' | 'fr';
+export type Locale = 'en' | 'de' | 'es' | 'fr' | 'it';
 
-export const locales: Locale[] = ['en', 'de', 'es', 'fr'];
+export const locales: Locale[] = ['en', 'de', 'es', 'fr', 'it'];
 
 export const localeNames: Record<Locale, string> = {
   en: 'English',
   de: 'Deutsch',
   es: 'Español',
   fr: 'Français',
+  it: 'Italiano',
 };
 
 export const localeFlags: Record<Locale, string> = {
@@ -16,6 +17,7 @@ export const localeFlags: Record<Locale, string> = {
   de: '🇩🇪',
   es: '🇪🇸',
   fr: '🇫🇷',
+  it: '🇮🇹',
 };
 
 export const translations = {
@@ -1043,6 +1045,263 @@ export const translations = {
         {
           title: 'Prêt !',
           description: 'Votre service est entièrement intégré et prêt, une expérience totalement nouvelle et un service unique pour vos clients.',
+        },
+      ],
+    },
+  },
+  it: {
+    nav: {
+      demo: 'Demo',
+      pricing: 'Prezzi',
+      implementation: 'Implementazione',
+      tryIt: 'Provalo',
+    },
+    hero: {
+      badge: 'Prova Virtuale con IA',
+      title: 'Qualsiasi Parrucca. Qualsiasi Viso.',
+      titleHighlight: 'Istantaneamente.',
+      subtitle: 'La Prova Virtuale con IA per Negozi Professionali di Parrucche. Lascia che i tuoi clienti vedano il loro look perfetto prima di acquistare.',
+      cta: 'Prova la Demo',
+      ctaSecondary: 'Vedi i Prezzi',
+    },
+    socialProof: {
+      title: 'Scelto da sempre più saloni moderni in tutto il mondo',
+    },
+    problems: {
+      title: 'Come TryYourWig supporta il tuo business',
+      subtitle: 'Distinguiti con un servizio speciale che ti aiuta a conquistare e fidelizzare i clienti',
+      items: [
+        {
+          title: 'Alti Tassi di Reso',
+          description: 'I clienti restituiscono le parrucche quando si rendono conto che lo stile o il colore non gli sta bene dopo l\'acquisto.',
+        },
+        {
+          title: 'Acquirenti Esitanti',
+          description: 'Gli acquirenti se ne vanno senza comprare perché non riescono a visualizzare come gli starà una parrucca.',
+        },
+        {
+          title: 'Consulenze Sprecate',
+          description: 'Il personale passa ore in consulenze che non convertono perché i clienti rimangono incerti.',
+        },
+        {
+          title: 'Argomento Sensibile',
+          description: 'Il nostro servizio permette ai tuoi clienti di provare le parrucche in diverse pose comodamente e in privato da casa loro.',
+        },
+        {
+          title: 'Presentazione Difficile',
+          description: 'Molte parrucche sono esposte su brutti volti di bambole o teste di plastica, il che danneggia la loro presentazione e le rende meno attraenti.',
+        },
+      ],
+    },
+    howItWorks: {
+      title: 'Come Funziona',
+      subtitle: 'Tre semplici passaggi per trasformare l\'esperienza del cliente',
+      steps: [
+        {
+          step: '01',
+          title: 'Carica Selfie',
+          description: 'Il cliente scatta o carica una propria foto',
+          overlayUploadTitle: 'Carica Selfie',
+          overlayUploadSubtitle: 'Assicurati che il tuo viso sia chiaramente visibile',
+          overlayStyleTitle: 'Stile desiderato',
+          overlayStyleSubtitle: 'Come l\'immagine di riferimento',
+          overlayGenerate: 'Genera immagine',
+        },
+        {
+          step: '02',
+          title: 'Seleziona Parrucca',
+          description: 'Sfoglia il tuo catalogo e scegli gli stili da provare',
+        },
+        {
+          step: '03',
+          title: 'Trasformazione IA',
+          description: 'Vedi risultati realistici in pochi secondi con la nostra IA',
+        },
+      ],
+    },
+    beforeAfter: {
+      title: 'Guarda la Magia',
+      subtitle: 'Trascina il cursore per rivelare la trasformazione',
+    },
+    faq: {
+      title: 'Domande Frequenti',
+      subtitle: 'Tutto quello che devi sapere su TryYourWig',
+      items: [
+        {
+          question: 'Quanto è precisa la corrispondenza del tono della pelle?',
+          answer: 'La nostra IA utilizza un\'analisi avanzata del colore per garantire che le parrucche si fondano naturalmente con qualsiasi tono della pelle.',
+        },
+        {
+          question: 'I dati dei clienti sono privati e sicuri?',
+          answer: 'Assolutamente. Le foto vengono elaborate in tempo reale e non vengono mai memorizzate sui nostri server. Siamo conformi al GDPR.',
+        },
+        {
+          question: 'Quanto è difficile l\'integrazione?',
+          answer: 'L\'integrazione richiede meno di 10 minuti. Basta aggiungere il nostro codice di incorporamento al tuo sito web.',
+        },
+        {
+          question: 'Posso personalizzare l\'interfaccia per abbinarla al mio brand?',
+          answer: 'Sì! Tutti i piani includono opzioni white-label. Puoi personalizzare colori, loghi e il dominio.',
+        },
+        {
+          question: 'Abbiamo molte parrucche nel nostro portfolio, possiamo caricarle in blocco nel sistema?',
+          answer: 'Attualmente questo non è possibile di default a causa dei molti modi diversi in cui questi dati potrebbero essere disponibili. Ma saremo felici di supportarti e possiamo trovare una soluzione insieme. Inviaci un messaggio a service@tryyourwig.com',
+        },
+        {
+          question: 'Come indirizzo i visitatori del nostro sito web a questo servizio?',
+          answer: 'Tramite codice QR o link, è meglio posizionare il servizio in modo prominente sul tuo sito web, ad esempio nell\'header. In questo modo, i tuoi visitatori lo trovano facilmente e ne beneficiano al massimo.',
+        },
+        {
+          question: 'Posso integrare il servizio direttamente nel mio sito web?',
+          answer: 'Sì, questo è possibile, ma non di default. Potremmo integrarlo tramite iframe, contattaci a service@tryyourwig.com e valutiamo insieme.',
+        },
+      ],
+    },
+    footer: {
+      product: 'Prodotto',
+      features: 'Funzionalità',
+      pricing: 'Prezzi',
+      demo: 'Demo',
+      company: 'Azienda',
+      about: 'Chi Siamo',
+      contact: 'Contatto',
+      careers: 'Carriere',
+      legal: 'Legale',
+      privacy: 'Informativa sulla Privacy',
+      terms: 'Termini e Condizioni',
+      impressum: 'Note Legali',
+      copyright: '© 2024 TryYourWig. Tutti i diritti riservati.',
+    },
+    pricing: {
+      title: 'Prezzi Semplici e Trasparenti',
+      subtitle: 'Scegli il piano che si adatta alle esigenze del tuo salone',
+      monthly: 'Mensile',
+      yearly: 'Annuale',
+      popular: 'Più Popolare',
+      getStarted: 'Inizia',
+      contactSales: 'Contatta le Vendite',
+      addon: {
+        title: 'Le Estensioni',
+        description: 'Hai bisogno di più? Ricarica istantaneamente.',
+        price: '50 generazioni per 25€',
+      },
+      tiers: [
+        {
+          name: 'Il Pixie Cut',
+          price: '89€',
+          period: '/mese netto',
+          description: 'Perfetto per piccole boutique',
+          features: ['100 Generazioni/mese'],
+        },
+        {
+          name: 'Il Volume Pieno',
+          price: '349€',
+          period: '/mese netto',
+          description: 'Il più popolare per saloni in crescita',
+          features: ['700 Generazioni/mese'],
+          highlighted: true,
+        },
+        {
+          name: 'Il Salon Pro',
+          price: '699€',
+          period: '/mese netto',
+          description: 'Per attività ad alto volume',
+          features: ['1500 Generazioni/mese'],
+        },
+      ],
+      extensions: {
+        generations: 'Generazioni',
+        purchase: 'Acquista',
+        net: 'netto',
+        packages: [
+          { generations: 50, price: 49 },
+          { generations: 100, price: 89 },
+          { generations: 200, price: 150 },
+          { generations: 400, price: 300 },
+        ],
+      },
+      whatYouGet: {
+        title: 'Cosa ottieni',
+        subtitle: 'Un\'esperienza completamente nuova per i tuoi clienti.',
+        features: [
+          'Risultati in qualità HD',
+          'Velocità di generazione rapide',
+          'Soluzioni white-label sotto il nome di dominio',
+          'Supporto via e-mail (tempo di risposta 24h)',
+          'Analisi utenti',
+        ],
+      },
+      support: {
+        title: 'Hai bisogno di supporto aggiuntivo?',
+        description: 'Cerchi soluzioni personalizzate, caricamenti in blocco di parrucche o hai requisiti speciali? Siamo qui per aiutarti a trovare la soluzione perfetta per la tua attività.',
+        email: 'service@tryyourwig.com',
+      },
+    },
+    demo: {
+      title: 'Prova la Demo',
+      subtitle: 'Scopri TryYourWig in azione',
+      dashboardCard: {
+        title: 'Anteprima della tua Dashboard',
+        description: 'Esplora l\'interfaccia di amministrazione dove gestisci le parrucche, visualizzi le analisi e configuri le impostazioni del brand.',
+        cta: 'Apri Demo Dashboard',
+      },
+      clientCard: {
+        title: 'Anteprima dell\'esperienza cliente',
+        description: 'Vedi esattamente cosa sperimenteranno i tuoi clienti quando proveranno le parrucche virtualmente.',
+        cta: 'Prova Demo Cliente',
+      },
+    },
+    legal: {
+      privacyTitle: 'Informativa sulla Privacy',
+      privacySubtitle: 'Come proteggiamo i tuoi dati',
+      termsTitle: 'Termini di Servizio',
+      termsSubtitle: 'I nostri termini e condizioni',
+      impressumTitle: 'Note Legali',
+      impressumSubtitle: 'Informazioni Legali',
+      contentPlaceholder: 'Il contenuto sarà fornito a breve.',
+      impressum: {
+        infoTitle: 'Informazioni ai sensi del § 5 TMG',
+        serviceProvider: 'TryYourWig è un servizio fornito da:',
+        germany: 'Germania',
+        representedBy: 'Rappresentato da',
+        managingDirector: 'Patrick Reverchon (Amministratore Delegato)',
+        contact: 'Contatto',
+        phone: 'Telefono',
+        email: 'E-mail',
+        registerEntry: 'Iscrizione al Registro',
+        commercialRegister: 'Iscrizione al Registro delle Imprese',
+        registerCourt: 'Tribunale del Registro',
+        registerNumber: 'Numero di Registro',
+        taxId: 'Partita IVA',
+        responsibleForContent: 'Responsabile del contenuto (secondo § 55 Abs. 2 RStV)',
+        disputeResolution: 'Risoluzione delle controversie',
+        odrPlatform: 'La Commissione Europea fornisce una piattaforma per la risoluzione delle controversie online (ODR):',
+        noArbitration: 'Non siamo disposti né obbligati a partecipare a procedimenti di risoluzione delle controversie davanti a un collegio arbitrale dei consumatori.',
+      },
+    },
+    implementation: {
+      title: 'Implementazione',
+      subtitle: 'Inizia con TryYourWig in 5 semplici passaggi',
+      steps: [
+        {
+          title: 'Registrati',
+          description: 'Registrati scegliendo il pacchetto migliore per te. Puoi passare a un piano superiore o inferiore in qualsiasi momento e le modifiche entrano in vigore con il prossimo ciclo di fatturazione mensile.',
+        },
+        {
+          title: 'Personalizzalo',
+          description: 'Personalizza l\'aspetto del servizio secondo il tuo brand, incluso il logo, i colori del brand, i link ai social media, la descrizione dell\'azienda e altro ancora.',
+        },
+        {
+          title: 'Crea l\'Inventario',
+          description: 'Carica immagini delle parrucche che offri includendo informazioni sui prezzi, colori disponibili, descrizione, colore, nome, ecc. Se hai una grande varietà di parrucche o hai bisogno di aiuto, contattaci a service@tryyourwig.com.',
+        },
+        {
+          title: 'Collega il Tuo Sito Web',
+          description: 'Collega il tuo sito web al servizio, crea un codice QR o un link per guidare i visitatori del tuo sito alla tua pagina simulatore personalizzata che puoi configurare nell\'area admin. Se desideri integrare completamente il servizio TryYourWig nel tuo sito web, contattaci e lo renderemo possibile.',
+        },
+        {
+          title: 'Pronto!',
+          description: 'Il tuo servizio è completamente integrato e pronto, un\'esperienza completamente nuova e un servizio unico per i tuoi clienti.',
         },
       ],
     },
