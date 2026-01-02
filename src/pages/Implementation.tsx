@@ -30,8 +30,8 @@ const ImplementationStep = ({
       <motion.div
         initial={false}
         animate={{
-          backgroundColor: isCompleted ? "rgb(34 197 94)" : "hsl(var(--muted))",
-          borderColor: isCompleted ? "rgb(34 197 94)" : "hsl(var(--border))",
+          backgroundColor: isCompleted ? "rgb(34, 197, 94)" : "rgb(241, 245, 249)",
+          borderColor: isCompleted ? "rgb(34, 197, 94)" : "rgb(226, 232, 240)",
         }}
         transition={{ duration: 0.4 }}
         className={`absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center font-bold text-lg border-3 ${
@@ -55,7 +55,7 @@ const ImplementationStep = ({
       <motion.div 
         className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow"
         animate={{
-          borderColor: isCompleted ? "rgba(34, 197, 94, 0.3)" : "hsl(var(--border) / 0.5)",
+          borderColor: isCompleted ? "rgba(34, 197, 94, 0.3)" : "rgba(226, 232, 240, 0.5)",
         }}
         transition={{ duration: 0.4 }}
       >
@@ -77,21 +77,31 @@ const Implementation = () => {
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 80%", "end 95%"],
+    offset: ["start 60%", "end 95%"],
   });
 
-  // Green progress line fill (0 → 1 as you scroll through the timeline)
-  const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  // Non-linear progress: fills faster than scroll position (accelerated curve)
+  const lineScale = useTransform(
+    scrollYProgress, 
+    [0, 0.15, 0.4, 0.7, 1], 
+    [0, 0.35, 0.6, 0.85, 1]
+  );
 
-  // Update completed steps based on scroll progress
+  // Update completed steps with accelerated thresholds
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const steps = t.implementation?.steps || [];
     const count = steps.length;
     if (!count) return;
 
-    // 0 at top, then 1..count as the user progresses
-    const newCompleted = Math.min(count, Math.floor(latest * count + 1e-6));
-    setCompletedSteps(newCompleted);
+    // Accelerated thresholds: steps complete faster than linear scroll
+    const thresholds = [0.12, 0.28, 0.48, 0.68, 0.88];
+    let completed = 0;
+    for (let i = 0; i < count; i++) {
+      if (latest >= thresholds[i]) {
+        completed = i + 1;
+      }
+    }
+    setCompletedSteps(completed);
   });
 
   const steps = t.implementation?.steps || [
