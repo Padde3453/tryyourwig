@@ -121,12 +121,14 @@ const Implementation = () => {
 
     const firstOffsetY = firstRect.top - containerRect.top + firstRect.height / 2;
     const lastOffsetY = lastRect.top - containerRect.top + lastRect.height / 2;
+    const currentLineHeight = Math.max(0, lastOffsetY - firstOffsetY);
 
     setLineTop(firstOffsetY);
-    setLineHeight(Math.max(0, lastOffsetY - firstOffsetY));
+    setLineHeight(currentLineHeight);
 
     // Trigger line: when this viewport Y position crosses a circle, it's "reached"
-    const viewportTriggerY = window.innerHeight * 0.65;
+    // Use 75% of viewport height for slower progression
+    const viewportTriggerY = window.innerHeight * 0.75;
     const currentTriggerY = scrollY + viewportTriggerY;
 
     // Use page coordinates for progress & completion.
@@ -139,7 +141,6 @@ const Implementation = () => {
     );
 
     // On initial page load (top of page), force a fully blank state.
-    // This avoids mobile/desktop differences where the first step might already be past the trigger line.
     if (scrollY < 8) {
       setLineProgress(0);
       setCompletedSteps(0);
@@ -147,13 +148,12 @@ const Implementation = () => {
       return;
     }
 
-    // Accelerated fill (ease-out)
-    const easedProgress = 1 - Math.pow(1 - rawProgress, 2.5);
+    // Slower fill with gentler easing (linear feel)
+    const easedProgress = Math.pow(rawProgress, 1.2);
     setLineProgress(easedProgress);
 
-    // Completed steps: a circle turns green when the progress line reaches its center.
-    // The progress line's current endpoint (in container-relative px):
-    const progressLineEndY = lineTop + lineHeight * easedProgress;
+    // Calculate the actual progress line end position using fresh values
+    const progressLineEndY = firstOffsetY + currentLineHeight * easedProgress;
 
     let completed = 0;
     for (let i = 0; i < circles.length; i++) {
