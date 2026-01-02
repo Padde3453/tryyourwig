@@ -72,6 +72,7 @@ const Implementation = () => {
   const circleRefs = useRef<(HTMLDivElement | null)[]>([]);
   
   const [completedSteps, setCompletedSteps] = useState(0);
+  const [lineTop, setLineTop] = useState(0);
   const [lineHeight, setLineHeight] = useState(0);
   const [lineProgress, setLineProgress] = useState(0);
   const [ready, setReady] = useState(false);
@@ -107,49 +108,62 @@ const Implementation = () => {
     const circles = circleRefs.current;
     const firstCircle = circles[0];
     const lastCircle = circles[circles.length - 1];
+    const container = containerRef.current;
 
-    if (!firstCircle || !lastCircle) return;
+    if (!firstCircle || !lastCircle || !container) return;
 
-    // Get circle centers in page coordinates
+    const scrollY = window.scrollY;
+
+    // Measure positions relative to the timeline container so the line never overshoots.
+    const containerRect = container.getBoundingClientRect();
     const firstRect = firstCircle.getBoundingClientRect();
     const lastRect = lastCircle.getBoundingClientRect();
-    
-    const scrollY = window.scrollY;
-    const firstCenterY = firstRect.top + scrollY + firstRect.height / 2;
-    const lastCenterY = lastRect.top + scrollY + lastRect.height / 2;
 
-    // Set the line height to span from first to last circle center
-    const totalLineHeight = lastCenterY - firstCenterY;
-    setLineHeight(totalLineHeight);
+    const firstOffsetY = firstRect.top - containerRect.top + firstRect.height / 2;
+    const lastOffsetY = lastRect.top - containerRect.top + lastRect.height / 2;
+
+    setLineTop(firstOffsetY);
+    setLineHeight(Math.max(0, lastOffsetY - firstOffsetY));
 
     // Trigger line: when this viewport Y position crosses a circle, it's "reached"
     const viewportTriggerY = window.innerHeight * 0.65;
     const currentTriggerY = scrollY + viewportTriggerY;
 
-    // Calculate raw progress (0 when trigger is at first circle, 1 when at last)
-    const rawProgress = Math.max(0, Math.min(1, 
-      (currentTriggerY - firstCenterY) / (lastCenterY - firstCenterY)
-    ));
+    // Use page coordinates for progress & completion.
+    const firstCenterY = firstRect.top + scrollY + firstRect.height / 2;
+    const lastCenterY = lastRect.top + scrollY + lastRect.height / 2;
 
-    // Apply ease-out cubic for accelerated fill (fills faster initially)
+    const rawProgress = Math.max(
+      0,
+      Math.min(1, (currentTriggerY - firstCenterY) / (lastCenterY - firstCenterY))
+    );
+
+    // On initial page load (top of page), force a fully blank state.
+    // This avoids mobile/desktop differences where the first step might already be past the trigger line.
+    if (scrollY < 8) {
+      setLineProgress(0);
+      setCompletedSteps(0);
+      if (!ready) setReady(true);
+      return;
+    }
+
+    // Accelerated fill (ease-out)
     const easedProgress = 1 - Math.pow(1 - rawProgress, 2.5);
     setLineProgress(easedProgress);
 
-    // Calculate completed steps based on each circle's position
+    // Completed steps based on each circle's center
     let completed = 0;
     for (let i = 0; i < circles.length; i++) {
       const circle = circles[i];
       if (!circle) continue;
-      
+
       const rect = circle.getBoundingClientRect();
       const circleCenterY = rect.top + scrollY + rect.height / 2;
-      
-      if (currentTriggerY >= circleCenterY) {
-        completed = i + 1;
-      }
+
+      if (currentTriggerY >= circleCenterY) completed = i + 1;
     }
     setCompletedSteps(completed);
-    
+
     if (!ready) setReady(true);
   }, [ready]);
 
@@ -208,25 +222,22 @@ const Implementation = () => {
           <div className="container mx-auto px-4">
             <div ref={containerRef} className="relative max-w-3xl mx-auto">
               {/* Timeline line background - spans from first to last circle */}
-              <div 
+              <div
                 className="absolute left-[22px] md:left-[26px] w-1 bg-slate-200 rounded-full"
-                style={{ 
-                  top: '50%',
+                style={{
+                  top: ready ? `${lineTop}px` : 0,
                   height: ready ? `${lineHeight}px` : 0,
-                  transform: 'translateY(-50%)',
-                  marginTop: `${lineHeight / 2}px`
                 }}
               />
-              
+
               {/* Animated progress line */}
               <div
                 className="absolute left-[22px] md:left-[26px] w-1 bg-gradient-to-b from-green-500 to-green-400 origin-top rounded-full"
-                style={{ 
-                  top: '50%',
+                style={{
+                  top: ready ? `${lineTop}px` : 0,
                   height: ready ? `${lineHeight}px` : 0,
-                  transform: `translateY(-50%) scaleY(${lineProgress})`,
-                  marginTop: `${lineHeight / 2}px`,
-                  transformOrigin: 'top'
+                  transform: `scaleY(${lineProgress})`,
+                  transformOrigin: "top",
                 }}
               />
 
