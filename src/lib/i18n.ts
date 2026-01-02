@@ -96,6 +96,10 @@ export const translations = {
       title: 'See the Magic',
       subtitle: 'Drag the slider to reveal the transformation',
     },
+    cta: {
+      title: 'Ready to Transform Your Salon?',
+      subtitle: 'Join hundreds of salons already using TryYourWig to boost confidence and reduce returns.',
+    },
     faq: {
       title: 'Frequently Asked Questions',
       subtitle: 'Everything you need to know about TryYourWig',
@@ -358,6 +362,10 @@ export const translations = {
     beforeAfter: {
       title: 'Sehen Sie die Magie',
       subtitle: 'Ziehen Sie den Schieberegler, um die Transformation zu enthüllen',
+    },
+    cta: {
+      title: 'Bereit, Ihren Salon zu transformieren?',
+      subtitle: 'Schließen Sie sich hunderten von Salons an, die TryYourWig bereits nutzen, um das Selbstvertrauen zu stärken und Retouren zu reduzieren.',
     },
     faq: {
       title: 'Häufig Gestellte Fragen',
@@ -622,6 +630,10 @@ export const translations = {
       title: 'Mira la Magia',
       subtitle: 'Arrastra el control deslizante para revelar la transformación',
     },
+    cta: {
+      title: '¿Listo para Transformar tu Salón?',
+      subtitle: 'Únete a cientos de salones que ya usan TryYourWig para aumentar la confianza y reducir las devoluciones.',
+    },
     faq: {
       title: 'Preguntas Frecuentes',
       subtitle: 'Todo lo que necesitas saber sobre TryYourWig',
@@ -885,6 +897,10 @@ export const translations = {
       title: 'Voyez la Magie',
       subtitle: 'Glissez le curseur pour révéler la transformation',
     },
+    cta: {
+      title: 'Prêt à Transformer Votre Salon?',
+      subtitle: 'Rejoignez des centaines de salons qui utilisent déjà TryYourWig pour renforcer la confiance et réduire les retours.',
+    },
     faq: {
       title: 'Questions Fréquentes',
       subtitle: 'Tout ce que vous devez savoir sur TryYourWig',
@@ -1147,6 +1163,10 @@ export const translations = {
     beforeAfter: {
       title: 'Guarda la Magia',
       subtitle: 'Trascina il cursore per rivelare la trasformazione',
+    },
+    cta: {
+      title: 'Pronto a Trasformare il Tuo Salone?',
+      subtitle: 'Unisciti a centinaia di saloni che già usano TryYourWig per aumentare la fiducia e ridurre i resi.',
     },
     faq: {
       title: 'Domande Frequenti',
