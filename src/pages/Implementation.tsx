@@ -1,9 +1,8 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { useRef, useState, useEffect, useCallback } from "react";
+import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { useI18n } from "@/lib/i18n";
-import { useState } from "react";
 
 const ImplementationStep = ({
   step,
@@ -11,12 +10,14 @@ const ImplementationStep = ({
   description,
   isCompleted,
   index,
+  circleRef,
 }: {
   step: number;
   title: string;
   description: string;
   isCompleted: boolean;
   index: number;
+  circleRef: (el: HTMLDivElement | null) => void;
 }) => {
   return (
     <motion.div
@@ -27,15 +28,12 @@ const ImplementationStep = ({
       className="relative pl-20 md:pl-28 pb-16 last:pb-0 min-h-[120px] flex items-center"
     >
       {/* Step circle - positioned at vertical center */}
-      <motion.div
-        initial={false}
-        animate={{
-          backgroundColor: isCompleted ? "rgb(34, 197, 94)" : "rgb(241, 245, 249)",
-          borderColor: isCompleted ? "rgb(34, 197, 94)" : "rgb(226, 232, 240)",
-        }}
-        transition={{ duration: 0.4 }}
-        className={`absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center font-bold text-lg border-3 ${
-          isCompleted ? "text-white" : "text-muted-foreground"
+      <div
+        ref={circleRef}
+        className={`absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center font-bold text-lg border-[3px] transition-all duration-400 ${
+          isCompleted 
+            ? "bg-green-500 border-green-500 text-white" 
+            : "bg-slate-100 border-slate-200 text-muted-foreground"
         }`}
       >
         {isCompleted ? (
@@ -49,15 +47,13 @@ const ImplementationStep = ({
         ) : (
           step
         )}
-      </motion.div>
+      </div>
 
       {/* Content card */}
-      <motion.div 
-        className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow"
-        animate={{
-          borderColor: isCompleted ? "rgba(34, 197, 94, 0.3)" : "rgba(226, 232, 240, 0.5)",
-        }}
-        transition={{ duration: 0.4 }}
+      <div 
+        className={`bg-card/50 backdrop-blur-sm border rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-400 ${
+          isCompleted ? "border-green-500/30" : "border-border/50"
+        }`}
       >
         <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
           {title}
@@ -65,7 +61,7 @@ const ImplementationStep = ({
         <p className="text-muted-foreground leading-relaxed">
           {description}
         </p>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
@@ -73,36 +69,12 @@ const ImplementationStep = ({
 const Implementation = () => {
   const { t } = useI18n();
   const containerRef = useRef<HTMLDivElement>(null);
-  const [completedSteps, setCompletedSteps] = useState(0);
+  const circleRefs = useRef<(HTMLDivElement | null)[]>([]);
   
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 60%", "end 95%"],
-  });
-
-  // Non-linear progress: fills faster than scroll position (accelerated curve)
-  const lineScale = useTransform(
-    scrollYProgress, 
-    [0, 0.15, 0.4, 0.7, 1], 
-    [0, 0.35, 0.6, 0.85, 1]
-  );
-
-  // Update completed steps with accelerated thresholds
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    const steps = t.implementation?.steps || [];
-    const count = steps.length;
-    if (!count) return;
-
-    // Accelerated thresholds: steps complete faster than linear scroll
-    const thresholds = [0.12, 0.28, 0.48, 0.68, 0.88];
-    let completed = 0;
-    for (let i = 0; i < count; i++) {
-      if (latest >= thresholds[i]) {
-        completed = i + 1;
-      }
-    }
-    setCompletedSteps(completed);
-  });
+  const [completedSteps, setCompletedSteps] = useState(0);
+  const [lineHeight, setLineHeight] = useState(0);
+  const [lineProgress, setLineProgress] = useState(0);
+  const [ready, setReady] = useState(false);
 
   const steps = t.implementation?.steps || [
     {
@@ -126,6 +98,86 @@ const Implementation = () => {
       description: "Your service is fully integrated and available to your clients, a completely new experience and unique service to your clients.",
     },
   ];
+
+  const setCircleRef = useCallback((index: number) => (el: HTMLDivElement | null) => {
+    circleRefs.current[index] = el;
+  }, []);
+
+  const measureAndUpdate = useCallback(() => {
+    const circles = circleRefs.current;
+    const firstCircle = circles[0];
+    const lastCircle = circles[circles.length - 1];
+
+    if (!firstCircle || !lastCircle) return;
+
+    // Get circle centers in page coordinates
+    const firstRect = firstCircle.getBoundingClientRect();
+    const lastRect = lastCircle.getBoundingClientRect();
+    
+    const scrollY = window.scrollY;
+    const firstCenterY = firstRect.top + scrollY + firstRect.height / 2;
+    const lastCenterY = lastRect.top + scrollY + lastRect.height / 2;
+
+    // Set the line height to span from first to last circle center
+    const totalLineHeight = lastCenterY - firstCenterY;
+    setLineHeight(totalLineHeight);
+
+    // Trigger line: when this viewport Y position crosses a circle, it's "reached"
+    const viewportTriggerY = window.innerHeight * 0.65;
+    const currentTriggerY = scrollY + viewportTriggerY;
+
+    // Calculate raw progress (0 when trigger is at first circle, 1 when at last)
+    const rawProgress = Math.max(0, Math.min(1, 
+      (currentTriggerY - firstCenterY) / (lastCenterY - firstCenterY)
+    ));
+
+    // Apply ease-out cubic for accelerated fill (fills faster initially)
+    const easedProgress = 1 - Math.pow(1 - rawProgress, 2.5);
+    setLineProgress(easedProgress);
+
+    // Calculate completed steps based on each circle's position
+    let completed = 0;
+    for (let i = 0; i < circles.length; i++) {
+      const circle = circles[i];
+      if (!circle) continue;
+      
+      const rect = circle.getBoundingClientRect();
+      const circleCenterY = rect.top + scrollY + rect.height / 2;
+      
+      if (currentTriggerY >= circleCenterY) {
+        completed = i + 1;
+      }
+    }
+    setCompletedSteps(completed);
+    
+    if (!ready) setReady(true);
+  }, [ready]);
+
+  useEffect(() => {
+    // Initial measurement after a short delay to ensure layout is complete
+    const initialTimeout = setTimeout(() => {
+      measureAndUpdate();
+    }, 100);
+
+    // Scroll listener
+    const handleScroll = () => {
+      requestAnimationFrame(measureAndUpdate);
+    };
+
+    // Resize listener
+    const handleResize = () => {
+      measureAndUpdate();
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      clearTimeout(initialTimeout);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [measureAndUpdate]);
 
   return (
     <Layout>
@@ -155,28 +207,43 @@ const Implementation = () => {
         <section className="py-8 md:py-16 pb-32">
           <div className="container mx-auto px-4">
             <div ref={containerRef} className="relative max-w-3xl mx-auto">
-              {/* Timeline line background - stops at last circle */}
-              <div className="absolute left-[22px] md:left-[26px] top-0 w-1 bg-border rounded-full" style={{ height: 'calc(100% - 60px)' }} />
+              {/* Timeline line background - spans from first to last circle */}
+              <div 
+                className="absolute left-[22px] md:left-[26px] w-1 bg-slate-200 rounded-full"
+                style={{ 
+                  top: '50%',
+                  height: ready ? `${lineHeight}px` : 0,
+                  transform: 'translateY(-50%)',
+                  marginTop: `${lineHeight / 2}px`
+                }}
+              />
               
               {/* Animated progress line */}
-              <motion.div
-                className="absolute left-[22px] md:left-[26px] top-0 w-1 bg-gradient-to-b from-green-500 to-green-400 origin-top rounded-full"
-                style={{ height: "calc(100% - 60px)", scaleY: lineScale }}
+              <div
+                className="absolute left-[22px] md:left-[26px] w-1 bg-gradient-to-b from-green-500 to-green-400 origin-top rounded-full"
+                style={{ 
+                  top: '50%',
+                  height: ready ? `${lineHeight}px` : 0,
+                  transform: `translateY(-50%) scaleY(${lineProgress})`,
+                  marginTop: `${lineHeight / 2}px`,
+                  transformOrigin: 'top'
+                }}
               />
 
               {/* Steps */}
-              <motion.div>
+              <div>
                 {steps.map((step, index) => (
                   <ImplementationStep
                     key={index}
                     step={index + 1}
                     title={step.title}
                     description={step.description}
-                    isCompleted={index < completedSteps}
+                    isCompleted={ready && index < completedSteps}
                     index={index}
+                    circleRef={setCircleRef(index)}
                   />
                 ))}
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
