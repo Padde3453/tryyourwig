@@ -221,7 +221,7 @@ const Index = () => {
                 {t.howItWorks.subtitle}
               </p>
               <p className="text-lg text-muted-foreground flex items-center justify-center gap-3">
-                Available in 5 languages
+                {t.howItWorks.languageHint}
                 <span className="flex items-center gap-2 text-2xl">
                   🇬🇧 🇩🇪 🇪🇸 🇫🇷 🇮🇹
                 </span>
@@ -404,20 +404,39 @@ const Index = () => {
             viewport={{ once: true }}
           >
             <Accordion type="single" collapsible className="space-y-4">
-              {t.faq.items.map((item, i) => (
-                <AccordionItem
-                  key={i}
-                  value={`item-${i}`}
-                  className="bg-card border border-border rounded-xl px-6 data-[state=open]:shadow-lg transition-shadow"
-                >
-                  <AccordionTrigger className="text-left font-semibold hover:no-underline py-5">
-                    {item.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-5">
-                    {item.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
+              {t.faq.items.map((item, i) => {
+                // Handle answer with implementation link placeholder
+                const renderAnswer = () => {
+                  if (item.answer.includes('{implementationLink}') && 'implementationLinkText' in item) {
+                    const parts = item.answer.split('{implementationLink}');
+                    return (
+                      <>
+                        {parts[0]}
+                        <Link to="/implementation" className="text-primary underline hover:text-primary/80">
+                          {(item as any).implementationLinkText}
+                        </Link>
+                        {parts[1]}
+                      </>
+                    );
+                  }
+                  return item.answer;
+                };
+
+                return (
+                  <AccordionItem
+                    key={i}
+                    value={`item-${i}`}
+                    className="bg-card border border-border rounded-xl px-6 data-[state=open]:shadow-lg transition-shadow"
+                  >
+                    <AccordionTrigger className="text-left font-semibold hover:no-underline py-5">
+                      {item.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground pb-5">
+                      {renderAnswer()}
+                    </AccordionContent>
+                  </AccordionItem>
+                );
+              })}
             </Accordion>
           </motion.div>
         </div>
