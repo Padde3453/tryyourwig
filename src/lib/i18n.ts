@@ -255,23 +255,23 @@ export const translations = {
       steps: [
         {
           title: 'Sign Up',
-          description: 'Sign up choosing the best package for you. Here the user signs up via the pricing page.',
+          description: 'Sign up choosing the best package for you. You can upgrade or downgrade at any point in time and the changes come into effect with the next monthly billing cycle.',
         },
         {
-          title: 'Access Admin Portal',
-          description: 'UI can get customized, including the logo, brand colors, social media links and company description.',
+          title: 'Make It Yours',
+          description: 'Customize the look and feel of the service to your brand, including the logo, brand colors, social media links, company description and more.',
         },
         {
           title: 'Create the Inventory',
           description: 'Upload images of the wigs you offer including pricing information, available colors, description, color, name etc. If you have a wide variety of wigs or need help otherwise, reach out to us via service@tryyourwig.com and we can help you with anything extra you might need.',
         },
         {
-          title: 'Adjust Your Website',
-          description: 'Link your website to the service, create a QR code or a link to guide your website visitors to your custom simulator page domain.',
+          title: 'Connect Your Website',
+          description: 'Link your website to the service, create a QR code or a link to guide your website visitors to your custom simulator page domain which you can setup in the admin area. If you want to fully integrate the TryYourWig service in your website, please contact us and we will make this possible.',
         },
         {
           title: 'Ready!',
-          description: 'Your service is fully integrated and available to your clients, a completely new experience and unique service to your clients.',
+          description: 'Your service is fully integrated and ready, a completely new experience and unique service to your clients.',
         },
       ],
     },
@@ -512,23 +512,23 @@ export const translations = {
       steps: [
         {
           title: 'Registrieren',
-          description: 'Melden Sie sich an und wählen Sie das beste Paket für Sie. Hier erfolgt die Anmeldung über die Preisseite.',
+          description: 'Melden Sie sich an und wählen Sie das beste Paket für Sie. Sie können jederzeit upgraden oder downgraden und die Änderungen treten mit dem nächsten monatlichen Abrechnungszyklus in Kraft.',
         },
         {
-          title: 'Admin-Portal Zugang',
-          description: 'Die Benutzeroberfläche kann angepasst werden, einschließlich Logo, Markenfarben, Social-Media-Links und Unternehmensbeschreibung.',
+          title: 'Machen Sie es zu Ihrem',
+          description: 'Passen Sie das Erscheinungsbild des Services an Ihre Marke an, einschließlich Logo, Markenfarben, Social-Media-Links, Unternehmensbeschreibung und mehr.',
         },
         {
           title: 'Inventar erstellen',
           description: 'Laden Sie Bilder Ihrer Perücken hoch, einschließlich Preisinformationen, verfügbarer Farben, Beschreibung, Farbe, Name usw. Bei einer großen Vielfalt an Perücken oder anderem Hilfebedarf kontaktieren Sie uns unter service@tryyourwig.com.',
         },
         {
-          title: 'Website anpassen',
-          description: 'Verknüpfen Sie Ihre Website mit dem Service, erstellen Sie einen QR-Code oder Link, um Ihre Website-Besucher zu Ihrer individuellen Simulator-Seite zu führen.',
+          title: 'Website verbinden',
+          description: 'Verknüpfen Sie Ihre Website mit dem Service, erstellen Sie einen QR-Code oder Link, um Ihre Website-Besucher zu Ihrer individuellen Simulator-Seite zu führen, die Sie im Admin-Bereich einrichten können. Wenn Sie den TryYourWig-Service vollständig in Ihre Website integrieren möchten, kontaktieren Sie uns und wir machen dies möglich.',
         },
         {
           title: 'Fertig!',
-          description: 'Ihr Service ist vollständig integriert und für Ihre Kunden verfügbar - ein völlig neues Erlebnis und einzigartiger Service für Ihre Kunden.',
+          description: 'Ihr Service ist vollständig integriert und bereit – ein völlig neues Erlebnis und einzigartiger Service für Ihre Kunden.',
         },
       ],
     },
@@ -769,23 +769,23 @@ export const translations = {
       steps: [
         {
           title: 'Registrarse',
-          description: 'Regístrate eligiendo el mejor paquete para ti. Aquí el usuario se registra a través de la página de precios.',
+          description: 'Regístrate eligiendo el mejor paquete para ti. Puedes actualizar o reducir tu plan en cualquier momento y los cambios entran en vigor con el siguiente ciclo de facturación mensual.',
         },
         {
-          title: 'Acceso al Portal de Administración',
-          description: 'La interfaz se puede personalizar, incluyendo el logo, colores de marca, enlaces de redes sociales y descripción de la empresa.',
+          title: 'Hazlo Tuyo',
+          description: 'Personaliza la apariencia del servicio según tu marca, incluyendo el logo, colores de marca, enlaces de redes sociales, descripción de la empresa y más.',
         },
         {
           title: 'Crear el Inventario',
           description: 'Sube imágenes de las pelucas que ofreces incluyendo información de precios, colores disponibles, descripción, color, nombre, etc. Si tienes una gran variedad de pelucas o necesitas ayuda, contáctanos en service@tryyourwig.com.',
         },
         {
-          title: 'Ajustar tu Sitio Web',
-          description: 'Vincula tu sitio web al servicio, crea un código QR o un enlace para guiar a los visitantes de tu sitio web a tu página de simulador personalizada.',
+          title: 'Conecta tu Sitio Web',
+          description: 'Vincula tu sitio web al servicio, crea un código QR o un enlace para guiar a los visitantes de tu sitio web a tu página de simulador personalizada que puedes configurar en el área de administración. Si deseas integrar completamente el servicio TryYourWig en tu sitio web, contáctanos y lo haremos posible.',
         },
         {
           title: '¡Listo!',
-          description: 'Tu servicio está completamente integrado y disponible para tus clientes, una experiencia completamente nueva y un servicio único para tus clientes.',
+          description: 'Tu servicio está completamente integrado y listo, una experiencia completamente nueva y un servicio único para tus clientes.',
         },
       ],
     },
@@ -1026,23 +1026,23 @@ export const translations = {
       steps: [
         {
           title: 'S\'inscrire',
-          description: 'Inscrivez-vous en choisissant le meilleur forfait pour vous. Ici, l\'utilisateur s\'inscrit via la page des tarifs.',
+          description: 'Inscrivez-vous en choisissant le meilleur forfait pour vous. Vous pouvez passer à un forfait supérieur ou inférieur à tout moment et les changements prennent effet lors du prochain cycle de facturation mensuel.',
         },
         {
-          title: 'Accès au Portail Admin',
-          description: 'L\'interface peut être personnalisée, y compris le logo, les couleurs de la marque, les liens vers les réseaux sociaux et la description de l\'entreprise.',
+          title: 'Personnalisez-le',
+          description: 'Personnalisez l\'apparence du service selon votre marque, y compris le logo, les couleurs de la marque, les liens vers les réseaux sociaux, la description de l\'entreprise et plus encore.',
         },
         {
           title: 'Créer l\'Inventaire',
           description: 'Téléchargez des images des perruques que vous proposez, y compris les informations de prix, les couleurs disponibles, la description, la couleur, le nom, etc. Si vous avez une grande variété de perruques ou besoin d\'aide, contactez-nous à service@tryyourwig.com.',
         },
         {
-          title: 'Ajuster Votre Site Web',
-          description: 'Liez votre site web au service, créez un code QR ou un lien pour guider les visiteurs de votre site vers votre page de simulateur personnalisée.',
+          title: 'Connectez Votre Site Web',
+          description: 'Liez votre site web au service, créez un code QR ou un lien pour guider les visiteurs de votre site vers votre page de simulateur personnalisée que vous pouvez configurer dans l\'espace administrateur. Si vous souhaitez intégrer complètement le service TryYourWig dans votre site web, contactez-nous et nous rendrons cela possible.',
         },
         {
           title: 'Prêt !',
-          description: 'Votre service est entièrement intégré et disponible pour vos clients, une expérience totalement nouvelle et un service unique pour vos clients.',
+          description: 'Votre service est entièrement intégré et prêt, une expérience totalement nouvelle et un service unique pour vos clients.',
         },
       ],
     },
