@@ -77,10 +77,11 @@ const Implementation = () => {
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 80%", "end 60%"],
+    offset: ["start 80%", "end 95%"],
   });
 
-  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  // Stop the line at the last circle (not 100% of container)
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "calc(100% - 60px)"]);
 
   // Update completed steps based on scroll progress
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -140,8 +141,8 @@ const Implementation = () => {
         <section className="py-8 md:py-16 pb-32">
           <div className="container mx-auto px-4">
             <div ref={containerRef} className="relative max-w-3xl mx-auto">
-              {/* Timeline line background */}
-              <div className="absolute left-[22px] md:left-[26px] top-0 bottom-0 w-1 bg-border rounded-full" />
+              {/* Timeline line background - stops at last circle */}
+              <div className="absolute left-[22px] md:left-[26px] top-0 w-1 bg-border rounded-full" style={{ height: 'calc(100% - 60px)' }} />
               
               {/* Animated progress line */}
               <motion.div
