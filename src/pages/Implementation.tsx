@@ -1,8 +1,10 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { useI18n } from "@/lib/i18n";
+import { Button } from "@/components/ui/button";
 
 const ImplementationStep = ({
   step,
@@ -260,6 +262,25 @@ const Implementation = () => {
                   />
                 ))}
               </div>
+              {/* CTA Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-center mt-12"
+              >
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-gradient-to-r from-brand-pink to-brand-purple hover:opacity-90 text-white px-8 py-6 text-lg"
+                >
+                  <Link to="/pricing" onClick={() => window.scrollTo(0, 0)}>
+                    Get started here
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </motion.div>
             </div>
           </div>
         </section>
