@@ -68,6 +68,7 @@ export const translations = {
     howItWorks: {
       title: 'How It Works',
       subtitle: 'Three simple steps to transform your customer experience',
+      languageHint: 'Available in 5 languages',
       steps: [
       {
         step: '01',
@@ -126,6 +127,11 @@ export const translations = {
         {
           question: 'Can I integrate the service directly on my website?',
           answer: 'Yes this is possible, but not by default. We could integrate it via iframe, contact us at service@tryyourwig.com and we evaluate this together.',
+        },
+        {
+          question: 'Do you offer a free trial?',
+          answer: 'No we do not, simply because it does not make much sense for two reasons. First, the setup requires some input and work from you across the admin area and your website (see the {implementationLink}). Although these requirements are minimal, they make a free trial illogical. And secondly, the monthly price for our service is really low, so there is not much risk for you.',
+          implementationLinkText: 'Implementation page',
         },
       ],
     },
@@ -325,6 +331,7 @@ export const translations = {
     howItWorks: {
       title: 'So Funktioniert Es',
       subtitle: 'Drei einfache Schritte zur Transformation Ihres Kundenerlebnisses',
+      languageHint: 'Verfügbar in 5 Sprachen',
       steps: [
       {
         step: '01',
@@ -383,6 +390,11 @@ export const translations = {
         {
           question: 'Kann ich den Service direkt auf meiner Website integrieren?',
           answer: 'Ja, das ist möglich, aber nicht standardmäßig. Wir könnten es per iframe integrieren, kontaktieren Sie uns unter service@tryyourwig.com und wir evaluieren dies gemeinsam.',
+        },
+        {
+          question: 'Bieten Sie eine kostenlose Testversion an?',
+          answer: 'Nein, das tun wir nicht, einfach weil es aus zwei Gründen keinen Sinn macht. Erstens erfordert die Einrichtung etwas Aufwand von Ihrer Seite im Admin-Bereich und auf Ihrer Website (siehe die {implementationLink}). Obwohl diese Anforderungen minimal sind, machen sie eine kostenlose Testversion unlogisch. Und zweitens ist der monatliche Preis für unseren Service wirklich niedrig, sodass für Sie kein großes Risiko besteht.',
+          implementationLinkText: 'Umsetzungsseite',
         },
       ],
     },
@@ -582,6 +594,7 @@ export const translations = {
     howItWorks: {
       title: 'Cómo Funciona',
       subtitle: 'Tres simples pasos para transformar la experiencia del cliente',
+      languageHint: 'Disponible en 5 idiomas',
       steps: [
       {
         step: '01',
@@ -640,6 +653,11 @@ export const translations = {
         {
           question: '¿Puedo integrar el servicio directamente en mi sitio web?',
           answer: 'Sí, esto es posible, pero no por defecto. Podríamos integrarlo mediante iframe, contáctanos en service@tryyourwig.com y lo evaluamos juntos.',
+        },
+        {
+          question: '¿Ofrecen una prueba gratuita?',
+          answer: 'No, no lo hacemos, simplemente porque no tiene mucho sentido por dos razones. Primero, la configuración requiere algo de trabajo de tu parte en el área de administración y tu sitio web (consulta la {implementationLink}). Aunque estos requisitos son mínimos, hacen que una prueba gratuita sea ilógica. Y segundo, el precio mensual de nuestro servicio es realmente bajo, por lo que no hay mucho riesgo para ti.',
+          implementationLinkText: 'página de Implementación',
         },
       ],
     },
@@ -839,6 +857,7 @@ export const translations = {
     howItWorks: {
       title: 'Comment Ça Marche',
       subtitle: 'Trois étapes simples pour transformer l\'expérience client',
+      languageHint: 'Disponible en 5 langues',
       steps: [
       {
         step: '01',
@@ -897,6 +916,11 @@ export const translations = {
         {
           question: 'Puis-je intégrer le service directement sur mon site web?',
           answer: 'Oui, c\'est possible, mais pas par défaut. Nous pourrions l\'intégrer via iframe, contactez-nous à service@tryyourwig.com et nous évaluons cela ensemble.',
+        },
+        {
+          question: 'Proposez-vous un essai gratuit?',
+          answer: 'Non, nous ne le proposons pas, simplement parce que cela n\'a pas beaucoup de sens pour deux raisons. Premièrement, la configuration nécessite un certain travail de votre part dans l\'espace administrateur et sur votre site web (voir la {implementationLink}). Bien que ces exigences soient minimales, elles rendent un essai gratuit illogique. Et deuxièmement, le prix mensuel de notre service est vraiment bas, donc il n\'y a pas beaucoup de risque pour vous.',
+          implementationLinkText: 'page de Mise en œuvre',
         },
       ],
     },
@@ -1096,6 +1120,7 @@ export const translations = {
     howItWorks: {
       title: 'Come Funziona',
       subtitle: 'Tre semplici passaggi per trasformare l\'esperienza del cliente',
+      languageHint: 'Disponibile in 5 lingue',
       steps: [
         {
           step: '01',
@@ -1154,6 +1179,11 @@ export const translations = {
         {
           question: 'Posso integrare il servizio direttamente nel mio sito web?',
           answer: 'Sì, questo è possibile, ma non di default. Potremmo integrarlo tramite iframe, contattaci a service@tryyourwig.com e valutiamo insieme.',
+        },
+        {
+          question: 'Offrite una prova gratuita?',
+          answer: 'No, non la offriamo, semplicemente perché non ha molto senso per due motivi. Primo, la configurazione richiede un po\' di lavoro da parte tua nell\'area admin e sul tuo sito web (vedi la {implementationLink}). Anche se questi requisiti sono minimi, rendono una prova gratuita illogica. E secondo, il prezzo mensile del nostro servizio è davvero basso, quindi non c\'è molto rischio per te.',
+          implementationLinkText: 'pagina di Implementazione',
         },
       ],
     },
