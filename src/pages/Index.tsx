@@ -26,6 +26,7 @@ import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slide
 import beforeWig from "@/assets/before-wig.webp";
 import afterWig from "@/assets/after-wig.png";
 import step01Video from "@/assets/step-01-video.mp4";
+import step02Video from "@/assets/step-02-video.mp4";
 import { HeroCarousel } from "@/components/HeroCarousel";
 
 const fadeInUp = {
@@ -256,7 +257,7 @@ const Index = () => {
                     viewport={{ once: true, amount: 0.6 }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
                   >
-                    <Card className="hero-card card-hover overflow-hidden aspect-[1008/1056] flex items-center justify-center bg-muted/50 relative">
+                    <Card className={`hero-card card-hover overflow-hidden flex items-center justify-center bg-muted/50 relative ${i === 1 ? '' : 'aspect-[1008/1056]'}`}>
                       {i === 0 ? (
                         <video 
                           src={step01Video}
@@ -266,8 +267,17 @@ const Index = () => {
                           playsInline
                           className="w-full h-full object-cover"
                         />
+                      ) : i === 1 ? (
+                        <video 
+                          src={step02Video}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-auto"
+                        />
                       ) : (
-                        <div className="flex flex-col items-center justify-center text-muted-foreground/50">
+                        <div className="flex flex-col items-center justify-center text-muted-foreground/50 aspect-[1008/1056] w-full">
                           <Image className="w-16 h-16 mb-2" />
                           <span className="text-sm font-medium">Step {step.step} Image</span>
                         </div>
