@@ -72,8 +72,8 @@ export const translations = {
       steps: [
       {
         step: '01',
-        title: 'Upload Selfie',
-        description: 'Customer takes or uploads a photo of themselves',
+        title: 'Page Visit and Wig Selection',
+        description: 'Your customer lands on your customized landing page and selects a wig to try-on of their choice',
         overlayUploadTitle: 'Upload Selfie',
         overlayUploadSubtitle: 'Make sure your face is clearly visible',
         overlayStyleTitle: 'Desired style',
@@ -82,13 +82,13 @@ export const translations = {
       },
         {
           step: '02',
-          title: 'Select Wig',
-          description: 'Browse your catalog and choose styles to try',
+          title: 'Upload Selfie and Color Choice',
+          description: 'They upload a selfie or choose an existing one and can then even select different hair colors if you offer some',
         },
         {
           step: '03',
           title: 'AI Transformation',
-          description: 'See realistic results in seconds with our AI',
+          description: 'See realistic results in seconds with our AI and download the results for later - or repeat the process with another piece or a new image',
         },
       ],
     },
@@ -339,8 +339,8 @@ export const translations = {
       steps: [
       {
         step: '01',
-        title: 'Selfie Hochladen',
-        description: 'Kunde macht oder lädt ein Foto von sich hoch',
+        title: 'Seitenbesuch und Perückenauswahl',
+        description: 'Ihr Kunde landet auf Ihrer individuellen Landingpage und wählt eine Perücke zum Anprobieren aus',
         overlayUploadTitle: 'Selfie hochladen',
         overlayUploadSubtitle: 'Stelle sicher, dass dein Gesicht gut sichtbar ist',
         overlayStyleTitle: 'Gewünschter Stil',
@@ -349,13 +349,13 @@ export const translations = {
       },
         {
           step: '02',
-          title: 'Perücke Auswählen',
-          description: 'Durchsuchen Sie Ihren Katalog und wählen Sie Stile zum Ausprobieren',
+          title: 'Selfie Hochladen und Farbauswahl',
+          description: 'Sie laden ein Selfie hoch oder wählen ein vorhandenes und können dann sogar verschiedene Haarfarben auswählen, wenn Sie welche anbieten',
         },
         {
           step: '03',
           title: 'KI-Transformation',
-          description: 'Sehen Sie realistische Ergebnisse in Sekunden mit unserer KI',
+          description: 'Sehen Sie realistische Ergebnisse in Sekunden mit unserer KI und laden Sie die Ergebnisse für später herunter - oder wiederholen Sie den Prozess mit einem anderen Stück oder einem neuen Bild',
         },
       ],
     },
@@ -606,8 +606,8 @@ export const translations = {
       steps: [
       {
         step: '01',
-        title: 'Subir Selfie',
-        description: 'El cliente toma o sube una foto de sí mismo',
+        title: 'Visita y Selección de Peluca',
+        description: 'Tu cliente llega a tu página de destino personalizada y selecciona una peluca para probarse',
         overlayUploadTitle: 'Subir Selfie',
         overlayUploadSubtitle: 'Asegúrate de que tu rostro sea claramente visible',
         overlayStyleTitle: 'Estilo deseado',
@@ -616,13 +616,13 @@ export const translations = {
       },
         {
           step: '02',
-          title: 'Seleccionar Peluca',
-          description: 'Navega por tu catálogo y elige estilos para probar',
+          title: 'Subir Selfie y Elección de Color',
+          description: 'Suben un selfie o eligen uno existente y luego pueden seleccionar diferentes colores de cabello si los ofreces',
         },
         {
           step: '03',
           title: 'Transformación IA',
-          description: 'Ve resultados realistas en segundos con nuestra IA',
+          description: 'Ve resultados realistas en segundos con nuestra IA y descarga los resultados para más tarde - o repite el proceso con otra pieza o una nueva imagen',
         },
       ],
     },
@@ -873,8 +873,8 @@ export const translations = {
       steps: [
       {
         step: '01',
-        title: 'Télécharger un Selfie',
-        description: 'Le client prend ou télécharge une photo de lui-même',
+        title: 'Visite et Sélection de Perruque',
+        description: 'Votre client arrive sur votre page d\'accueil personnalisée et sélectionne une perruque à essayer',
         overlayUploadTitle: 'Télécharger un Selfie',
         overlayUploadSubtitle: 'Assurez-vous que votre visage est bien visible',
         overlayStyleTitle: 'Style souhaité',
@@ -883,13 +883,13 @@ export const translations = {
       },
         {
           step: '02',
-          title: 'Sélectionner la Perruque',
-          description: 'Parcourez votre catalogue et choisissez des styles à essayer',
+          title: 'Télécharger Selfie et Choix de Couleur',
+          description: 'Ils téléchargent un selfie ou en choisissent un existant et peuvent ensuite sélectionner différentes couleurs de cheveux si vous en proposez',
         },
         {
           step: '03',
           title: 'Transformation IA',
-          description: 'Voyez des résultats réalistes en quelques secondes avec notre IA',
+          description: 'Voyez des résultats réalistes en quelques secondes avec notre IA et téléchargez les résultats pour plus tard - ou répétez le processus avec une autre pièce ou une nouvelle image',
         },
       ],
     },
@@ -1140,8 +1140,8 @@ export const translations = {
       steps: [
         {
           step: '01',
-          title: 'Carica Selfie',
-          description: 'Il cliente scatta o carica una propria foto',
+          title: 'Visita e Selezione Parrucca',
+          description: 'Il tuo cliente arriva sulla tua landing page personalizzata e seleziona una parrucca da provare',
           overlayUploadTitle: 'Carica Selfie',
           overlayUploadSubtitle: 'Assicurati che il tuo viso sia chiaramente visibile',
           overlayStyleTitle: 'Stile desiderato',
@@ -1150,13 +1150,13 @@ export const translations = {
         },
         {
           step: '02',
-          title: 'Seleziona Parrucca',
-          description: 'Sfoglia il tuo catalogo e scegli gli stili da provare',
+          title: 'Carica Selfie e Scelta Colore',
+          description: 'Caricano un selfie o ne scelgono uno esistente e possono poi selezionare diversi colori di capelli se ne offri',
         },
         {
           step: '03',
           title: 'Trasformazione IA',
-          description: 'Vedi risultati realistici in pochi secondi con la nostra IA',
+          description: 'Vedi risultati realistici in pochi secondi con la nostra IA e scarica i risultati per dopo - o ripeti il processo con un altro pezzo o una nuova immagine',
         },
       ],
     },
