@@ -25,7 +25,7 @@ import { Layout } from "@/components/Layout";
 import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slider";
 import beforeWig from "@/assets/before-wig.webp";
 import afterWig from "@/assets/after-wig.png";
-import stepUploadSelfie from "@/assets/step-upload-selfie.webp";
+import step01Video from "@/assets/step-01-video.mp4";
 import { HeroCarousel } from "@/components/HeroCarousel";
 
 const fadeInUp = {
@@ -258,44 +258,14 @@ const Index = () => {
                   >
                     <Card className="hero-card card-hover overflow-hidden aspect-[1008/1056] flex items-center justify-center bg-muted/50 relative">
                       {i === 0 ? (
-                        <>
-                          <img 
-                            src={stepUploadSelfie} 
-                            alt={step.title} 
-                            className="w-full h-full object-cover"
-                          />
-                          {/* Text overlays with exact positioning based on image measurements */}
-                          {/* Upload title */}
-                          <div className="absolute left-1/2 -translate-x-1/2" style={{ top: '40.4%' }}>
-                            <h4 className="text-sm md:text-base lg:text-lg font-bold text-foreground text-center">
-                              {step.overlayUploadTitle}
-                            </h4>
-                          </div>
-                          {/* Upload subtitle */}
-                          <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ top: '54.9%', width: '45.6%' }}>
-                            <p className="text-[10px] md:text-xs lg:text-sm text-muted-foreground">
-                              {step.overlayUploadSubtitle}
-                            </p>
-                          </div>
-                          {/* Style title */}
-                          <div className="absolute" style={{ top: '68.6%', left: '7.4%' }}>
-                            <h4 className="text-sm md:text-base lg:text-lg font-bold text-foreground">
-                              {step.overlayStyleTitle}
-                            </h4>
-                          </div>
-                          {/* Style subtitle */}
-                          <div className="absolute" style={{ top: '76.6%', left: '7.5%' }}>
-                            <p className="text-[10px] md:text-xs lg:text-sm text-muted-foreground">
-                              {step.overlayStyleSubtitle}
-                            </p>
-                          </div>
-                          {/* Generate button text */}
-                          <div className="absolute left-1/2 -translate-x-1/2" style={{ top: '91.1%' }}>
-                            <p className="text-xs md:text-sm lg:text-base font-semibold text-white whitespace-nowrap">
-                              {step.overlayGenerate}
-                            </p>
-                          </div>
-                        </>
+                        <video 
+                          src={step01Video}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover"
+                        />
                       ) : (
                         <div className="flex flex-col items-center justify-center text-muted-foreground/50">
                           <Image className="w-16 h-16 mb-2" />
