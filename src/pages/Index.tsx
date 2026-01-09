@@ -27,6 +27,7 @@ import beforeWig from "@/assets/before-wig.webp";
 import afterWig from "@/assets/after-wig.png";
 import step01Video from "@/assets/step-01-video.mp4";
 import step02Video from "@/assets/step-02-video.mp4";
+import step03Video from "@/assets/step-03-video.mp4";
 import { HeroCarousel } from "@/components/HeroCarousel";
 
 const fadeInUp = {
@@ -277,10 +278,14 @@ const Index = () => {
                           className="w-full h-auto"
                         />
                       ) : (
-                        <div className="flex flex-col items-center justify-center text-muted-foreground/50 aspect-[1008/1056] w-full">
-                          <Image className="w-16 h-16 mb-2" />
-                          <span className="text-sm font-medium">Step {step.step} Image</span>
-                        </div>
+                        <video 
+                          src={step03Video}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover"
+                        />
                       )}
                     </Card>
                   </motion.div>
