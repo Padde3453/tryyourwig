@@ -217,6 +217,11 @@ export const translations = {
         description: 'Looking for custom solutions, bulk uploads of wigs, or have special requirements? We\'re here to help you find the perfect solution for your business.',
         email: 'service@tryyourwig.com',
       },
+      firstMonthFree: {
+        title: 'Get the first month for free',
+        description: 'Choose the package you want and enter the discount code below during the checkout process. After the free month, your subscription continues at the normal package price.',
+        codeLabel: 'Your discount code',
+      },
     },
     demo: {
       title: 'Try the Demo',
@@ -482,6 +487,11 @@ export const translations = {
         title: 'Benötigen Sie zusätzliche Unterstützung?',
         description: 'Suchen Sie nach maßgeschneiderten Lösungen, Massen-Uploads von Perücken oder haben Sie besondere Anforderungen? Wir helfen Ihnen gerne, die perfekte Lösung für Ihr Unternehmen zu finden.',
         email: 'service@tryyourwig.com',
+      },
+      firstMonthFree: {
+        title: 'Der erste Monat ist kostenlos',
+        description: 'Wählen Sie das gewünschte Paket und geben Sie den untenstehenden Rabattcode während des Bestellvorgangs ein. Nach dem kostenlosen Monat läuft Ihr Abonnement zum normalen Paketpreis weiter.',
+        codeLabel: 'Ihr Rabattcode',
       },
     },
     demo: {
@@ -749,6 +759,11 @@ export const translations = {
         description: '¿Buscas soluciones personalizadas, cargas masivas de pelucas o tienes requisitos especiales? Estamos aquí para ayudarte a encontrar la solución perfecta para tu negocio.',
         email: 'service@tryyourwig.com',
       },
+      firstMonthFree: {
+        title: 'Consigue el primer mes gratis',
+        description: 'Elige el paquete que quieras e introduce el código de descuento de abajo durante el proceso de pago. Después del mes gratuito, tu suscripción continúa al precio normal del paquete.',
+        codeLabel: 'Tu código de descuento',
+      },
     },
     demo: {
       title: 'Prueba la Demo',
@@ -1015,6 +1030,11 @@ export const translations = {
         description: 'Vous cherchez des solutions personnalisées, des téléchargements en masse de perruques ou avez des exigences spéciales? Nous sommes là pour vous aider à trouver la solution parfaite pour votre entreprise.',
         email: 'service@tryyourwig.com',
       },
+      firstMonthFree: {
+        title: 'Profitez du premier mois gratuit',
+        description: 'Choisissez le forfait qui vous convient et saisissez le code de réduction ci-dessous lors du paiement. Après le mois gratuit, votre abonnement se poursuit au prix normal du forfait.',
+        codeLabel: 'Votre code de réduction',
+      },
     },
     demo: {
       title: 'Essayer la Démo',
@@ -1280,6 +1300,11 @@ export const translations = {
         title: 'Hai bisogno di supporto aggiuntivo?',
         description: 'Cerchi soluzioni personalizzate, caricamenti in blocco di parrucche o hai requisiti speciali? Siamo qui per aiutarti a trovare la soluzione perfetta per la tua attività.',
         email: 'service@tryyourwig.com',
+      },
+      firstMonthFree: {
+        title: 'Ottieni il primo mese gratis',
+        description: 'Scegli il pacchetto che preferisci e inserisci il codice sconto qui sotto durante il pagamento. Dopo il mese gratuito, l\'abbonamento prosegue al prezzo normale del pacchetto.',
+        codeLabel: 'Il tuo codice sconto',
       },
     },
     demo: {
