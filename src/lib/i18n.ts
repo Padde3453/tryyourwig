@@ -134,7 +134,7 @@ export const translations = {
         },
         {
           question: 'Do you offer a free trial?',
-          answer: 'Yes, we do. Simply choose the package you want and apply the discount code "first month free" during the checkout process. Your subscription then continues at the normal package price once the month is over.',
+          answer: 'Yes, we do. Simply choose the package you want and apply the discount code "FirstMonthFree" during the checkout process. Your subscription then continues at the normal package price once the month is over.',
         },
       ],
     },
@@ -400,7 +400,7 @@ export const translations = {
         },
         {
           question: 'Bieten Sie eine kostenlose Testversion an?',
-          answer: 'Ja, das tun wir. Wählen Sie einfach das gewünschte Paket und geben Sie während des Bestellvorgangs den Rabattcode "first month free" ein. Nach Ablauf des Monats läuft das Abonnement zum normalen Paketpreis weiter.',
+          answer: 'Ja, das tun wir. Wählen Sie einfach das gewünschte Paket und geben Sie während des Bestellvorgangs den Rabattcode "FirstMonthFree" ein. Nach Ablauf des Monats läuft das Abonnement zum normalen Paketpreis weiter.',
         },
       ],
     },
@@ -666,7 +666,7 @@ export const translations = {
         },
         {
           question: '¿Ofrecen una prueba gratuita?',
-          answer: 'Sí, la ofrecemos. Solo tienes que elegir el paquete que quieras y aplicar el código de descuento "first month free" durante el proceso de pago. Tu suscripción continúa después con el precio normal del paquete una vez finalizado el mes.',
+          answer: 'Sí, la ofrecemos. Solo tienes que elegir el paquete que quieras y aplicar el código de descuento "FirstMonthFree" durante el proceso de pago. Tu suscripción continúa después con el precio normal del paquete una vez finalizado el mes.',
         },
       ],
     },
@@ -932,7 +932,7 @@ export const translations = {
         },
         {
           question: 'Proposez-vous un essai gratuit?',
-          answer: 'Oui, nous le proposons. Choisissez simplement le forfait qui vous convient et appliquez le code de réduction « first month free » lors du processus de paiement. Votre abonnement se poursuit ensuite au prix normal du forfait une fois le mois écoulé.',
+          answer: 'Oui, nous le proposons. Choisissez simplement le forfait qui vous convient et appliquez le code de réduction « FirstMonthFree » lors du processus de paiement. Votre abonnement se poursuit ensuite au prix normal du forfait une fois le mois écoulé.',
         },
       ],
     },
@@ -1198,7 +1198,7 @@ export const translations = {
         },
         {
           question: 'Offrite una prova gratuita?',
-          answer: 'Sì, la offriamo. Scegli semplicemente il pacchetto che preferisci e applica il codice sconto "first month free" durante il processo di acquisto. L\'abbonamento prosegue poi al prezzo normale del pacchetto una volta concluso il mese.',
+          answer: 'Sì, la offriamo. Scegli semplicemente il pacchetto che preferisci e applica il codice sconto "FirstMonthFree" durante il processo di acquisto. L\'abbonamento prosegue poi al prezzo normale del pacchetto una volta concluso il mese.',
         },
       ],
     },
