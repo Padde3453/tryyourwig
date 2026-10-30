@@ -134,7 +134,7 @@ export const translations = {
         },
         {
           question: 'Do you offer a free trial?',
-          answer: 'Yes, we do. Simply choose the package you want and apply the discount code "FirstMonthFree" during the checkout process. Your subscription then continues at the normal package price once the month is over.',
+          answer: 'Yes, we do. Simply choose the package you want and apply the discount code "FirstMonthFree" during the checkout process. Your subscription then continues at the normal package price once the month is over. To make the most of your free month, add your wigs and place our URL or QR code on your website and social media, so that your clients can actually use the service.',
         },
       ],
     },
@@ -400,7 +400,7 @@ export const translations = {
         },
         {
           question: 'Bieten Sie eine kostenlose Testversion an?',
-          answer: 'Ja, das tun wir. Wählen Sie einfach das gewünschte Paket und geben Sie während des Bestellvorgangs den Rabattcode "FirstMonthFree" ein. Nach Ablauf des Monats läuft das Abonnement zum normalen Paketpreis weiter.',
+          answer: 'Ja, das tun wir. Wählen Sie einfach das gewünschte Paket und geben Sie während des Bestellvorgangs den Rabattcode "FirstMonthFree" ein. Nach Ablauf des Monats läuft das Abonnement zum normalen Paketpreis weiter. Damit Sie den kostenlosen Monat wirklich nutzen können, fügen Sie Ihre Perücken hinzu und platzieren Sie unsere URL oder den QR-Code auf Ihrer Website und in Ihren sozialen Medien, damit Ihre Kunden den Service tatsächlich verwenden.',
         },
       ],
     },
@@ -666,7 +666,7 @@ export const translations = {
         },
         {
           question: '¿Ofrecen una prueba gratuita?',
-          answer: 'Sí, la ofrecemos. Solo tienes que elegir el paquete que quieras y aplicar el código de descuento "FirstMonthFree" durante el proceso de pago. Tu suscripción continúa después con el precio normal del paquete una vez finalizado el mes.',
+          answer: 'Sí, la ofrecemos. Solo tienes que elegir el paquete que quieras y aplicar el código de descuento "FirstMonthFree" durante el proceso de pago. Tu suscripción continúa después con el precio normal del paquete una vez finalizado el mes. Para aprovechar bien tu mes gratuito, añade tus pelucas y coloca nuestra URL o el código QR en tu sitio web y en tus redes sociales, para que tus clientes puedan usar realmente el servicio.',
         },
       ],
     },
@@ -932,7 +932,7 @@ export const translations = {
         },
         {
           question: 'Proposez-vous un essai gratuit?',
-          answer: 'Oui, nous le proposons. Choisissez simplement le forfait qui vous convient et appliquez le code de réduction « FirstMonthFree » lors du processus de paiement. Votre abonnement se poursuit ensuite au prix normal du forfait une fois le mois écoulé.',
+          answer: 'Oui, nous le proposons. Choisissez simplement le forfait qui vous convient et appliquez le code de réduction « FirstMonthFree » lors du processus de paiement. Votre abonnement se poursuit ensuite au prix normal du forfait une fois le mois écoulé. Pour profiter pleinement de votre mois gratuit, ajoutez vos perruques et placez notre URL ou notre code QR sur votre site web et vos réseaux sociaux, afin que vos clients utilisent réellement le service.',
         },
       ],
     },
@@ -1198,7 +1198,7 @@ export const translations = {
         },
         {
           question: 'Offrite una prova gratuita?',
-          answer: 'Sì, la offriamo. Scegli semplicemente il pacchetto che preferisci e applica il codice sconto "FirstMonthFree" durante il processo di acquisto. L\'abbonamento prosegue poi al prezzo normale del pacchetto una volta concluso il mese.',
+          answer: 'Sì, la offriamo. Scegli semplicemente il pacchetto che preferisci e applica il codice sconto "FirstMonthFree" durante il processo di acquisto. L\'abbonamento prosegue poi al prezzo normale del pacchetto una volta concluso il mese. Per sfruttare al meglio il tuo mese gratuito, aggiungi le tue parrucche e posiziona il nostro URL o il codice QR sul tuo sito web e sui tuoi social, così i tuoi clienti potranno effettivamente usare il servizio.',
         },
       ],
     },
