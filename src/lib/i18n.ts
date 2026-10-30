@@ -169,14 +169,14 @@ export const translations = {
       tiers: [
         {
           name: 'The Pixie Cut',
-          price: '89€',
+          price: '35€',
           period: '/month net',
           description: 'Perfect for small boutiques',
           features: ['100 Generations/month'],
         },
         {
           name: 'The Full Volume',
-          price: '349€',
+          price: '100€',
           period: '/month net',
           description: 'Most popular for growing salons',
           features: ['700 Generations/month'],
@@ -184,7 +184,7 @@ export const translations = {
         },
         {
           name: 'The Salon Pro',
-          price: '699€',
+          price: '200€',
           period: '/month net',
           description: 'For high-volume businesses',
           features: ['1500 Generations/month'],
@@ -195,10 +195,10 @@ export const translations = {
         purchase: 'Purchase',
         net: 'net',
         packages: [
-          { generations: 50, price: 49 },
-          { generations: 100, price: 89 },
-          { generations: 200, price: 150 },
-          { generations: 400, price: 300 },
+          { generations: 50, price: 20 },
+          { generations: 100, price: 40 },
+          { generations: 200, price: 75 },
+          { generations: 400, price: 140 },
         ],
       },
       whatYouGet: {
@@ -216,6 +216,11 @@ export const translations = {
         title: 'Need additional support?',
         description: 'Looking for custom solutions, bulk uploads of wigs, or have special requirements? We\'re here to help you find the perfect solution for your business.',
         email: 'service@tryyourwig.com',
+      },
+      firstMonthFree: {
+        title: 'Get the first month for free',
+        description: 'Choose the package you want and enter the discount code below during the checkout process. After the free month, your subscription continues at the normal package price.',
+        codeLabel: 'Your discount code',
       },
     },
     demo: {
@@ -435,14 +440,14 @@ export const translations = {
       tiers: [
         {
           name: 'Der Pixie Cut',
-          price: '89€',
+          price: '35€',
           period: '/Monat netto',
           description: 'Perfekt für kleine Boutiquen',
           features: ['100 Generierungen/Monat'],
         },
         {
           name: 'Das Volle Volumen',
-          price: '349€',
+          price: '100€',
           period: '/Monat netto',
           description: 'Am beliebtesten für wachsende Salons',
           features: ['700 Generierungen/Monat'],
@@ -450,7 +455,7 @@ export const translations = {
         },
         {
           name: 'Der Salon Pro',
-          price: '699€',
+          price: '200€',
           period: '/Monat netto',
           description: 'Für Geschäfte mit hohem Volumen',
           features: ['1500 Generierungen/Monat'],
@@ -461,10 +466,10 @@ export const translations = {
         purchase: 'Kaufen',
         net: 'netto',
         packages: [
-          { generations: 50, price: 49 },
-          { generations: 100, price: 89 },
-          { generations: 200, price: 150 },
-          { generations: 400, price: 300 },
+          { generations: 50, price: 20 },
+          { generations: 100, price: 40 },
+          { generations: 200, price: 75 },
+          { generations: 400, price: 140 },
         ],
       },
       whatYouGet: {
@@ -482,6 +487,11 @@ export const translations = {
         title: 'Benötigen Sie zusätzliche Unterstützung?',
         description: 'Suchen Sie nach maßgeschneiderten Lösungen, Massen-Uploads von Perücken oder haben Sie besondere Anforderungen? Wir helfen Ihnen gerne, die perfekte Lösung für Ihr Unternehmen zu finden.',
         email: 'service@tryyourwig.com',
+      },
+      firstMonthFree: {
+        title: 'Der erste Monat ist kostenlos',
+        description: 'Wählen Sie das gewünschte Paket und geben Sie den untenstehenden Rabattcode während des Bestellvorgangs ein. Nach dem kostenlosen Monat läuft Ihr Abonnement zum normalen Paketpreis weiter.',
+        codeLabel: 'Ihr Rabattcode',
       },
     },
     demo: {
@@ -701,14 +711,14 @@ export const translations = {
       tiers: [
         {
           name: 'El Pixie Cut',
-          price: '89€',
+          price: '35€',
           period: '/mes neto',
           description: 'Perfecto para boutiques pequeñas',
           features: ['100 Generaciones/mes'],
         },
         {
           name: 'El Volumen Total',
-          price: '349€',
+          price: '100€',
           period: '/mes neto',
           description: 'El más popular para salones en crecimiento',
           features: ['700 Generaciones/mes'],
@@ -716,7 +726,7 @@ export const translations = {
         },
         {
           name: 'El Salon Pro',
-          price: '699€',
+          price: '200€',
           period: '/mes neto',
           description: 'Para negocios de alto volumen',
           features: ['1500 Generaciones/mes'],
@@ -727,10 +737,10 @@ export const translations = {
         purchase: 'Comprar',
         net: 'neto',
         packages: [
-          { generations: 50, price: 49 },
-          { generations: 100, price: 89 },
-          { generations: 200, price: 150 },
-          { generations: 400, price: 300 },
+          { generations: 50, price: 20 },
+          { generations: 100, price: 40 },
+          { generations: 200, price: 75 },
+          { generations: 400, price: 140 },
         ],
       },
       whatYouGet: {
@@ -748,6 +758,11 @@ export const translations = {
         title: '¿Necesitas soporte adicional?',
         description: '¿Buscas soluciones personalizadas, cargas masivas de pelucas o tienes requisitos especiales? Estamos aquí para ayudarte a encontrar la solución perfecta para tu negocio.',
         email: 'service@tryyourwig.com',
+      },
+      firstMonthFree: {
+        title: 'Consigue el primer mes gratis',
+        description: 'Elige el paquete que quieras e introduce el código de descuento de abajo durante el proceso de pago. Después del mes gratuito, tu suscripción continúa al precio normal del paquete.',
+        codeLabel: 'Tu código de descuento',
       },
     },
     demo: {
@@ -967,14 +982,14 @@ export const translations = {
       tiers: [
         {
           name: 'La Coupe Pixie',
-          price: '89€',
+          price: '35€',
           period: '/mois net',
           description: 'Parfait pour les petites boutiques',
           features: ['100 Générations/mois'],
         },
         {
           name: 'Le Volume Total',
-          price: '349€',
+          price: '100€',
           period: '/mois net',
           description: 'Le plus populaire pour les salons en croissance',
           features: ['700 Générations/mois'],
@@ -982,7 +997,7 @@ export const translations = {
         },
         {
           name: 'Le Salon Pro',
-          price: '699€',
+          price: '200€',
           period: '/mois net',
           description: 'Pour les entreprises à fort volume',
           features: ['1500 Générations/mois'],
@@ -993,10 +1008,10 @@ export const translations = {
         purchase: 'Acheter',
         net: 'net',
         packages: [
-          { generations: 50, price: 49 },
-          { generations: 100, price: 89 },
-          { generations: 200, price: 150 },
-          { generations: 400, price: 300 },
+          { generations: 50, price: 20 },
+          { generations: 100, price: 40 },
+          { generations: 200, price: 75 },
+          { generations: 400, price: 140 },
         ],
       },
       whatYouGet: {
@@ -1014,6 +1029,11 @@ export const translations = {
         title: 'Besoin d\'un support supplémentaire?',
         description: 'Vous cherchez des solutions personnalisées, des téléchargements en masse de perruques ou avez des exigences spéciales? Nous sommes là pour vous aider à trouver la solution parfaite pour votre entreprise.',
         email: 'service@tryyourwig.com',
+      },
+      firstMonthFree: {
+        title: 'Profitez du premier mois gratuit',
+        description: 'Choisissez le forfait qui vous convient et saisissez le code de réduction ci-dessous lors du paiement. Après le mois gratuit, votre abonnement se poursuit au prix normal du forfait.',
+        codeLabel: 'Votre code de réduction',
       },
     },
     demo: {
@@ -1233,14 +1253,14 @@ export const translations = {
       tiers: [
         {
           name: 'Il Pixie Cut',
-          price: '89€',
+          price: '35€',
           period: '/mese netto',
           description: 'Perfetto per piccole boutique',
           features: ['100 Generazioni/mese'],
         },
         {
           name: 'Il Volume Pieno',
-          price: '349€',
+          price: '100€',
           period: '/mese netto',
           description: 'Il più popolare per saloni in crescita',
           features: ['700 Generazioni/mese'],
@@ -1248,7 +1268,7 @@ export const translations = {
         },
         {
           name: 'Il Salon Pro',
-          price: '699€',
+          price: '200€',
           period: '/mese netto',
           description: 'Per attività ad alto volume',
           features: ['1500 Generazioni/mese'],
@@ -1259,10 +1279,10 @@ export const translations = {
         purchase: 'Acquista',
         net: 'netto',
         packages: [
-          { generations: 50, price: 49 },
-          { generations: 100, price: 89 },
-          { generations: 200, price: 150 },
-          { generations: 400, price: 300 },
+          { generations: 50, price: 20 },
+          { generations: 100, price: 40 },
+          { generations: 200, price: 75 },
+          { generations: 400, price: 140 },
         ],
       },
       whatYouGet: {
@@ -1280,6 +1300,11 @@ export const translations = {
         title: 'Hai bisogno di supporto aggiuntivo?',
         description: 'Cerchi soluzioni personalizzate, caricamenti in blocco di parrucche o hai requisiti speciali? Siamo qui per aiutarti a trovare la soluzione perfetta per la tua attività.',
         email: 'service@tryyourwig.com',
+      },
+      firstMonthFree: {
+        title: 'Ottieni il primo mese gratis',
+        description: 'Scegli il pacchetto che preferisci e inserisci il codice sconto qui sotto durante il pagamento. Dopo il mese gratuito, l\'abbonamento prosegue al prezzo normale del pacchetto.',
+        codeLabel: 'Il tuo codice sconto',
       },
     },
     demo: {
