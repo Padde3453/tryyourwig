@@ -134,8 +134,7 @@ export const translations = {
         },
         {
           question: 'Do you offer a free trial?',
-          answer: 'No we do not, simply because it does not make much sense for two reasons. First, the setup requires some input and work from you across the admin area and your website (see the {implementationLink}). Although these requirements are minimal, they make a free trial illogical. And secondly, the monthly price for our service is really low, so there is not much risk for you.',
-          implementationLinkText: 'Implementation page',
+          answer: 'Yes, we do. Simply choose the package you want and apply the discount code "first month free" during the checkout process. Your subscription then continues at the normal package price once the month is over.',
         },
       ],
     },
@@ -401,8 +400,7 @@ export const translations = {
         },
         {
           question: 'Bieten Sie eine kostenlose Testversion an?',
-          answer: 'Nein, das tun wir nicht, einfach weil es aus zwei Gründen keinen Sinn macht. Erstens erfordert die Einrichtung etwas Aufwand von Ihrer Seite im Admin-Bereich und auf Ihrer Website (siehe die {implementationLink}). Obwohl diese Anforderungen minimal sind, machen sie eine kostenlose Testversion unlogisch. Und zweitens ist der monatliche Preis für unseren Service wirklich niedrig, sodass für Sie kein großes Risiko besteht.',
-          implementationLinkText: 'Umsetzungsseite',
+          answer: 'Ja, das tun wir. Wählen Sie einfach das gewünschte Paket und geben Sie während des Bestellvorgangs den Rabattcode "first month free" ein. Nach Ablauf des Monats läuft das Abonnement zum normalen Paketpreis weiter.',
         },
       ],
     },
@@ -668,8 +666,7 @@ export const translations = {
         },
         {
           question: '¿Ofrecen una prueba gratuita?',
-          answer: 'No, no lo hacemos, simplemente porque no tiene mucho sentido por dos razones. Primero, la configuración requiere algo de trabajo de tu parte en el área de administración y tu sitio web (consulta la {implementationLink}). Aunque estos requisitos son mínimos, hacen que una prueba gratuita sea ilógica. Y segundo, el precio mensual de nuestro servicio es realmente bajo, por lo que no hay mucho riesgo para ti.',
-          implementationLinkText: 'página de Implementación',
+          answer: 'Sí, la ofrecemos. Solo tienes que elegir el paquete que quieras y aplicar el código de descuento "first month free" durante el proceso de pago. Tu suscripción continúa después con el precio normal del paquete una vez finalizado el mes.',
         },
       ],
     },
@@ -935,8 +932,7 @@ export const translations = {
         },
         {
           question: 'Proposez-vous un essai gratuit?',
-          answer: 'Non, nous ne le proposons pas, simplement parce que cela n\'a pas beaucoup de sens pour deux raisons. Premièrement, la configuration nécessite un certain travail de votre part dans l\'espace administrateur et sur votre site web (voir la {implementationLink}). Bien que ces exigences soient minimales, elles rendent un essai gratuit illogique. Et deuxièmement, le prix mensuel de notre service est vraiment bas, donc il n\'y a pas beaucoup de risque pour vous.',
-          implementationLinkText: 'page de Mise en œuvre',
+          answer: 'Oui, nous le proposons. Choisissez simplement le forfait qui vous convient et appliquez le code de réduction « first month free » lors du processus de paiement. Votre abonnement se poursuit ensuite au prix normal du forfait une fois le mois écoulé.',
         },
       ],
     },
@@ -1202,8 +1198,7 @@ export const translations = {
         },
         {
           question: 'Offrite una prova gratuita?',
-          answer: 'No, non la offriamo, semplicemente perché non ha molto senso per due motivi. Primo, la configurazione richiede un po\' di lavoro da parte tua nell\'area admin e sul tuo sito web (vedi la {implementationLink}). Anche se questi requisiti sono minimi, rendono una prova gratuita illogica. E secondo, il prezzo mensile del nostro servizio è davvero basso, quindi non c\'è molto rischio per te.',
-          implementationLinkText: 'pagina di Implementazione',
+          answer: 'Sì, la offriamo. Scegli semplicemente il pacchetto che preferisci e applica il codice sconto "first month free" durante il processo di acquisto. L\'abbonamento prosegue poi al prezzo normale del pacchetto una volta concluso il mese.',
         },
       ],
     },
