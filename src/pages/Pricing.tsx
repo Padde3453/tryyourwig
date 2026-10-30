@@ -79,7 +79,7 @@ const Pricing = () => {
                   <div className="w-6 h-6 rounded-full gradient-bg flex items-center justify-center flex-shrink-0">
                     <Check className="w-4 h-4 text-primary-foreground" />
                   </div>
-                  <span className="text-sm text-foreground">{feature}</span>
+                  <span className="text-sm text-foreground min-w-0 break-words hyphens-auto">{feature}</span>
                 </motion.div>
               ))}
             </div>
@@ -157,6 +157,32 @@ const Pricing = () => {
               );
             })}
           </div>
+
+          {/* First Month Free Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="mt-16"
+          >
+            <Card className="max-w-4xl mx-auto p-8 gradient-border bg-card text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-bg flex items-center justify-center">
+                <Sparkles className="w-8 h-8 text-primary-foreground" />
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
+                {(t.pricing as any).firstMonthFree?.title || 'Get the first month for free'}
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
+                {(t.pricing as any).firstMonthFree?.description || 'Choose the package you want and enter the discount code below during the checkout process.'}
+              </p>
+              <p className="text-sm text-muted-foreground mb-2">
+                {(t.pricing as any).firstMonthFree?.codeLabel || 'Your discount code'}
+              </p>
+              <span className="inline-block gradient-bg text-primary-foreground text-lg sm:text-xl font-extrabold tracking-widest px-6 py-3 rounded-full">
+                FirstMonthFree
+              </span>
+            </Card>
+          </motion.div>
 
           {/* Extensions Section */}
           <motion.div
